@@ -1,0 +1,30 @@
+{
+  "com.entity.arrows.game": {
+    "latestVersionCode": 1,
+    "minSupportedVersionCode": 1
+  },
+  "com.entity.sudoku": {
+    "latestVersionCode": 1,
+    "minSupportedVersionCode": 1
+  },
+  "com.entity.tubes.game": {
+    "latestVersionCode": 1,
+    "minSupportedVersionCode": 1
+  },
+  "com.entity.wordpuzzlematching.game": {
+    "latestVersionCode": 1,
+    "minSupportedVersionCode": 1
+  },
+  "com.entity.wordpuzzleselecting.game": {
+    "latestVersionCode": 1,
+    "minSupportedVersionCode": 1
+  },
+  "com.entity.bricksbreaker.game": {
+    "latestVersionCode": 1,
+    "minSupportedVersionCode": 1
+  },
+  "com.entity.bubbleshooter.game": {
+    "latestVersionCode": 1,
+    "minSupportedVersionCode": 1
+  }
+}
