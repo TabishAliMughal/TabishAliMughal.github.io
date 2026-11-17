@@ -94,9 +94,8 @@ GitHub Actions). Live in about a minute.
 Dark only, one set of tokens for every page, echoing the Entity game logos: deep navy `#0A1528`, a
 faint circuit-board grid, and a blue (`#5BB8FF`) -> amber (`#FFB648`) gradient for display text.
 Fonts: Unbounded (display headings) and IBM Plex Sans (everything else). All text pairs >= 4.5:1
-contrast; amber focus ring; `prefers-reduced-motion` respected. Full token table and page blocks:
-[`D:\persional\Entity\docs\developer-website.md`](../docs/developer-website.md) (in the Entity
-workspace, outside this repo).
+contrast; amber focus ring; `prefers-reduced-motion` respected. Full token table, page blocks and
+the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
 
