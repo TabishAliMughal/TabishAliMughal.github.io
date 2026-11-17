@@ -37,6 +37,9 @@
     --radius-s: 6px;
     --radius-m: 12px;
     --radius-l: 20px;
+    /* app/game logos: same radius as the alpha mask baked in by tools/normalize_app_logos.py */
+    --icon-radius: 22%;
+    --icon-shadow: 0 6px 18px rgba(0, 0, 0, 0.45), 0 0 18px rgba(91, 184, 255, 0.14);
     --gutter: 16px;
     --measure: 68ch;
     --grid: 32px;

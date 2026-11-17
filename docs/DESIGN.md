@@ -43,9 +43,13 @@ Skills, AI-Enhanced Development, Projects, Apps & Games (`#apps`), Contact. All 
    that game's README/docs. Keep the `data-app="<slug>"` on the hero card and the
    `.app-store-badge` inside it: that is what `assets/js/apps.js` turns into the Play link.
 2. Head: keep the shared block (`theme-color`, favicon, fonts, Font Awesome on game pages,
-   `/assets/css/tokens.css?v=2`, `/assets/css/entity.css?v=2`). Do not add inline styles; add
+   `/assets/css/tokens.css?v=3`, `/assets/css/entity.css?v=3`). Do not add inline styles; add
    classes to `entity.css`. Bump `?v=` on every page if you change the CSS a lot (cache busting).
-3. Logo: `assets/images/apps/<slug>.webp`, 256 px, made from the game's `assets/icon.png`.
+3. Logo: `assets/images/apps/<slug>.webp`, generated only by `python tools/normalize_app_logos.py`
+   (add the game to its `LOGOS` table: source file, crop `box` - `FULL` for full-bleed art,
+   `INNER_TILE` for a tile inside a rim - and optional `watermark` boxes to inpaint). Every logo is
+   512 px with the same 22% transparent rounded corners; CSS shows it with `--icon-radius` (22%)
+   and `--icon-shadow` from `tokens.css`, never a background tile or border.
 4. Home page: add an `<article class="app-card" id="app-<slug>" data-app="<slug>">` to `#apps` in
    `index.html` (copy an existing one), add `"<slug>": ""` to `assets/js/apps-data.js`, add the policy
    to `privacy/index.html`, and a redirect stub `privacy/<slug>/index.html` only if an old link exists.

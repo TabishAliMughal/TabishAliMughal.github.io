@@ -79,9 +79,11 @@ li::marker { color: var(--blue); }
 .hero img {
     width: 128px;
     height: 128px;
-    border-radius: 26px;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--icon-radius);
     flex-shrink: 0;
-    border: 1px solid var(--line);
+    background: transparent;
+    box-shadow: var(--icon-shadow);
 }
 .hero-text { flex: 1; min-width: 200px; }
 .hero h1 {
