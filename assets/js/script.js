@@ -100,62 +100,6 @@ function animateStats() {
     });
 }
 
-// Contact form handling
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        if (!validateForm(this)) {
-            showNotification('Please fill in all fields correctly.', 'error');
-            return;
-        }
-
-        // Show loading state
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-
-        try {
-            // Get form data
-            const formData = new FormData(this);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                subject: formData.get('subject'),
-                message: formData.get('message')
-            };
-
-            // Send to PHP backend
-            const response = await fetch('assets/scripts/send-email.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            });
-
-            const result = await response.json();
-
-            if (result.success) {
-                showNotification(result.message, 'success');
-                this.reset();
-            } else {
-                showNotification(result.message, 'error');
-            }
-
-        } catch (error) {
-            console.error('Error:', error);
-            showNotification('Network error. Please try again or contact directly at tabishalimughal@gmail.com', 'error');
-        } finally {
-            // Restore button state
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }
-    });
-}
-
 // CV Download functionality
 document.getElementById('download-cv').addEventListener('click', function(e) {
     e.preventDefault();
