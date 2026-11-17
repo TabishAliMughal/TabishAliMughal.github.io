@@ -5,83 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabish Ali Mughal - Team Lead, Software Developer</title>
     <meta name="description" content="Tabish Ali Mughal - Team Lead, Software Developer at Connect Communications with 6+ years of experience building web and mobile applications with Laravel, React Native and modern web technologies.">
+    <meta name="theme-color" content="#0A1528">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/tokens.css?v=2">
+    <link rel="stylesheet" href="assets/css/style.css?v=2">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span>Tabish Ali Mughal</span>
-            </div>
+    <header class="navbar">
+        <nav class="nav-container" aria-label="Main">
+            <a class="nav-logo" href="#home" aria-label="Tabish Ali Mughal, back to top">
+                <span class="nav-mark" aria-hidden="true">TAM</span>
+                <span class="nav-name">Tabish Ali Mughal</span>
+            </a>
+            <button class="hamburger" id="hamburger" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="Open menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#apps" class="nav-link">Apps &amp; Games</a>
-                <a href="#experience" class="nav-link">Experience</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <a href="#" class="nav-link resume-download" id="download-cv">
-                    <i class="fas fa-external-link-alt"></i> View Resume
+                <a href="resume.html" target="_blank" rel="noopener" class="nav-link resume-download" id="download-cv">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i> View Resume
                 </a>
             </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
+    <main id="main">
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="highlight">Tabish Ali Mughal</span>
-                    </h1>
-
-                    <h2 class="hero-subtitle">Team Lead – Software Developer</h2>
-                    <p class="hero-description">
-                        I'm a passionate full-stack developer and Team Lead at Connect Communications with 6+ years of experience
-                        building scalable web applications, mobile apps, and enterprise-level systems. I lead a team of 5 developers
-                        and specialize in Laravel, React Native, and modern web technologies.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                    </div>
-                    <div class="hero-social">
-                        <a href="https://github.com/TabishAliMughal" target="_blank" rel="noopener" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.facebook.com/TabishAliMughal/" target="_blank" rel="noopener" class="social-link">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="mailto:tabishalimughal@gmail.com" class="social-link" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="tel:+923112918396" class="social-link" aria-label="Call">
-                            <i class="fas fa-phone"></i>
-                        </a>
-                    </div>
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight grad-text">Tabish Ali Mughal</span>
+                </h1>
+                <h2 class="hero-subtitle">Team Lead – Software Developer</h2>
+                <p class="hero-description">
+                    I'm a passionate full-stack developer and Team Lead at Connect Communications with 6+ years of experience
+                    building scalable web applications, mobile apps, and enterprise-level systems. I lead a team of 5 developers
+                    and specialize in Laravel, React Native, and modern web technologies.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
-                <div class="hero-image">
-                    <div class="image-container">
-                        <img src="assets/images/image.png" alt="Tabish Ali Mughal" class="profile-image">
-                        <div class="image-overlay"></div>
-                    </div>
+                <div class="hero-social">
+                    <a href="https://github.com/TabishAliMughal" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.facebook.com/TabishAliMughal/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="mailto:tabishalimughal@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="tel:+923112918396" class="social-link" aria-label="Call">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- circuit traces running out of the portrait frame (decorative, drawn in once) -->
+                <svg class="hero-traces" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+                    <g class="trace-lines" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path pathLength="1" d="M70 120 H30 V40 H0"/>
+                        <path pathLength="1" d="M70 200 H40 L20 220 V300"/>
+                        <path pathLength="1" d="M330 90 H360 V20 H400"/>
+                        <path pathLength="1" d="M330 260 H372 L392 280 V400"/>
+                        <path pathLength="1" d="M160 340 V380 H90"/>
+                        <path pathLength="1" d="M250 60 V18 H320"/>
+                    </g>
+                    <g class="trace-nodes">
+                        <circle cx="0" cy="40" r="5"/><circle cx="20" cy="300" r="5"/>
+                        <circle cx="400" cy="20" r="5"/><circle cx="392" cy="400" r="5"/>
+                        <circle cx="90" cy="380" r="5"/><circle cx="320" cy="18" r="5"/>
+                    </g>
+                </svg>
+                <div class="image-container">
+                    <img src="assets/images/image.png" alt="Tabish Ali Mughal" class="profile-image" width="809" height="705">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
@@ -101,31 +122,145 @@
                         helping the team ship reliable software. I'm passionate about building
                         new things, solving problems, and delivering impactful, user-friendly solutions.
                     </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">6+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Projects Completed</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Technologies Mastered</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Client Satisfaction</span>
-                        </div>
-                    </div>
                 </div>
+                <dl class="about-stats">
+                    <div class="stat">
+                        <dt class="stat-label">Years Experience</dt>
+                        <dd class="stat-number">6+</dd>
+                    </div>
+                    <div class="stat">
+                        <dt class="stat-label">Projects Completed</dt>
+                        <dd class="stat-number">50+</dd>
+                    </div>
+                    <div class="stat">
+                        <dt class="stat-label">Technologies Mastered</dt>
+                        <dd class="stat-number">15+</dd>
+                    </div>
+                    <div class="stat">
+                        <dt class="stat-label">Client Satisfaction</dt>
+                        <dd class="stat-number">100%</dd>
+                    </div>
+                </dl>
             </div>
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="experience section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Work Experience</h2>
+                <p class="section-subtitle">My professional journey and achievements</p>
+            </div>
+            <ol class="timeline">
+                <li class="timeline-item is-current">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="job-title">Team Lead – Software Developer</h3>
+                            <span class="company">Connect Communications</span>
+                            <span class="duration">Oct 2026 - Present</span>
+                        </div>
+                        <p class="job-description">
+                            Leading a team of 5 developers building and maintaining the company's web and mobile applications,
+                            while staying hands-on with PHP, Laravel, Nuxt, PostgreSQL, and React Native.
+                        </p>
+                        <ul class="achievements">
+                            <li>Lead a 5-person development team</li>
+                            <li>Run code reviews and uphold coding standards</li>
+                            <li>Plan work, set priorities, and own delivery</li>
+                            <li>Mentor and support developers on the team</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="timeline-item">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="job-title">Full Stack Developer</h3>
+                            <span class="company">Connect Communications</span>
+                            <span class="duration">2022 - Sep 2026</span>
+                        </div>
+                        <p class="job-description">
+                            Building scalable web and mobile applications using PHP, Laravel, Nuxt, PostgreSQL, and React Native.
+                            Leading development of enterprise-level solutions with focus on performance and security.
+                        </p>
+                        <ul class="achievements">
+                            <li>Developed Streamium entertainment platform with 50,000+ users</li>
+                            <li>Implemented OAuth2 authentication with IP restrictions</li>
+                            <li>Built 5MB chunked video streaming system</li>
+                            <li>Created automated content processing pipeline</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="timeline-item is-current">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="job-title">Freelance Full Stack Developer</h3>
+                            <span class="company">Self-Employed</span>
+                            <span class="duration">2021 - Present</span>
+                        </div>
+                        <p class="job-description">
+                            Working on diverse projects including Django, SAP, C#, Laravel, and core PHP applications with
+                            unit testing, e-commerce solutions, and OAuth2 integrations.
+                        </p>
+                        <ul class="achievements">
+                            <li>Delivered 30+ successful projects across multiple technologies</li>
+                            <li>Built e-commerce platform with inventory tracking</li>
+                            <li>Implemented shipping logic and payment gateways</li>
+                            <li>Created custom PDF catalog generators</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="timeline-item">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="job-title">Teacher (English, Computer)</h3>
+                            <span class="company">New Vision Public School</span>
+                            <span class="duration">2020 - 2021</span>
+                        </div>
+                        <p class="job-description">
+                            Taught English and Computer Science, focusing on programming basics and computer literacy.
+                            Developed curriculum and educational materials for students.
+                        </p>
+                        <ul class="achievements">
+                            <li>Improved student performance by 40% in computer subjects</li>
+                            <li>Developed programming curriculum for beginners</li>
+                            <li>Led technology integration in classroom</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="timeline-item">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="job-title">Full Stack Developer</h3>
+                            <span class="company">Comsoft Systems</span>
+                            <span class="duration">2019 - 2021</span>
+                        </div>
+                        <p class="job-description">
+                            Worked on multiple web projects using PHP and JavaScript stack. Gained foundational experience
+                            in full-stack development and software engineering principles.
+                        </p>
+                        <ul class="achievements">
+                            <li>Contributed to 15+ web development projects</li>
+                            <li>Learned PHP, JavaScript, and database fundamentals</li>
+                            <li>Collaborated in team development environment</li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Technical Skills</h2>
@@ -134,110 +269,46 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3 class="category-title">Backend Development</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-php"></i>
-                            <span>PHP</span>
-                            <div class="skill-level" data-level="95"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-laravel"></i>
-                            <span>Laravel</span>
-                            <div class="skill-level" data-level="90"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python/Django</span>
-                            <div class="skill-level" data-level="85"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <span>C#/.NET</span>
-                            <div class="skill-level" data-level="80"></div>
-                        </div>
-                    </div>
+                    <ul class="skill-items">
+                        <li class="skill-item"><i class="fab fa-php" aria-hidden="true"></i><span>PHP</span><div class="skill-level" data-level="95"></div></li>
+                        <li class="skill-item"><i class="fab fa-laravel" aria-hidden="true"></i><span>Laravel</span><div class="skill-level" data-level="90"></div></li>
+                        <li class="skill-item"><i class="fab fa-python" aria-hidden="true"></i><span>Python/Django</span><div class="skill-level" data-level="85"></div></li>
+                        <li class="skill-item"><i class="fas fa-code" aria-hidden="true"></i><span>C#/.NET</span><div class="skill-level" data-level="80"></div></li>
+                    </ul>
                 </div>
                 <div class="skill-category">
                     <h3 class="category-title">Frontend Development</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-js"></i>
-                            <span>JavaScript</span>
-                            <div class="skill-level" data-level="90"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>React Native</span>
-                            <div class="skill-level" data-level="85"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-vuejs"></i>
-                            <span>Nuxt.js</span>
-                            <div class="skill-level" data-level="80"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML/CSS</span>
-                            <div class="skill-level" data-level="95"></div>
-                        </div>
-                    </div>
+                    <ul class="skill-items">
+                        <li class="skill-item"><i class="fab fa-js" aria-hidden="true"></i><span>JavaScript</span><div class="skill-level" data-level="90"></div></li>
+                        <li class="skill-item"><i class="fab fa-react" aria-hidden="true"></i><span>React Native</span><div class="skill-level" data-level="85"></div></li>
+                        <li class="skill-item"><i class="fab fa-vuejs" aria-hidden="true"></i><span>Nuxt.js</span><div class="skill-level" data-level="80"></div></li>
+                        <li class="skill-item"><i class="fab fa-html5" aria-hidden="true"></i><span>HTML/CSS</span><div class="skill-level" data-level="95"></div></li>
+                    </ul>
                 </div>
                 <div class="skill-category">
-                    <h3 class="category-title">Database & Tools</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>MySQL</span>
-                            <div class="skill-level" data-level="90"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>PostgreSQL</span>
-                            <div class="skill-level" data-level="85"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-git-alt"></i>
-                            <span>Git</span>
-                            <div class="skill-level" data-level="90"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-server"></i>
-                            <span>Linux/Ubuntu</span>
-                            <div class="skill-level" data-level="80"></div>
-                        </div>
-                    </div>
+                    <h3 class="category-title">Database &amp; Tools</h3>
+                    <ul class="skill-items">
+                        <li class="skill-item"><i class="fas fa-database" aria-hidden="true"></i><span>MySQL</span><div class="skill-level" data-level="90"></div></li>
+                        <li class="skill-item"><i class="fas fa-database" aria-hidden="true"></i><span>PostgreSQL</span><div class="skill-level" data-level="85"></div></li>
+                        <li class="skill-item"><i class="fab fa-git-alt" aria-hidden="true"></i><span>Git</span><div class="skill-level" data-level="90"></div></li>
+                        <li class="skill-item"><i class="fas fa-server" aria-hidden="true"></i><span>Linux/Ubuntu</span><div class="skill-level" data-level="80"></div></li>
+                    </ul>
                 </div>
                 <div class="skill-category">
-                    <h3 class="category-title">Mobile & Others</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>Expo</span>
-                            <div class="skill-level" data-level="85"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Cross-Platform</span>
-                            <div class="skill-level" data-level="80"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-cloud"></i>
-                            <span>REST APIs</span>
-                            <div class="skill-level" data-level="90"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-cog"></i>
-                            <span>Unit Testing</span>
-                            <div class="skill-level" data-level="75"></div>
-                        </div>
-                    </div>
+                    <h3 class="category-title">Mobile &amp; Others</h3>
+                    <ul class="skill-items">
+                        <li class="skill-item"><i class="fab fa-react" aria-hidden="true"></i><span>Expo</span><div class="skill-level" data-level="85"></div></li>
+                        <li class="skill-item"><i class="fas fa-mobile-alt" aria-hidden="true"></i><span>Cross-Platform</span><div class="skill-level" data-level="80"></div></li>
+                        <li class="skill-item"><i class="fas fa-cloud" aria-hidden="true"></i><span>REST APIs</span><div class="skill-level" data-level="90"></div></li>
+                        <li class="skill-item"><i class="fas fa-cog" aria-hidden="true"></i><span>Unit Testing</span><div class="skill-level" data-level="75"></div></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- AI Usage Section -->
-    <section id="ai-usage" class="ai-usage">
+    <section id="ai-usage" class="ai-usage section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">AI-Enhanced Development</h2>
@@ -257,30 +328,30 @@
                         security best practices.
                     </p>
                 </div>
-                <div class="ai-benefits">
-                    <div class="ai-benefit-card">
-                        <div class="ai-benefit-icon"><i class="fas fa-rocket"></i></div>
+                <ul class="ai-benefits">
+                    <li class="ai-benefit-card">
+                        <div class="ai-benefit-icon" aria-hidden="true"><i class="fas fa-rocket"></i></div>
                         <h3>Faster Delivery</h3>
                         <p>Deliver features faster without compromising quality</p>
-                    </div>
-                    <div class="ai-benefit-card">
-                        <div class="ai-benefit-icon"><i class="fas fa-sync-alt"></i></div>
+                    </li>
+                    <li class="ai-benefit-card">
+                        <div class="ai-benefit-icon" aria-hidden="true"><i class="fas fa-sync-alt"></i></div>
                         <h3>Rapid Prototyping</h3>
                         <p>Quickly prototype and iterate on ideas</p>
-                    </div>
-                    <div class="ai-benefit-card">
-                        <div class="ai-benefit-icon"><i class="fas fa-clock"></i></div>
+                    </li>
+                    <li class="ai-benefit-card">
+                        <div class="ai-benefit-icon" aria-hidden="true"><i class="fas fa-clock"></i></div>
                         <h3>Time Efficient</h3>
                         <p>Reduce development time on routine tasks</p>
-                    </div>
-                    <div class="ai-benefit-card">
-                        <div class="ai-benefit-icon"><i class="fas fa-brain"></i></div>
+                    </li>
+                    <li class="ai-benefit-card">
+                        <div class="ai-benefit-icon" aria-hidden="true"><i class="fas fa-brain"></i></div>
                         <h3>Deep Focus</h3>
                         <p>Focus more on architecture, optimization, and business logic</p>
-                    </div>
-                </div>
+                    </li>
+                </ul>
                 <div class="ai-note">
-                    <i class="fas fa-shield-alt"></i>
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
                     <p>
                         My strength lies in recognizing AI inaccuracies quickly. With a solid understanding of programming
                         fundamentals, system design, and debugging practices, I validate outputs efficiently and refine them
@@ -292,86 +363,86 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Featured Projects</h2>
                 <p class="section-subtitle">Some of my recent work and achievements</p>
             </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <article class="project-card has-image">
                     <div class="project-image">
-                        <img src="assets/images/streamium-logo.png" alt="Streamium Entertainment Platform">
+                        <img src="assets/images/streamium-logo.png" alt="Streamium Entertainment Platform" width="500" height="500" loading="lazy">
                     </div>
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">Streamium Entertainment Platform</h3>
                             <div class="project-links">
-                                <a href="https://streamium-web.tabishalimughal.xyz" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://streamium-web.tabishalimughal.xyz" target="_blank" rel="noopener" class="project-link" aria-label="Open Streamium Entertainment Platform"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
                             </div>
                         </div>
                         <p class="project-description">
                             A sophisticated streaming platform with Laravel backend, React Native mobile client, and 5 Node.js scrapers.
                             Features chunked video streaming, OAuth2 authentication, and automated content management.
                         </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Laravel 12</span>
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">OAuth2</span>
-                            <span class="tech-tag">Video Streaming</span>
-                        </div>
+                        <ul class="project-tech">
+                            <li class="tech-tag">Laravel 12</li>
+                            <li class="tech-tag">React Native</li>
+                            <li class="tech-tag">Node.js</li>
+                            <li class="tech-tag">OAuth2</li>
+                            <li class="tech-tag">Video Streaming</li>
+                        </ul>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Enterprise E-Commerce System</h3>
-                            <div class="project-links">
-                                <a href="https://worlddealtraders.com" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                        <p class="project-description">
-                            Full-featured e-commerce platform with inventory tracking, shipping algorithms, flash sales,
-                            PDF catalog generation, and comprehensive checkout flow optimization.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Payment Gateway</span>
-                            <span class="tech-tag">PDF Generation</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/tj-app-logo.png" alt="Texas Jasmine Ordering App">
+                <article class="project-card has-image">
+                    <div class="project-image plate-light">
+                        <img src="assets/images/tj-app-logo.png" alt="Texas Jasmine Ordering App" width="2778" height="1077" loading="lazy">
                     </div>
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">Texas Jasmine Ordering App</h3>
                             <div class="project-links">
-                                <a href="https://texasjasmine.com" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://texasjasmine.com" target="_blank" rel="noopener" class="project-link" aria-label="Open Texas Jasmine Ordering App"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
                             </div>
                         </div>
                         <p class="project-description">
                             Cross-platform mobile ordering application with advanced barcode scanning, custom responsive design system,
                             and sophisticated state management across iOS, Android, and Web platforms.
                         </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Expo</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Scandit SDK</span>
-                            <span class="tech-tag">TanStack Query</span>
-                            <span class="tech-tag">Cross-Platform</span>
-                        </div>
+                        <ul class="project-tech">
+                            <li class="tech-tag">Expo</li>
+                            <li class="tech-tag">TypeScript</li>
+                            <li class="tech-tag">Scandit SDK</li>
+                            <li class="tech-tag">TanStack Query</li>
+                            <li class="tech-tag">Cross-Platform</li>
+                        </ul>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Enterprise E-Commerce System</h3>
+                            <div class="project-links">
+                                <a href="https://worlddealtraders.com" target="_blank" rel="noopener" class="project-link" aria-label="Open Enterprise E-Commerce System"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Full-featured e-commerce platform with inventory tracking, shipping algorithms, flash sales,
+                            PDF catalog generation, and comprehensive checkout flow optimization.
+                        </p>
+                        <ul class="project-tech">
+                            <li class="tech-tag">PHP</li>
+                            <li class="tech-tag">Laravel</li>
+                            <li class="tech-tag">MySQL</li>
+                            <li class="tech-tag">Payment Gateway</li>
+                            <li class="tech-tag">PDF Generation</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project-card">
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">Custom PHP Framework</h3>
@@ -380,39 +451,39 @@
                             Enterprise-grade custom PHP framework with MVC architecture, advanced security features,
                             custom ORM, role-based access control, and comprehensive middleware system.
                         </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">PHP 8+</span>
-                            <span class="tech-tag">MVC Architecture</span>
-                            <span class="tech-tag">Custom ORM</span>
-                            <span class="tech-tag">Security</span>
-                            <span class="tech-tag">Framework</span>
-                        </div>
+                        <ul class="project-tech">
+                            <li class="tech-tag">PHP 8+</li>
+                            <li class="tech-tag">MVC Architecture</li>
+                            <li class="tech-tag">Custom ORM</li>
+                            <li class="tech-tag">Security</li>
+                            <li class="tech-tag">Framework</li>
+                        </ul>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
+                <article class="project-card">
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">School Management System</h3>
                             <div class="project-links">
-                                <a href="https://sms-web.tabishalimughal.xyz" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://sms-web.tabishalimughal.xyz" target="_blank" rel="noopener" class="project-link" aria-label="Open School Management System"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
                             </div>
                         </div>
                         <p class="project-description">
                             Comprehensive school management application with billing module, student fee management,
                             voucher generation, and flexible payment tracking system.
                         </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Billing System</span>
-                            <span class="tech-tag">Reports</span>
-                            <span class="tech-tag">Management</span>
-                        </div>
+                        <ul class="project-tech">
+                            <li class="tech-tag">Laravel</li>
+                            <li class="tech-tag">MySQL</li>
+                            <li class="tech-tag">Billing System</li>
+                            <li class="tech-tag">Reports</li>
+                            <li class="tech-tag">Management</li>
+                        </ul>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
+                <article class="project-card">
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">OAuth2 .NET Integration</h3>
@@ -421,15 +492,15 @@
                             Advanced OAuth2 authentication system for .NET applications with client credential validation,
                             token management, and secure API access control.
                         </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">.NET</span>
-                            <span class="tech-tag">OAuth2</span>
-                            <span class="tech-tag">Authentication</span>
-                            <span class="tech-tag">Security</span>
-                        </div>
+                        <ul class="project-tech">
+                            <li class="tech-tag">C#</li>
+                            <li class="tech-tag">.NET</li>
+                            <li class="tech-tag">OAuth2</li>
+                            <li class="tech-tag">Authentication</li>
+                            <li class="tech-tag">Security</li>
+                        </ul>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -439,319 +510,183 @@
          assets/js/apps-data.js (one line per app) - assets/js/apps.js turns "Coming soon" into a live link here
          and on /entity/games/<slug>/.
          See D:\persional\Entity\docs\developer-website.md -->
-    <section id="apps" class="apps">
+    <section id="apps" class="apps section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Apps &amp; Games</h2>
                 <p class="section-subtitle">My own Entity games for Android - offline, family-friendly puzzles, coming soon to Google Play</p>
             </div>
             <div class="apps-grid">
-                <article class="project-card app-card" id="app-entity-arrows" data-app="entity-arrows">
-                    <div class="project-content">
-                        <div class="app-header">
-                            <a class="app-link" href="/entity/games/entity-arrows/"><img class="app-icon" src="assets/images/apps/entity-arrows.webp" alt="Entity Arrows logo" width="72" height="72" loading="lazy">
-                                <h3 class="project-title">Entity Arrows</h3>
-                            </a>
-                        </div>
-                        <p class="project-description">Free tangled arrow strings in the right order to clear every board.</p>
-                        <div class="app-actions">
-                            <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play"></i> Coming soon to Google Play</span>
-                            <a class="app-privacy" href="/entity/games/entity-arrows/privacy/">Privacy policy</a>
-                        </div>
+                <article class="app-card" id="app-entity-arrows" data-app="entity-arrows">
+                    <a class="app-link" href="/entity/games/entity-arrows/">
+                        <img class="app-icon" src="assets/images/apps/entity-arrows.webp" alt="Entity Arrows logo" width="256" height="256" loading="lazy">
+                        <h3 class="app-title">Entity Arrows</h3>
+                    </a>
+                    <p class="app-description">Free tangled arrow strings in the right order to clear every board.</p>
+                    <div class="app-actions">
+                        <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play" aria-hidden="true"></i> Coming soon to Google Play</span>
+                        <a class="app-privacy" href="/entity/games/entity-arrows/privacy/">Privacy policy</a>
                     </div>
                 </article>
 
-                <article class="project-card app-card" id="app-entity-sudoku" data-app="entity-sudoku">
-                    <div class="project-content">
-                        <div class="app-header">
-                            <a class="app-link" href="/entity/games/entity-sudoku/"><img class="app-icon" src="assets/images/apps/entity-sudoku.webp" alt="Entity Sudoku logo" width="72" height="72" loading="lazy">
-                                <h3 class="project-title">Entity Sudoku</h3>
-                            </a>
-                        </div>
-                        <p class="project-description">A fresh daily Sudoku across five difficulty levels, with streaks and stats.</p>
-                        <div class="app-actions">
-                            <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play"></i> Coming soon to Google Play</span>
-                            <a class="app-privacy" href="/entity/games/entity-sudoku/privacy/">Privacy policy</a>
-                        </div>
+                <article class="app-card" id="app-entity-sudoku" data-app="entity-sudoku">
+                    <a class="app-link" href="/entity/games/entity-sudoku/">
+                        <img class="app-icon" src="assets/images/apps/entity-sudoku.webp" alt="Entity Sudoku logo" width="256" height="256" loading="lazy">
+                        <h3 class="app-title">Entity Sudoku</h3>
+                    </a>
+                    <p class="app-description">A fresh daily Sudoku across five difficulty levels, with streaks and stats.</p>
+                    <div class="app-actions">
+                        <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play" aria-hidden="true"></i> Coming soon to Google Play</span>
+                        <a class="app-privacy" href="/entity/games/entity-sudoku/privacy/">Privacy policy</a>
                     </div>
                 </article>
 
-                <article class="project-card app-card" id="app-entity-tubes-game" data-app="entity-tubes-game">
-                    <div class="project-content">
-                        <div class="app-header">
-                            <a class="app-link" href="/entity/games/entity-tubes-game/"><img class="app-icon" src="assets/images/apps/entity-tubes-game.webp" alt="Entity Tubes Game logo" width="72" height="72" loading="lazy">
-                                <h3 class="project-title">Entity Tubes Game</h3>
-                            </a>
-                        </div>
-                        <p class="project-description">Pour and sort coloured layers until every tube holds a single colour.</p>
-                        <div class="app-actions">
-                            <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play"></i> Coming soon to Google Play</span>
-                            <a class="app-privacy" href="/entity/games/entity-tubes-game/privacy/">Privacy policy</a>
-                        </div>
+                <article class="app-card" id="app-entity-tubes-game" data-app="entity-tubes-game">
+                    <a class="app-link" href="/entity/games/entity-tubes-game/">
+                        <img class="app-icon" src="assets/images/apps/entity-tubes-game.webp" alt="Entity Tubes Game logo" width="256" height="256" loading="lazy">
+                        <h3 class="app-title">Entity Tubes Game</h3>
+                    </a>
+                    <p class="app-description">Pour and sort coloured layers until every tube holds a single colour.</p>
+                    <div class="app-actions">
+                        <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play" aria-hidden="true"></i> Coming soon to Google Play</span>
+                        <a class="app-privacy" href="/entity/games/entity-tubes-game/privacy/">Privacy policy</a>
                     </div>
                 </article>
 
-                <article class="project-card app-card" id="app-entity-wordpuzzlematching" data-app="entity-wordpuzzlematching">
-                    <div class="project-content">
-                        <div class="app-header">
-                            <a class="app-link" href="/entity/games/entity-wordpuzzlematching/"><img class="app-icon" src="assets/images/apps/entity-wordpuzzlematching.webp" alt="Entity Word Puzzle logo" width="72" height="72" loading="lazy">
-                                <h3 class="project-title">Entity Word Puzzle</h3>
-                            </a>
-                        </div>
-                        <p class="project-description">Drag across a hexagon of letters to find every hidden word.</p>
-                        <div class="app-actions">
-                            <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play"></i> Coming soon to Google Play</span>
-                            <a class="app-privacy" href="/entity/games/entity-wordpuzzlematching/privacy/">Privacy policy</a>
-                        </div>
+                <article class="app-card" id="app-entity-wordpuzzlematching" data-app="entity-wordpuzzlematching">
+                    <a class="app-link" href="/entity/games/entity-wordpuzzlematching/">
+                        <img class="app-icon" src="assets/images/apps/entity-wordpuzzlematching.webp" alt="Entity Word Puzzle logo" width="256" height="256" loading="lazy">
+                        <h3 class="app-title">Entity Word Puzzle</h3>
+                    </a>
+                    <p class="app-description">Drag across a hexagon of letters to find every hidden word.</p>
+                    <div class="app-actions">
+                        <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play" aria-hidden="true"></i> Coming soon to Google Play</span>
+                        <a class="app-privacy" href="/entity/games/entity-wordpuzzlematching/privacy/">Privacy policy</a>
                     </div>
                 </article>
 
-                <article class="project-card app-card" id="app-entity-wordpuzzleselecting" data-app="entity-wordpuzzleselecting">
-                    <div class="project-content">
-                        <div class="app-header">
-                            <a class="app-link" href="/entity/games/entity-wordpuzzleselecting/"><img class="app-icon" src="assets/images/apps/entity-wordpuzzleselecting.webp" alt="Entity Word Select logo" width="72" height="72" loading="lazy">
-                                <h3 class="project-title">Entity Word Select</h3>
-                            </a>
-                        </div>
-                        <p class="project-description">Fill a crossword grid from a letter bank, guided by across and down clues.</p>
-                        <div class="app-actions">
-                            <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play"></i> Coming soon to Google Play</span>
-                            <a class="app-privacy" href="/entity/games/entity-wordpuzzleselecting/privacy/">Privacy policy</a>
-                        </div>
+                <article class="app-card" id="app-entity-wordpuzzleselecting" data-app="entity-wordpuzzleselecting">
+                    <a class="app-link" href="/entity/games/entity-wordpuzzleselecting/">
+                        <img class="app-icon" src="assets/images/apps/entity-wordpuzzleselecting.webp" alt="Entity Word Select logo" width="256" height="256" loading="lazy">
+                        <h3 class="app-title">Entity Word Select</h3>
+                    </a>
+                    <p class="app-description">Fill a crossword grid from a letter bank, guided by across and down clues.</p>
+                    <div class="app-actions">
+                        <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play" aria-hidden="true"></i> Coming soon to Google Play</span>
+                        <a class="app-privacy" href="/entity/games/entity-wordpuzzleselecting/privacy/">Privacy policy</a>
                     </div>
                 </article>
 
-                <article class="project-card app-card" id="app-entity-bricksbreaker" data-app="entity-bricksbreaker">
-                    <div class="project-content">
-                        <div class="app-header">
-                            <a class="app-link" href="/entity/games/entity-bricksbreaker/"><img class="app-icon" src="assets/images/apps/entity-bricksbreaker.webp" alt="Entity Bricks Breaker logo" width="72" height="72" loading="lazy">
-                                <h3 class="project-title">Entity Bricks Breaker</h3>
-                            </a>
-                        </div>
-                        <p class="project-description">Aim and fire bouncing sparks to break numbered bricks before they reach the line.</p>
-                        <div class="app-actions">
-                            <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play"></i> Coming soon to Google Play</span>
-                            <a class="app-privacy" href="/entity/games/entity-bricksbreaker/privacy/">Privacy policy</a>
-                        </div>
+                <article class="app-card" id="app-entity-bricksbreaker" data-app="entity-bricksbreaker">
+                    <a class="app-link" href="/entity/games/entity-bricksbreaker/">
+                        <img class="app-icon" src="assets/images/apps/entity-bricksbreaker.webp" alt="Entity Bricks Breaker logo" width="256" height="256" loading="lazy">
+                        <h3 class="app-title">Entity Bricks Breaker</h3>
+                    </a>
+                    <p class="app-description">Aim and fire bouncing sparks to break numbered bricks, in 60 levels or an endless Infinity mode.</p>
+                    <div class="app-actions">
+                        <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play" aria-hidden="true"></i> Coming soon to Google Play</span>
+                        <a class="app-privacy" href="/entity/games/entity-bricksbreaker/privacy/">Privacy policy</a>
                     </div>
                 </article>
 
-                <article class="project-card app-card" id="app-entity-bubbleshooter" data-app="entity-bubbleshooter">
-                    <div class="project-content">
-                        <div class="app-header">
-                            <a class="app-link" href="/entity/games/entity-bubbleshooter/"><img class="app-icon" src="assets/images/apps/entity-bubbleshooter.webp" alt="Entity Bubble Shooter logo" width="72" height="72" loading="lazy">
-                                <h3 class="project-title">Entity Bubble Shooter</h3>
-                            </a>
-                        </div>
-                        <p class="project-description">Match three or more sea-bubbles to pop them and clear the reef.</p>
-                        <div class="app-actions">
-                            <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play"></i> Coming soon to Google Play</span>
-                            <a class="app-privacy" href="/entity/games/entity-bubbleshooter/privacy/">Privacy policy</a>
-                        </div>
+                <article class="app-card" id="app-entity-bubbleshooter" data-app="entity-bubbleshooter">
+                    <a class="app-link" href="/entity/games/entity-bubbleshooter/">
+                        <img class="app-icon" src="assets/images/apps/entity-bubbleshooter.webp" alt="Entity Bubble Shooter logo" width="256" height="256" loading="lazy">
+                        <h3 class="app-title">Entity Bubble Shooter</h3>
+                    </a>
+                    <p class="app-description">Match three or more sea-bubbles to pop them and clear the reef.</p>
+                    <div class="app-actions">
+                        <span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play" aria-hidden="true"></i> Coming soon to Google Play</span>
+                        <a class="app-privacy" href="/entity/games/entity-bubbleshooter/privacy/">Privacy policy</a>
                     </div>
                 </article>
             </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Work Experience</h2>
-                <p class="section-subtitle">My professional journey and achievements</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="job-title">Team Lead – Software Developer</h3>
-                            <span class="company">Connect Communications</span>
-                            <span class="duration">Oct 2026 - Present</span>
-                        </div>
-                        <p class="job-description">
-                            Leading a team of 5 developers building and maintaining the company's web and mobile applications,
-                            while staying hands-on with PHP, Laravel, Nuxt, PostgreSQL, and React Native.
-                        </p>
-                        <ul class="achievements">
-                            <li>Lead a 5-person development team</li>
-                            <li>Run code reviews and uphold coding standards</li>
-                            <li>Plan work, set priorities, and own delivery</li>
-                            <li>Mentor and support developers on the team</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="job-title">Full Stack Developer</h3>
-                            <span class="company">Connect Communications</span>
-                            <span class="duration">2022 - Sep 2026</span>
-                        </div>
-                        <p class="job-description">
-                            Building scalable web and mobile applications using PHP, Laravel, Nuxt, PostgreSQL, and React Native.
-                            Leading development of enterprise-level solutions with focus on performance and security.
-                        </p>
-                        <ul class="achievements">
-                            <li>Developed Streamium entertainment platform with 50,000+ users</li>
-                            <li>Implemented OAuth2 authentication with IP restrictions</li>
-                            <li>Built 5MB chunked video streaming system</li>
-                            <li>Created automated content processing pipeline</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="job-title">Freelance Full Stack Developer</h3>
-                            <span class="company">Self-Employed</span>
-                            <span class="duration">2021 - Present</span>
-                        </div>
-                        <p class="job-description">
-                            Working on diverse projects including Django, SAP, C#, Laravel, and core PHP applications with
-                            unit testing, e-commerce solutions, and OAuth2 integrations.
-                        </p>
-                        <ul class="achievements">
-                            <li>Delivered 30+ successful projects across multiple technologies</li>
-                            <li>Built e-commerce platform with inventory tracking</li>
-                            <li>Implemented shipping logic and payment gateways</li>
-                            <li>Created custom PDF catalog generators</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="job-title">Teacher (English, Computer)</h3>
-                            <span class="company">New Vision Public School</span>
-                            <span class="duration">2020 - 2021</span>
-                        </div>
-                        <p class="job-description">
-                            Taught English and Computer Science, focusing on programming basics and computer literacy.
-                            Developed curriculum and educational materials for students.
-                        </p>
-                        <ul class="achievements">
-                            <li>Improved student performance by 40% in computer subjects</li>
-                            <li>Developed programming curriculum for beginners</li>
-                            <li>Led technology integration in classroom</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="job-title">Full Stack Developer</h3>
-                            <span class="company">Comsoft Systems</span>
-                            <span class="duration">2019 - 2021</span>
-                        </div>
-                        <p class="job-description">
-                            Worked on multiple web projects using PHP and JavaScript stack. Gained foundational experience
-                            in full-stack development and software engineering principles.
-                        </p>
-                        <ul class="achievements">
-                            <li>Contributed to 15+ web development projects</li>
-                            <li>Learned PHP, JavaScript, and database fundamentals</li>
-                            <li>Collaborated in team development environment</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <p class="apps-more"><a href="privacy/">All app privacy policies</a></p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Get In Touch</h2>
                 <p class="section-subtitle">Let's discuss your next project</p>
             </div>
             <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                <ul class="contact-info">
+                    <li class="contact-item">
+                        <div class="contact-icon" aria-hidden="true"><i class="fas fa-envelope"></i></div>
                         <div class="contact-details">
                             <h3>Email</h3>
                             <p><a href="mailto:tabishalimughal@gmail.com">tabishalimughal@gmail.com</a></p>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-icon" aria-hidden="true"><i class="fas fa-phone"></i></div>
                         <div class="contact-details">
                             <h3>Phone</h3>
                             <p><a href="tel:+923112918396">+92 311-2918396</a><br><a href="tel:+923392918396">+92 339-2918396</a></p>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="contact-details">
                             <h3>Location</h3>
                             <p>Karachi, Pakistan</p>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-icon" aria-hidden="true"><i class="fab fa-github"></i></div>
                         <div class="contact-details">
                             <h3>GitHub</h3>
                             <p><a href="https://github.com/TabishAliMughal" target="_blank" rel="noopener">github.com/TabishAliMughal</a></p>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-facebook"></i>
-                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-icon" aria-hidden="true"><i class="fab fa-facebook"></i></div>
                         <div class="contact-details">
                             <h3>Facebook</h3>
                             <p><a href="https://www.facebook.com/TabishAliMughal/" target="_blank" rel="noopener">facebook.com/TabishAliMughal</a></p>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
                 <div class="contact-form">
-                    <form id="contact-form">
+                    <!-- Submitting opens the visitor's email app with a pre-filled message to tabishalimughal@gmail.com
+                         (assets/js/script.js); nothing is sent to a server. -->
+                    <form id="contact-form" novalidate>
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <label for="name">Your name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <label for="email">Your email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" autocomplete="email" required>
                         </div>
                         <div class="form-group">
+                            <label for="subject">Subject</label>
                             <input type="text" id="subject" name="subject" placeholder="Subject" required>
                         </div>
                         <div class="form-group">
+                            <label for="message">Message</label>
                             <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
+                        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-text">
-                    <p>&copy; <span id="current-year"></span> Tabish Ali Mughal. All rights reserved.</p>
+                    <p>&copy; <span id="current-year">2026</span> Tabish Ali Mughal. All rights reserved.</p>
                 </div>
-                <div class="footer-links">
+                <nav class="footer-links" aria-label="Footer">
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
                     <a href="#projects">Projects</a>
@@ -761,13 +696,12 @@
                     <a href="tel:+923112918396">+92 311-2918396</a>
                     <a href="https://github.com/TabishAliMughal" target="_blank" rel="noopener">GitHub</a>
                     <a href="https://www.facebook.com/TabishAliMughal/" target="_blank" rel="noopener">Facebook</a>
-                </div>
+                </nav>
             </div>
         </div>
     </footer>
 
-    <script src="assets/js/script.js?v=1.0"></script>
-    <script src="assets/js/network-bg.js"></script>
+    <script src="assets/js/script.js?v=2"></script>
     <script src="assets/js/apps-data.js"></script>
     <script src="assets/js/apps.js"></script>
 </body>

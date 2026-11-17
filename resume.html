@@ -4,452 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabish Ali Mughal - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#0A1528">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/tokens.css?v=2">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
-        }
+        /* Screen: dark, shared tokens from assets/css/tokens.css. Print: plain light A4 (see @media print). */
+        h1, h2, h3, h4, p { margin: 0; }
 
         .resume-container {
             max-width: 210mm;
-            margin: 0 auto;
-            padding: 20mm;
-            background: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin: 24px auto 48px;
+            padding: 16mm 18mm;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-m);
         }
 
         .resume-header {
             text-align: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 2px solid var(--line);
         }
-
         .resume-name {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 10px;
+            font: 700 clamp(1.7rem, 6vw, 2.4rem)/1.15 var(--font-display);
+            letter-spacing: -0.015em;
+            margin-bottom: 8px;
+            background: var(--grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-
-        .resume-title {
-            font-size: 1.3rem;
-            color: #667eea;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
+        .resume-title { font: 500 1.2rem/1.35 var(--font-body); color: var(--text); margin-bottom: 14px; }
         .resume-contact {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 8px 26px;
             flex-wrap: wrap;
             font-size: 0.9rem;
-            color: #666;
+            color: var(--muted);
         }
+        .contact-item { display: flex; align-items: center; gap: 6px; }
+        .contact-item a { color: var(--blue); text-decoration: none; }
+        .contact-item a:hover { text-decoration: underline; }
 
-        .contact-item a { color: inherit; text-decoration: none; }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
+        .section { margin-bottom: 28px; }
         .section-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 15px;
+            font: 600 1.05rem/1.3 var(--font-display);
+            color: var(--text);
+            margin-bottom: 14px;
             padding-bottom: 8px;
-            border-bottom: 2px solid #667eea;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            border-bottom: 1px solid var(--line);
         }
+        .profile-summary { color: var(--muted); line-height: 1.75; }
 
-        .profile-summary {
-            font-size: 1rem;
-            color: #555;
-            line-height: 1.8;
-            text-align: justify;
-        }
-
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 
         .education-item,
         .experience-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
+            margin-bottom: 14px;
+            padding: 14px 16px;
+            background: var(--surface-2);
+            border-radius: var(--radius-s);
+            border-left: 3px solid var(--blue);
         }
-
         .education-period,
-        .experience-period {
-            font-weight: 600;
-            color: #667eea;
-            font-size: 0.9rem;
-        }
-
+        .experience-period { font-weight: 600; color: var(--amber); font-size: 0.88rem; }
         .education-degree,
-        .experience-title {
-            font-weight: 600;
-            color: #333;
-            font-size: 1.1rem;
-            margin: 5px 0;
-        }
-
+        .experience-title { font-weight: 600; color: var(--text); font-size: 1.05rem; margin: 4px 0; }
         .education-institution,
-        .experience-company {
-            color: #666;
-            font-style: italic;
-        }
-
-        .experience-description {
-            margin-top: 10px;
-            color: #555;
-        }
-
-        .experience-achievements {
-            margin-top: 10px;
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .experience-achievements li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 5px;
-            color: #555;
-        }
-
+        .experience-company { color: var(--muted); font-style: italic; }
+        .experience-description { margin-top: 8px; color: var(--muted); }
+        .experience-achievements,
+        .achievements-list { margin: 8px 0 0; padding: 0; list-style: none; }
+        .experience-achievements li,
+        .achievements-list li { position: relative; padding-left: 20px; margin-bottom: 5px; color: var(--muted); }
         .experience-achievements li::before {
-            content: '▪';
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
+            content: "";
+            position: absolute; left: 2px; top: 0.62em;
+            width: 7px; height: 7px; border-radius: 1px;
+            background: var(--blue);
+        }
+        .achievements-list li::before {
+            content: "\2713";
+            position: absolute; left: 0;
+            color: var(--blue); font-weight: 700;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
         .skill-category {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-top: 3px solid #667eea;
+            background: var(--surface-2);
+            padding: 14px;
+            border-radius: var(--radius-s);
+            border-top: 2px solid var(--blue);
         }
-
-        .skill-category h4 {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
+        .skill-category h4 { font-weight: 600; color: var(--text); margin-bottom: 10px; font-size: 1rem; }
+        .skill-list { display: flex; flex-wrap: wrap; gap: 6px; }
         .skill-tag {
-            background: #667eea;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 15px;
+            background: var(--bg);
+            color: var(--text);
+            border: 1px solid var(--line);
+            padding: 3px 9px;
+            border-radius: 4px;
             font-size: 0.8rem;
             font-weight: 500;
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
+        .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .project-item {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
+            background: var(--surface-2);
+            padding: 14px 16px;
+            border-radius: var(--radius-s);
+            border-left: 3px solid var(--blue);
         }
-
-        .project-title {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-
-        .project-description {
-            color: #555;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-
+        .project-title { font-weight: 600; color: var(--text); margin-bottom: 6px; font-size: 1.05rem; }
+        .project-description { color: var(--muted); margin-bottom: 10px; font-size: 0.9rem; }
+        .project-tech { display: flex; flex-wrap: wrap; gap: 5px; }
         .tech-tag {
-            background: rgba(102, 126, 234, 0.1);
-            color: #667eea;
-            padding: 3px 8px;
-            border-radius: 12px;
+            background: var(--bg);
+            color: var(--muted);
+            padding: 2px 8px;
+            border-radius: 4px;
             font-size: 0.75rem;
             font-weight: 500;
         }
 
-        .achievements-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .achievements-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        .achievements-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-        }
-
-        .download-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #667eea;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 500;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .download-btn:hover {
-            background: #5a6fd8;
-            transform: translateY(-2px);
-        }
-
-        /* Tab Navigation */
+        /* Top bar: tabs + actions */
         .top-action-bar {
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            background: #fff;
             z-index: 100;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             flex-wrap: wrap;
             gap: 10px;
+            padding: 10px var(--gutter);
+            background: rgba(10, 21, 40, 0.94);
+            border-bottom: 1px solid var(--line);
         }
-
-        .tab-buttons {
-            display: flex;
-            gap: 8px;
-        }
-
-        .tab-btn {
-            padding: 8px 18px;
-            border: 2px solid #667eea;
-            background: transparent;
-            color: #667eea;
-            border-radius: 20px;
+        .tab-buttons, .action-buttons { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+        .tab-btn, .download-btn {
+            min-height: 40px;
+            padding: 8px 16px;
+            border-radius: var(--radius-s);
+            font: 500 0.88rem/1.2 var(--font-body);
             cursor: pointer;
-            font-weight: 500;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-        }
-
-        .tab-btn.active,
-        .tab-btn:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .download-link {
             text-decoration: none;
-            display: inline-block;
-            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
+        .tab-btn { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+        .tab-btn:hover { color: var(--text); border-color: var(--blue); }
+        .tab-btn.active { background: var(--blue); color: var(--on-accent); border-color: var(--blue); }
+        .download-btn { background: var(--surface-2); color: var(--text); border: 1px solid var(--line); }
+        .download-btn:hover { border-color: var(--amber); color: var(--text); }
+        .home-link { color: var(--muted); text-decoration: none; font-weight: 500; padding: 8px 4px; }
+        .home-link:hover { color: var(--text); }
 
-        .tab-content {
-            display: none;
-            padding-top: 70px;
-        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
 
-        .tab-content.active {
-            display: block;
-        }
-
-        .download-btn {
-            position: static;
-            background: #667eea;
-            color: white;
-            padding: 8px 18px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 0.85rem;
-            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .download-btn:hover {
-            background: #5a6fd8;
-            transform: translateY(-1px);
+        @media (max-width: 768px) {
+            .resume-container { padding: 20px 16px; margin: 12px var(--gutter) 32px; }
+            .two-column, .projects-grid { grid-template-columns: 1fr; }
+            .resume-contact { flex-direction: column; align-items: center; gap: 8px; }
+            .skills-grid { grid-template-columns: 1fr !important; }
+            .top-action-bar { position: static; }
+            .tab-btn, .download-btn { font-size: 0.8rem; padding: 6px 12px; }
         }
 
         @media print {
-            .top-action-bar {
-                display: none;
+            @page { size: A4; margin: 15mm; }
+            :root {
+                --bg: #ffffff; --surface: #ffffff; --surface-2: #f4f6fa; --line: #c9d3e3;
+                --text: #1a2233; --muted: #3d4a60; --blue: #1f5fa8; --amber: #1f5fa8;
             }
-            .tab-content {
-                padding-top: 0;
-            }
-            .tab-content.active {
-                display: block;
-            }
-            @page {
-                size: A4;
-                margin: 15mm;
-            }
-
-            body {
-                font-size: 12px;
-            }
-            .resume-container {
-                box-shadow: none;
-                margin: 0;
-                padding: 15mm;
-            }
-            .download-btn {
-                display: none;
-            }
-
-            .experience-item,
-            .education-item,
-            .project-card {
-                margin-bottom: 15px;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            /* Allow natural page flow for sections */
-            .section {
-                margin-bottom: 20px;
-            }
-
-            .education-item,
-            .skill-category,
-            .experience-item,
-            .project-item{
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .resume-container {
-                padding: 15px;
-                margin: 10px;
-            }
-            .two-column {
-                grid-template-columns: 1fr;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .resume-contact {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .skills-grid {
-                grid-template-columns: 1fr !important;
-            }
-            .top-action-bar {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 8px 12px;
-            }
-            .tab-buttons {
-                flex-wrap: wrap;
-                gap: 5px;
-            }
-            .tab-btn {
-                font-size: 0.75rem;
-                padding: 6px 12px;
-            }
-            .action-buttons {
-                flex-wrap: wrap;
-                gap: 5px;
-            }
-            .download-btn {
-                font-size: 0.75rem;
-                padding: 6px 12px;
-            }
-            .tab-content {
-                padding-top: 140px;
-            }
+            body { background: #fff; color: #1a2233; font-size: 12px; }
+            .top-action-bar, .skip-link { display: none; }
+            .resume-container { border: 0; border-radius: 0; margin: 0; padding: 0; max-width: none; }
+            .resume-name { background: none; color: #1a2233; -webkit-text-fill-color: #1a2233; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .section { margin-bottom: 20px; }
+            .education-item, .skill-category, .experience-item, .project-item { page-break-inside: avoid; break-inside: avoid; }
         }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#tab-resume">Skip to resume</a>
     <!-- Top Action Bar -->
     <div class="top-action-bar">
         <div class="tab-buttons">
-            <button class="tab-btn active" onclick="switchTab('resume')">Resume</button>
-            <button class="tab-btn" onclick="switchTab('cover-letter-1')">Cover Letter (General)</button>
-            <button class="tab-btn" onclick="switchTab('cover-letter-2')">Cover Letter (AI Focus)</button>
+            <a href="index.html" class="home-link">&larr; Portfolio</a>
+            <button type="button" class="tab-btn active" onclick="switchTab('resume')">Resume</button>
+            <button type="button" class="tab-btn" onclick="switchTab('cover-letter-1')">Cover Letter (General)</button>
+            <button type="button" class="tab-btn" onclick="switchTab('cover-letter-2')">Cover Letter (AI Focus)</button>
         </div>
         <div class="action-buttons">
-            <button class="download-btn" onclick="window.print()">📄 Print / Save as PDF</button>
+            <button type="button" class="download-btn" onclick="window.print()">📄 Print / Save as PDF</button>
             <a href="Cover Letter.pdf" download class="download-btn download-link">📥 Download Cover Letter</a>
             <a href="Cover Letter (AI).pdf" download class="download-btn download-link">📥 Download AI Cover Letter</a>
         </div>
