@@ -1051,7 +1051,8 @@ a.app-store-badge.is-live:hover {
 
 .footer-links {
     display: flex;
-    gap: 2rem;
+    gap: 1rem 2rem;
+    flex-wrap: wrap;
 }
 
 .footer-links a {
