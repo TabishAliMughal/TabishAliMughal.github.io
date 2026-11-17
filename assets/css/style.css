@@ -694,6 +694,114 @@ html {
     font-weight: 500;
 }
 
+/* Apps & Games Section */
+.apps {
+    padding: 100px 0;
+    background: white;
+}
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: 2rem;
+}
+
+.apps-grid .app-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    border: 1px solid rgba(102, 126, 234, 0.12);
+}
+
+.app-card .project-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.app-icon {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+}
+
+.app-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.app-header .project-title {
+    margin-bottom: 0;
+    transition: color 0.3s ease;
+}
+
+.app-link:hover .project-title {
+    color: #667eea;
+}
+
+.app-card .project-description {
+    flex: 1;
+}
+
+.app-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.app-store-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+    user-select: none;
+}
+
+a.app-store-badge.is-live {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a.app-store-badge.is-live:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.app-privacy {
+    color: #667eea;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.app-privacy:hover {
+    text-decoration: underline;
+}
+
 /* Experience Section */
 .experience {
     padding: 100px 0;

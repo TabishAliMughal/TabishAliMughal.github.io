@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entity Sudoku - Android game by Tabish Ali Mughal</title>
+<meta name="description" content="Entity Sudoku: A fresh Sudoku every day, five difficulty levels. An offline, kid-friendly Android game with no personal data collected.">
+<meta name="robots" content="index,follow">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<style>
+:root{--bg:#f7f7fb;--card:#fff;--text:#22223a;--muted:#5b5b74;--accent:#5a67d8;--border:#e3e3ee;--chip:#eef0fb;--badge-bg:#e9ecef;--badge-text:#6c757d}
+@media (prefers-color-scheme:dark){:root{--bg:#14141c;--card:#1d1d28;--text:#e8e8f2;--muted:#a3a3b8;--accent:#8f9bff;--border:#2e2e3d;--chip:#262636;--badge-bg:#2a2a38;--badge-text:#a3a3b8}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+a{color:var(--accent);overflow-wrap:anywhere}
+nav.crumbs{font-size:.92rem;margin-bottom:12px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:15px;padding:20px;margin-bottom:16px;box-shadow:0 5px 15px rgba(0,0,0,.06)}
+.hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.hero img{width:112px;height:112px;border-radius:24px;flex-shrink:0;box-shadow:0 4px 12px rgba(102,126,234,.3)}
+.hero-text{flex:1;min-width:200px}
+h1{font-size:1.8rem;line-height:1.2;margin:0 0 .2em;font-weight:700;background:linear-gradient(135deg,#667eea,#764ba2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.tagline{margin:0 0 .8em;color:var(--muted);font-size:1.05rem}
+h2{font-size:1.15rem;margin:0 0 .6em}
+ul,ol{padding-left:1.25em;margin:0}
+li{margin:.3em 0}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+.app-store-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem 1rem;border-radius:50px;font-size:.85rem;font-weight:500;background:var(--badge-bg);color:var(--badge-text);cursor:not-allowed;user-select:none}
+a.app-store-badge.is-live{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;cursor:pointer;text-decoration:none}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0}
+.chips li{margin:0;background:var(--chip);color:var(--accent);padding:.3rem .8rem;border-radius:15px;font-size:.9rem;font-weight:500}
+.muted{color:var(--muted);font-size:.92rem}
+footer{max-width:760px;margin:0 auto;padding:0 16px 32px;color:var(--muted);font-size:.88rem}
+</style>
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="/">Home</a> / <a href="/#apps">Apps &amp; Games</a> / Entity Sudoku</nav>
+
+<div class="card" data-app="entity-sudoku">
+<div class="hero">
+<img src="/assets/images/apps/entity-sudoku.webp" alt="Entity Sudoku logo" width="112" height="112">
+<div class="hero-text">
+<h1>Entity Sudoku</h1>
+<p class="tagline">A fresh Sudoku every day, five difficulty levels.</p>
+<div class="actions">
+<!-- Google Play link: set "entity-sudoku" in /assets/js/apps-data.js (one line); this badge then becomes a live link. -->
+<span class="app-store-badge" aria-disabled="true"><i class="fab fa-google-play"></i> Coming soon to Google Play</span>
+<a href="/entity/games/entity-sudoku/privacy/">Privacy policy</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>About the game</h2>
+<p style="margin:0">A Sudoku game with a daily puzzle shared by every player on the same date, plus Free Play at any of five difficulties. Build a daily streak, celebrate milestones and track your stats.</p>
+</div>
+
+<!-- SCREENSHOTS: add phone screenshots here later (e.g. /entity/games/entity-sudoku/screenshots/1.webp),
+     then remove the "hidden" attribute below. -->
+<div class="card" id="screenshots" hidden>
+<h2>Screenshots</h2>
+</div>
+
+<div class="card">
+<h2>How to play</h2>
+<ol>
+<li>Pick the Daily puzzle or a Free Play difficulty.</li>
+<li>Select a cell and tap a number to fill it in.</li>
+<li>Use pencil marks for candidates, and Undo or Erase to fix mistakes.</li>
+<li>Fill the grid so every row, column and 3x3 box has the digits 1 to 9.</li>
+</ol>
+</div>
+
+<div class="card">
+<h2>Features</h2>
+<ul>
+<li>Five difficulties from Very Easy to Expert - 1,250 puzzles in total</li>
+<li>Daily mode (the same puzzle for everyone each day) and Free Play</li>
+<li>Streaks with milestone celebrations at 7, 30, 100 and 365 days, plus a 30-day calendar</li>
+<li>Pencil marks, Undo, Erase and up to 3 hints per puzzle</li>
+<li>Optional auto-check and highlighting of matching numbers, row, column and box</li>
+<li>Progress saves automatically mid-game</li>
+<li>Light, Dark or System theme</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Safe for families</h2>
+<ul class="chips">
+<li>Made for kids</li>
+<li>Plays offline</li>
+<li>No personal data</li>
+<li>Child-safe ads</li>
+</ul>
+<p class="muted" style="margin:.8em 0 0">No accounts and no analytics. Ads are non-personalised, family-rated (G) and child-directed, with no advertising ID. Details in the <a href="/entity/games/entity-sudoku/privacy/">privacy policy</a>.</p>
+</div>
+</main>
+<footer>&copy; Tabish Ali Mughal &middot; <a href="/">Developer website</a> &middot; <a href="/#apps">Apps &amp; Games</a> &middot; <a href="/entity/games/entity-sudoku/privacy/">Privacy policy</a></footer>
+<script src="/assets/js/apps-data.js"></script>
+<script src="/assets/js/apps.js"></script>
+</body>
+</html>
