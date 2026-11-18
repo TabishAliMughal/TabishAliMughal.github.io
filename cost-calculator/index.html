@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Cost Calculator - Tabish Ali Mughal</title>
+<meta name="description" content="Estimate the cost of your web or mobile project yourself: pick a project type or the features you need, set a timeline and get an instant, itemised estimate in USD or PKR.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0A1528">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/tokens.css?v=3">
+<link rel="stylesheet" href="/assets/css/entity.css?v=4">
+<link rel="stylesheet" href="/assets/css/calculator.css?v=2">
+</head>
+<body class="page-wide">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-bar"><div class="wrap">
+<a class="brand" href="/"><span class="nav-mark" aria-hidden="true">TAM</span> Tabish Ali Mughal</a>
+<nav class="bar-links" aria-label="Site">
+<a class="bar-link" href="/#projects">Projects</a>
+<a class="bar-link" href="/#contact">Contact</a>
+</nav>
+</div></header>
+<main id="main">
+<nav class="crumbs"><a href="/">Home</a> / Cost Calculator</nav>
+
+<div class="card calc-intro">
+<h1>Project Cost Calculator</h1>
+<p class="tagline">Estimate your web or mobile project yourself, then send me the estimate.</p>
+<p class="muted flush">Pick a project type or tick the features you need, set your timeline, and the estimate updates as you go. It is an indicative figure, not a binding quote: I confirm the scope and send a formal quotation after a short call.</p>
+</div>
+
+<noscript><div class="card"><p>This calculator needs JavaScript. You can still <a href="/#contact">contact me</a> for a quote.</p></div></noscript>
+
+<div class="calc-layout">
+<form class="calc-form" id="calc-form" novalidate>
+
+<section class="card" aria-labelledby="h-currency">
+<h2 id="h-currency"><span class="step" aria-hidden="true">1</span>Currency</h2>
+<fieldset class="seg">
+<legend class="visually-hidden">Currency</legend>
+<input type="radio" name="currency" id="cur-usd" value="USD"><label for="cur-usd">USD ($)</label>
+<input type="radio" name="currency" id="cur-pkr" value="PKR"><label for="cur-pkr">PKR (Rs)</label>
+</fieldset>
+<p class="calc-note" id="usd-note" role="note" hidden><i class="fas fa-clock" aria-hidden="true"></i><span><strong>Why USD rates are higher:</strong> I am based in Pakistan (UTC+5). For USD clients, work is scheduled outside my regular local hours so I can stay available during your business day, which is why USD prices are higher than PKR prices.</span></p>
+</section>
+
+<section class="card" aria-labelledby="h-type">
+<h2 id="h-type"><span class="step" aria-hidden="true">2</span>Project type</h2>
+<p class="card-hint">Optional shortcut: selects the usual features for that kind of project. You can change any of them below.</p>
+<label class="field"><span>Project type</span>
+<select class="calc-select" id="template"></select>
+</label>
+<div class="variance" id="variance"></div>
+</section>
+
+<section class="card" aria-labelledby="h-features">
+<h2 id="h-features"><span class="step" aria-hidden="true">3</span>Features</h2>
+<p class="card-hint">Tick what you need and set the quantity.</p>
+<div id="services"></div>
+</section>
+
+<section class="card" aria-labelledby="h-timeline">
+<h2 id="h-timeline"><span class="step" aria-hidden="true">4</span>Timeline</h2>
+<label class="field"><span>Delivery needed within (days, leave empty if flexible)</span>
+<input class="calc-input" type="number" id="days" min="0" step="1" inputmode="numeric" placeholder="Flexible">
+</label>
+<label class="check field"><input type="checkbox" id="ai"><span>AI-assisted development <span class="support-price" id="ai-price"></span></span></label>
+<p class="muted flush" id="rush-hint"></p>
+</section>
+
+<section class="card" aria-labelledby="h-support">
+<h2 id="h-support"><span class="step" aria-hidden="true">5</span>Support after launch</h2>
+<ul class="support-list" id="support"></ul>
+</section>
+
+</form>
+
+<aside class="calc-aside">
+<section class="card calc-summary" id="summary" aria-labelledby="h-summary">
+<h2 id="h-summary">Your estimate</h2>
+<p class="calc-note" id="usd-note-summary" hidden><i class="fas fa-clock" aria-hidden="true"></i><span>USD prices are higher because of the time-zone difference: work is done outside my regular local hours.</span></p>
+<p class="effort" id="effort"></p>
+<ul class="sum-lines" id="sum-lines" tabindex="0" aria-label="Selected features"></ul>
+<table class="sum-table">
+<caption class="visually-hidden">Estimate totals</caption>
+<tbody id="sum-table"></tbody>
+</table>
+<div id="sum-extra"></div>
+<div class="sum-actions">
+<a class="btn btn-primary" id="mail" href="mailto:tabishalimughal@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> Contact me with this estimate</a>
+<button type="button" class="btn btn-secondary" id="copy"><i class="far fa-copy" aria-hidden="true"></i> Copy estimate</button>
+<button type="button" class="btn-link" id="reset">Start over</button>
+<p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+</div>
+<p class="sum-fine">The email button opens your own email app with the estimate filled in; nothing is sent from this page. If it does not open, copy the estimate and send it to <a href="mailto:tabishalimughal@gmail.com">tabishalimughal@gmail.com</a> or call <a href="tel:+923112918396">+92 311-2918396</a>.</p>
+</section>
+</aside>
+</div>
+</main>
+
+<div class="calc-dock" aria-hidden="true">
+<div><span class="dock-label">Estimated total</span><span class="dock-total" id="dock-total">-</span></div>
+<a class="btn btn-primary" href="#summary" tabindex="-1">View estimate</a>
+</div>
+
+<footer>&copy; Tabish Ali Mughal &middot; <a href="/">Portfolio</a> &middot; <a href="/#contact">Contact</a> &middot; <a href="mailto:tabishalimughal@gmail.com">tabishalimughal@gmail.com</a></footer>
+<script src="/cost-calculator/pricing-data.js?v=1"></script>
+<script src="/cost-calculator/cost-model.js?v=1"></script>
+<script src="/cost-calculator/calculator.js?v=2"></script>
+</body>
+</html>

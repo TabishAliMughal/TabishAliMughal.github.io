@@ -11,7 +11,8 @@ faint circuit-board grid, and the ENTITY wordmark's blue -> amber gradient.
 |---|---|---|
 | `assets/css/tokens.css` | every page (index, resume, game, privacy, /privacy/) | colour/type/space tokens, base, focus ring, buttons, Play badge, reduced motion |
 | `assets/css/style.css` | `index.html` | home page layout |
-| `assets/css/entity.css` | `/entity/games/<slug>/`, `.../privacy/`, `/privacy/` | top bar, cards, game hero, chips, `.modes`, policy text |
+| `assets/css/entity.css` | `/entity/games/<slug>/`, `.../privacy/`, `/privacy/`, `/cost-calculator/` | top bar, cards, game hero, chips, `.modes`, policy text |
+| `assets/css/calculator.css` | `/cost-calculator/` | wide layout, currency pills, service rows, summary, phone total bar |
 | `resume.html` inline `<style>` | resume + cover letters | dark on screen; `@media print` swaps the tokens to a plain light A4 |
 | `privacy/<slug>/index.html` | redirect stubs | one-line inline style with the same hex values |
 
@@ -36,6 +37,28 @@ turns it (and smooth scrolling) off. Icons: Font Awesome 6 (CDN). Favicon: `asse
 Home page order: hero, About, Experience (timeline; roles that are still current get an amber node),
 Skills, AI-Enhanced Development, Projects, Apps & Games (`#apps`), VS Code Extensions (`#extensions`), Contact.
 All old anchors still work.
+
+Nav: one row of links (`white-space: nowrap`) from 1141 px up; below that the hamburger menu (the full row
+measures ~1080 px + gutters, so keep link labels short - e.g. "Pricing" for the cost calculator). Re-measure
+if you add a link.
+
+Skills: five `.skill-category` cards (Backend, Frontend, Database & Tools, Mobile & Others, Cloud & Hosting),
+each item = Font Awesome icon + name + `.skill-level` bar (`data-level` 0-100, drawn by `script.js`).
+
+### Cost calculator (`/cost-calculator/`)
+
+Same shell as the game pages (`.site-bar`, `.crumbs`, `.card`, `footer`, tokens.css + entity.css), plus
+`assets/css/calculator.css`. `body.page-wide` widens main/bar/footer to 1160 px. `.calc-layout`: form cards
+(numbered `h2 .step` circles: Currency, Project type, Features, Timeline, Support) and, from 980 px, a sticky
+380 px `.calc-summary`. Under 980 px a fixed `.calc-dock` shows the live total + "View estimate" and hides
+itself (IntersectionObserver) while the summary is on screen. Blocks: `.seg` (currency radios as pills),
+`.calc-note` (amber left border; the USD time-zone note), `.svc` rows (checkbox + name, qty + unit, cost;
+stacks under 600 px), `.support-list`, `.sum-lines`, `.sum-table` (`.is-total` row in the display font),
+`.sum-actions` (primary mailto, secondary Copy, `.btn-link` Start over). All DOM is built with
+`textContent` in `calculator.js`; prices come only from the generated `pricing-data.js` (see README).
+
+Home links: nav "Pricing", footer "Cost Calculator", and `.calc-cta` in `#contact` (`style.css`: surface
+card with an amber left border, calculator icon, text, primary button; button goes full-width under 760 px).
 
 ### VS Code Extensions section (`#extensions`)
 

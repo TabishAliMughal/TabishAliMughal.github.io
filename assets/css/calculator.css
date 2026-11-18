@@ -1,0 +1,204 @@
+/* Cost calculator page (/cost-calculator/). Load after tokens.css and entity.css - this file only adds
+   the wider layout and the calculator blocks. Tokens only, no raw colours (see docs/DESIGN.md). */
+
+/* Wider than the 800 px game pages: form + sticky summary side by side on desktop */
+.page-wide main,
+.page-wide .site-bar .wrap,
+.page-wide footer { max-width: 1160px; }
+
+.bar-links { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+
+.calc-layout { display: grid; gap: 16px; align-items: start; }
+@media (min-width: 980px) {
+    .calc-layout { grid-template-columns: minmax(0, 1fr) 380px; gap: 20px; }
+    .calc-summary { position: sticky; top: 16px; }
+}
+.calc-form, .calc-aside { min-width: 0; }
+
+.calc-intro h1 {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.card h2 .step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.7em;
+    height: 1.7em;
+    margin-right: 0.5em;
+    border-radius: 50%;
+    border: 1.5px solid var(--line);
+    color: var(--blue);
+    font-size: 0.8em;
+    vertical-align: 0.08em;
+}
+.card-hint { color: var(--muted); font-size: 0.92rem; margin: -0.3em 0 1em; }
+
+/* Currency: two radio "pills" */
+.seg { display: inline-flex; flex-wrap: wrap; gap: 8px; border: 0; padding: 0; margin: 0; }
+.seg input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.seg label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    min-height: 44px;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-s);
+    background: var(--surface-2);
+    color: var(--muted);
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+.seg label:hover { border-color: var(--blue); color: var(--text); }
+.seg input:checked + label { border-color: var(--blue); color: var(--text); box-shadow: inset 0 0 0 1px var(--blue); }
+.seg input:focus-visible + label { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+/* The USD time-zone note */
+.calc-note {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin: 16px 0 0;
+    padding: 12px 14px;
+    max-width: none;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--amber);
+    border-radius: var(--radius-s);
+    background: var(--surface-2);
+    font-size: 0.92rem;
+}
+.calc-note i { color: var(--amber); margin-top: 0.25em; }
+.calc-summary .calc-note { margin: 0 0 16px; }
+
+/* Form controls */
+.field { display: grid; gap: 6px; margin: 0 0 14px; }
+.field:last-child { margin-bottom: 0; }
+.field > span { font-size: var(--step--1); font-weight: 500; color: var(--muted); }
+.calc-select,
+.calc-input {
+    width: 100%;
+    min-height: 44px;
+    padding: 9px 12px;
+    font: inherit;
+    color: var(--text);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-s);
+}
+.calc-select:focus, .calc-input:focus { border-color: var(--blue); }
+.variance { margin-top: 14px; }
+.variance:empty { display: none; }
+
+.check {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    cursor: pointer;
+}
+.check input[type="checkbox"],
+.check input[type="radio"] {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0.15em 0 0;
+    accent-color: var(--blue);
+}
+
+/* Services */
+.svc-group { font: 600 var(--step-0)/1.35 var(--font-body); color: var(--muted); margin: 1.2em 0 0.3em; }
+.svc-group:first-of-type { margin-top: 0; }
+.svc-list { list-style: none; margin: 0; padding: 0; }
+.svc-list li { margin: 0; }
+.svc {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 150px 110px;
+    gap: 6px 14px;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+}
+.svc-name { font-weight: 500; }
+.svc.is-on .svc-name { color: var(--text); }
+.svc:not(.is-on) .svc-name { color: var(--muted); }
+.svc-qty { display: flex; align-items: center; gap: 8px; }
+.svc-qty .calc-input { width: 72px; min-height: 40px; padding: 6px 8px; }
+.svc-unit { color: var(--muted); font-size: 0.85rem; line-height: 1.25; }
+.svc-cost { text-align: right; font-variant-numeric: tabular-nums; font-weight: 500; }
+.svc:not(.is-on) .svc-cost { color: var(--muted); }
+.svc-note { grid-column: 1 / -1; margin: 0 0 0 30px; color: var(--muted); font-size: 0.85rem; max-width: none; }
+@media (max-width: 600px) {
+    .svc { grid-template-columns: minmax(0, 1fr) auto; }
+    .svc .check { grid-column: 1 / -1; }
+    .svc-qty { padding-left: 30px; }
+    .svc-note { margin-left: 30px; }
+}
+
+.support-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.support-list li { margin: 0; }
+.support-list .check { padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius-s); }
+.support-list .check:has(input:checked) { border-color: var(--blue); }
+.support-price { display: block; color: var(--muted); font-size: 0.88rem; }
+
+/* Summary */
+.calc-summary h2 { margin-bottom: 0.5em; }
+.effort { color: var(--muted); font-size: 0.92rem; margin: 0 0 14px; }
+.effort strong { color: var(--text); font-weight: 600; }
+.sum-lines { list-style: none; margin: 0 0 12px; padding: 0; font-size: 0.9rem; max-height: 280px; overflow-y: auto; }
+.sum-lines li { display: flex; justify-content: space-between; gap: 12px; margin: 0; padding: 4px 0; color: var(--muted); }
+.sum-lines li span:last-child { color: var(--text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sum-empty { color: var(--muted); font-size: 0.92rem; }
+.sum-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.sum-table th { text-align: left; font-weight: 400; color: var(--muted); padding: 5px 0; }
+.sum-table td { text-align: right; padding: 5px 0 5px 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sum-table tr.is-total th,
+.sum-table tr.is-total td { border-top: 1px solid var(--line); padding-top: 12px; color: var(--text); font-weight: 600; }
+.sum-table tr.is-total td { font: 700 var(--step-2)/1.2 var(--font-display); }
+.sum-extra { margin: 12px 0 0; font-size: 0.9rem; color: var(--muted); max-width: none; }
+.sum-extra strong { color: var(--text); font-weight: 600; }
+.sum-actions { display: grid; gap: 10px; margin: 18px 0 0; }
+.sum-actions .btn { width: 100%; }
+.btn-link {
+    background: none;
+    border: 0;
+    padding: 6px 0;
+    min-height: 44px;
+    color: var(--blue);
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+.btn-link:hover { color: var(--text); }
+.copy-status { min-height: 1.4em; margin: 0; font-size: var(--step--1); color: var(--ok); }
+.sum-fine { margin: 14px 0 0; font-size: 0.85rem; color: var(--muted); max-width: none; }
+
+/* Phone/tablet: a slim bar with the live total, linking to the full summary */
+.calc-dock { display: none; }
+@media (max-width: 979px) {
+    .page-wide footer { padding-bottom: 110px; }
+    .calc-dock {
+        position: fixed;
+        left: 0; right: 0; bottom: 0;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px var(--gutter);
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
+        background: rgba(10, 21, 40, 0.96);
+        border-top: 1px solid var(--line);
+    }
+    .calc-dock .dock-total { font: 700 var(--step-1)/1.2 var(--font-display); font-variant-numeric: tabular-nums; }
+    .calc-dock .dock-label { display: block; font: 400 0.8rem/1.2 var(--font-body); color: var(--muted); }
+    .calc-dock .btn { min-height: 44px; padding: 0.5rem 1rem; font-size: var(--step--1); }
+    .calc-dock.is-hidden { display: none; }
+    .sum-lines { max-height: none; overflow: visible; }
+}
+
+.flush { margin: 0; }

@@ -12,7 +12,9 @@ Static HTML/CSS/JS, no build step. Repo: `TabishAliMughal/TabishAliMughal.github
 
 | Path | Purpose |
 |---|---|
-| `index.html` | Home page: hero, About, Experience, Skills, AI-Enhanced Development, Projects, Apps & Games (`#apps`), VS Code Extensions (`#extensions`), Contact |
+| `index.html` | Home page: hero, About, Experience, Skills, AI-Enhanced Development, Projects, Apps & Games (`#apps`), VS Code Extensions (`#extensions`), Contact (with the cost-calculator call-to-action) |
+| `cost-calculator/` | Client cost calculator (https://tabishalimughal.github.io/cost-calculator/): `index.html`, `calculator.js` (UI), `cost-model.js` (formula), `pricing-data.js` (GENERATED prices) |
+| `assets/css/calculator.css` | Cost calculator page layout (loaded after tokens.css + entity.css) |
 | `resume.html` | Resume + cover letters (dark on screen, plain light A4 when printed) |
 | `assets/css/tokens.css` | Design tokens and shared base used by every page |
 | `assets/css/style.css` | Home page layout |
@@ -100,6 +102,27 @@ Put the icon in `assets/images/extensions/` (the extension's own icon, square, S
 Check at 360 px and 1280 px, commit and push. The "View all on VS Code Marketplace" button uses
 `window.VSCODE_PUBLISHER_URL` in the same file.
 
+## Cost calculator (`/cost-calculator/`)
+
+Clients estimate a project themselves: pick a project type or features, a deadline, optional AI-assisted
+development and a support option; the itemised estimate updates live in USD or PKR. In USD a note explains
+that USD prices are higher because of the time-zone difference (work is done outside regular local hours).
+"Contact me with this estimate" opens the visitor's email app (`mailto:`) with the summary; nothing is sent
+or stored by the page. Linked from the nav ("Pricing"), the Contact section call-to-action and the footer.
+
+**Prices are never edited here.** `cost-calculator/pricing-data.js` is generated from the private tool
+`D:\persional\Entity\Finance\Entity-CostCalculator_finance` (its `data/*.php` are the single source of truth):
+
+```
+cd D:\persional\Entity\Finance\Entity-CostCalculator_finance
+php tools/export_portfolio_pricing.php
+```
+
+Then bump `pricing-data.js?v=` in `cost-calculator/index.html`, commit and push. The export is a whitelist
+(no discounts, internal conversion rate, client data or saved quotes) - field mapping and the PHP parity
+check are in that project's `docs/portfolio-export.md`. `cost-model.js` mirrors its `lib/Calculator.php`; if
+the PHP formula changes, change both.
+
 ## Screenshots and YouTube video
 
 Each game page has two generated blocks, between `<!-- screenshots:start -->` /
@@ -155,6 +178,14 @@ contrast; amber focus ring; `prefers-reduced-motion` respected. Full token table
 the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
+
+2026-11-18 (cost calculator + cloud skills):
+- New `/cost-calculator/` page (game-page shell, wide layout, sticky summary on desktop, live-total bar on
+  phones): data from the private CostCalculator tool via its export script, formula ported from its PHP
+  (verified equal on 6 cases). USD time-zone note, `mailto:` "Contact me with this estimate", Copy estimate.
+- Home: nav link "Pricing", Contact call-to-action card (`.calc-cta`), footer link. Nav links no longer wrap:
+  `white-space: nowrap` and the hamburger now starts below 1140 px (the row needs ~1080 px). `style.css?v=6`.
+- Technical Skills: new "Cloud & Hosting" card (AWS, Azure, cPanel); resume "Tools & DevOps" adds Azure, cPanel.
 
 2026-11-18 (VS Code Extensions):
 - New `#extensions` section after Apps & Games (nav link "Extensions"), rendered from
