@@ -44,7 +44,7 @@ Games (slugs): `entity-arrows`, `entity-sudoku`, `entity-tubes-game`, `entity-wo
   reads `https://tabishalimughal.github.io/entity/games/manifest.json`. It is the only copy.
   Format, keyed by Android package:
   ```json
-  { "com.entity.sudoku": { "latestVersionCode": 1, "minSupportedVersionCode": 1 } }
+  { "com.entity.sudoku.game": { "latestVersionCode": 1, "minSupportedVersionCode": 1 } }
   ```
   After publishing a release: set that package's `latestVersionCode` to the new versionCode, set
   `minSupportedVersionCode = latestVersionCode - 2` (minimum 1) or higher to force an immediate
@@ -67,7 +67,7 @@ Run it from the repo root and open http://127.0.0.1:8765/. Links are root-relati
 When a game is live, paste its listing URL for that slug in `assets/js/apps-data.js`:
 
 ```js
-"entity-sudoku": "https://play.google.com/store/apps/details?id=com.entity.sudoku",
+"entity-sudoku": "https://play.google.com/store/apps/details?id=com.entity.sudoku.game",
 ```
 
 Commit and push. The badge becomes "Get it on Google Play" on both the home card and the game page.
