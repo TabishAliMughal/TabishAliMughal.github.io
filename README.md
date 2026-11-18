@@ -179,6 +179,13 @@ the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
 
+2026-11-18 (all screenshot galleries):
+- `tools/sync_screenshots.py` run for all 7 games: Arrows 8, Sudoku 8, Tubes 7, Word Puzzle 8, Word Select 8,
+  Bricks Breaker 8, Bubble Shooter 9 screenshots (540/1080 WebP pairs, all < 120 KB, ~3.4 MB in total).
+  Docs slugs match the page slugs one to one (Tubes is `entity-tubes-game` on both sides).
+- Checked with ClaudeTester at 1280 px and 360 px: every gallery visible, 0 broken images, every full-size
+  link returns 200, no horizontal page overflow, no console messages. Video IDs are still empty.
+
 2026-11-18 (cost calculator + cloud skills):
 - New `/cost-calculator/` page (game-page shell, wide layout, sticky summary on desktop, live-total bar on
   phones): data from the private CostCalculator tool via its export script, formula ported from its PHP
