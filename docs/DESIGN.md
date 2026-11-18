@@ -43,7 +43,7 @@ Skills, AI-Enhanced Development, Projects, Apps & Games (`#apps`), Contact. All 
    that game's README/docs. Keep the `data-app="<slug>"` on the hero card and the
    `.app-store-badge` inside it: that is what `assets/js/apps.js` turns into the Play link.
 2. Head: keep the shared block (`theme-color`, favicon, fonts, Font Awesome on game pages,
-   `/assets/css/tokens.css?v=3`, `/assets/css/entity.css?v=3`). Do not add inline styles; add
+   `/assets/css/tokens.css?v=3`, `/assets/css/entity.css?v=4`). Do not add inline styles; add
    classes to `entity.css`. Bump `?v=` on every page if you change the CSS a lot (cache busting).
 3. Logo: `assets/images/apps/<slug>.webp`, generated only by `python tools/normalize_app_logos.py`
    (add the game to its `LOGOS` table: source file, crop `box` - `FULL` for full-bleed art,
@@ -53,11 +53,32 @@ Skills, AI-Enhanced Development, Projects, Apps & Games (`#apps`), Contact. All 
 4. Home page: add an `<article class="app-card" id="app-<slug>" data-app="<slug>">` to `#apps` in
    `index.html` (copy an existing one), add `"<slug>": ""` to `assets/js/apps-data.js`, add the policy
    to `privacy/index.html`, and a redirect stub `privacy/<slug>/index.html` only if an old link exists.
-5. Check at 360 px and 1280 px (ClaudeTester, see below): no horizontal scroll, no broken images.
+5. Keep the empty `<!-- screenshots:start -->...<!-- screenshots:end -->` and
+   `<!-- video:start -->...<!-- video:end -->` markers (after "About the game"), add
+   `"<slug>": ""` to `tools/game_videos.json`, then run `python tools/sync_screenshots.py`.
+6. Check at 360 px and 1280 px (ClaudeTester, see below): no horizontal scroll, no broken images.
 
 Useful page blocks in `entity.css`: `.card`, `.hero`, `.tagline`, `.actions`, `.chips`,
 `.modes` > `.mode` (two-up blocks; `.mode.is-new` + `<span class="tag-new">New</span>` for a new
-feature), `.muted`; policy pages add `class="card policy"`.
+feature), `.muted`; policy pages add `class="card policy"`. Generated only (never hand-written):
+`.shots` > `ul` > `li` > `a.shot` > `img` (gallery) and `.video-frame` > `iframe` (video).
+
+### Screenshot gallery and video slot
+
+Both are produced by `python tools/sync_screenshots.py` between the markers above; re-run it any time.
+
+- **Gallery** (`#screenshots`): a focusable (`tabindex="0"`, `role="region"`, labelled) row that scrolls
+  sideways with `scroll-snap-type: x mandatory` - swipe, trackpad, or Tab into it and use the arrow keys.
+  No JS. Each shot is a phone frame: `--radius-l` corners, 5 px `--bg` bezel, 1 px `--line` border
+  (`--blue` on hover), `--icon-shadow`; width `clamp(150px, 42vw, 220px)`, 9:16. Images are
+  `loading="lazy"`, `width`/`height` set, `srcset` 540w/1080w; each links to its 1080 px WebP (open
+  full size). Alt text = game name + label from the file name (`04-pop-combo.png` -> "Bubble Shooter –
+  pop combo"). Sources: `D:\persional\Entity\docs\games\<slug>\screenshots\*.png`, name order. No
+  PNGs -> a hidden empty card.
+- **Video** (`#video`): renders only when `tools/game_videos.json` has an ID/URL for the slug -
+  one line per game, e.g. `"entity-sudoku": "https://youtu.be/VIDEO_ID",` then re-run the script.
+  Output: `youtube-nocookie.com/embed/<id>` iframe, `loading="lazy"`, `title` = "<Game> – gameplay
+  video", inside `.video-frame` (16:9 via `aspect-ratio`, `--radius-m`, `--line` border).
 
 ### Local preview and visual check
 
