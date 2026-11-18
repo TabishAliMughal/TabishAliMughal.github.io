@@ -101,6 +101,11 @@ the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
 
+2026-11-18 (Entity brand template):
+- All 7 games got new icons from the shared Entity template (`Infra/LogoTemplate/entity_brand/build_brand.py`);
+  logos regenerated. `tools/normalize_app_logos.py` now uses the FULL crop for every game (all icons are
+  full-bleed, no rim).
+
 2026-11-17 (logos):
 - All 7 Apps & Games logos rebuilt from each game's current `assets/icon.png` by
   `tools/normalize_app_logos.py`: rim and baked corners cropped off (Arrows, Sudoku), Sudoku's

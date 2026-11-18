@@ -23,11 +23,10 @@ MAX_KB = 80           # per-file budget
 SUPERSAMPLE = 4       # mask anti-aliasing
 
 # box: (x0, y0, x1, y1) crop as fractions of the source, dropping baked corners + rim.
-#   Arrows/Sudoku icons are a rounded tile inside a metallic rim on transparent
-#   (Arrows) / black (Sudoku) corners; the rim's inner edge is at ~x 0.09/0.91,
-#   y 0.078/0.917, so INNER_TILE crops just inside it (keeps the subtitle clear
-#   of the bottom edge, matching the full-bleed logos' text position).
-#   The other five icon.png files are full-bleed square art -> FULL (no crop).
+#   Since 2026-11-18 all seven icon.png files come from the shared Entity template
+#   (Infra/LogoTemplate/entity_brand/build_brand.py): full-bleed square art with no
+#   rim or baked corners -> FULL for every game. INNER_TILE is kept for reference
+#   (it cropped the old rimmed Arrows/Sudoku tiles).
 # watermark: list of (x0, y0, x1, y1) boxes, as fractions of the SOURCE image,
 #   that are inpainted from their surroundings before cropping (e.g. a Gemini
 #   sparkle). Sudoku's sparkle sits in the black corner outside the tile, so the
@@ -36,8 +35,8 @@ INNER_TILE = (0.092, 0.085, 0.908, 0.912)
 FULL = (0.0, 0.0, 1.0, 1.0)
 
 LOGOS = {
-    "entity-arrows":              {"folder": "Entity-Arrows_game",              "file": "icon.png", "box": INNER_TILE},
-    "entity-sudoku":              {"folder": "Entity-Sudoku_game",              "file": "icon.png", "box": INNER_TILE},
+    "entity-arrows":              {"folder": "Entity-Arrows_game",              "file": "icon.png", "box": FULL},
+    "entity-sudoku":              {"folder": "Entity-Sudoku_game",              "file": "icon.png", "box": FULL},
     "entity-tubes-game":          {"folder": "Entity-Tubes_game",               "file": "icon.png", "box": FULL},
     "entity-wordpuzzlematching":  {"folder": "Entity-WordPuzzleMatching_game",  "file": "icon.png", "box": FULL},
     "entity-wordpuzzleselecting": {"folder": "Entity-WordPuzzleSelecting_game", "file": "icon.png", "box": FULL},
