@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/tokens.css?v=3">
-    <link rel="stylesheet" href="assets/css/style.css?v=3">
+    <link rel="stylesheet" href="assets/css/style.css?v=4">
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -36,6 +36,7 @@
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#apps" class="nav-link">Apps &amp; Games</a>
+                <a href="#extensions" class="nav-link">Extensions</a>
                 <a href="#contact" class="nav-link">Contact</a>
                 <a href="resume.html" target="_blank" rel="noopener" class="nav-link resume-download" id="download-cv">
                     <i class="fas fa-external-link-alt" aria-hidden="true"></i> View Resume
@@ -605,6 +606,23 @@
         </div>
     </section>
 
+    <!-- VS Code Extensions Section
+         DATA: one entry per extension in assets/js/extensions-data.js; assets/js/extensions.js renders the
+         .ext-card elements into #extensions-grid. Do not hand-write cards here. See docs/DESIGN.md. -->
+    <section id="extensions" class="extensions section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">VS Code Extensions</h2>
+                <p class="section-subtitle">Tools I build and publish on the Visual Studio Code Marketplace</p>
+            </div>
+            <div class="ext-grid" id="extensions-grid"></div>
+            <noscript><p class="section-subtitle">Turn on JavaScript to see the extension cards, or browse them on the Marketplace below.</p></noscript>
+            <p class="ext-more">
+                <a class="btn btn-secondary" href="https://marketplace.visualstudio.com/publishers/TabishAliMughal" id="ext-publisher-link" target="_blank" rel="noopener" aria-label="View all my extensions on the VS Code Marketplace (opens in a new tab)"><i class="fas fa-store" aria-hidden="true"></i> View all on VS Code Marketplace</a>
+            </p>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact section">
         <div class="container">
@@ -704,5 +722,7 @@
     <script src="assets/js/script.js?v=2"></script>
     <script src="assets/js/apps-data.js"></script>
     <script src="assets/js/apps.js"></script>
+    <script src="assets/js/extensions-data.js"></script>
+    <script src="assets/js/extensions.js"></script>
 </body>
 </html>

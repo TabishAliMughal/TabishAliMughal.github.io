@@ -34,7 +34,26 @@ non-interactive animation is the hero's circuit traces drawing in once; `prefers
 turns it (and smooth scrolling) off. Icons: Font Awesome 6 (CDN). Favicon: `assets/images/favicon.svg`.
 
 Home page order: hero, About, Experience (timeline; roles that are still current get an amber node),
-Skills, AI-Enhanced Development, Projects, Apps & Games (`#apps`), Contact. All old anchors still work.
+Skills, AI-Enhanced Development, Projects, Apps & Games (`#apps`), VS Code Extensions (`#extensions`), Contact.
+All old anchors still work.
+
+### VS Code Extensions section (`#extensions`)
+
+Data-driven: `assets/js/extensions-data.js` holds `window.VSCODE_EXTENSIONS` (one object per extension:
+`id`, `name`, `description`, `features` (3-5), `icon`, `marketplace`, `source`) and `window.VSCODE_PUBLISHER_URL`
+(the section's "View all on VS Code Marketplace" button). `assets/js/extensions.js` renders one `.ext-card` per
+entry into `#extensions-grid` with DOM APIs (`textContent`, no HTML strings); never hand-write cards in
+`index.html`. Leave `source` empty while a repo is private - a Source button that 404s for visitors is worse
+than none. All buttons open in a new tab with `rel="noopener"` and an aria-label ending "(opens in a new tab)".
+
+Card blocks (`style.css`): `.ext-grid` (auto-fill, min 440 px, one column on phones), `.ext-card` (`--surface`,
+`--line` border, `--radius-l`, blue border on hover - same as `.app-card`), `.ext-head` > `.ext-icon` (72 px,
+56 px under 520 px; `--icon-radius` + `--icon-shadow`) + `.ext-titles` > `.ext-tag` ("VS Code extension",
+styled like `.tech-tag`) + `.ext-title`, `.ext-description` (`--muted`), `.ext-features` (blue square
+bullets), `.ext-actions` (`.btn.btn-primary.btn-sm` Install + `.btn.btn-secondary.btn-sm` Source; full-width
+stacked under 520 px). Icons live in `assets/images/extensions/` (square SVG, or 256 px WebP); prefer the
+extension's own icon. Entity SVNWorkflow has no Marketplace icon, so its SVG is a `--surface-2` tile with
+the extension's `media/svn.svg` branch glyph stroked in the `--grad` colours.
 
 ### Adding a game page
 
