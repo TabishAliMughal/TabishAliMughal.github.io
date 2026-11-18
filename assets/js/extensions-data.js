@@ -23,6 +23,6 @@ window.VSCODE_EXTENSIONS = [
         ],
         icon: "assets/images/extensions/entity-svnworkflow.svg",
         marketplace: "https://marketplace.visualstudio.com/items?itemName=TabishAliMughal.Entity-SVNWorkflow",
-        source: "https://github.com/TabishAliMughal/Entity-SVNWorkflow"
+        source: "https://github.com/TabishAliMughal/Entity-SVNWorkFlow_vscode"
     }
 ];
