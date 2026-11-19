@@ -15,6 +15,7 @@ Static HTML/CSS/JS, no build step. Repo: `TabishAliMughal/TabishAliMughal.github
 | `index.html` | Home page: hero, About, Experience, Skills, AI-Enhanced Development, Projects, Apps & Games (`#apps`), VS Code Extensions (`#extensions`), Contact (with the cost-calculator call-to-action) |
 | `cost-calculator/` | Client cost calculator (https://tabishalimughal.github.io/cost-calculator/): `index.html`, `calculator.js` (UI), `cost-model.js` (formula), `pricing-data.js` (GENERATED prices) |
 | `assets/css/calculator.css` | Cost calculator page layout (loaded after tokens.css + entity.css) |
+| `assets/images/entity/` | Entity Corporation logo (`entity-corporation-256.webp`, copied from `Infra\LogoTemplate\entity_brand\out\entity-corporation\`) |
 | `resume.html` | Resume + cover letters (dark on screen, plain light A4 when printed) |
 | `assets/css/tokens.css` | Design tokens and shared base used by every page |
 | `assets/css/style.css` | Home page layout |
@@ -185,6 +186,18 @@ contrast; amber focus ring; `prefers-reduced-motion` respected. Full token table
 the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
+
+2026-11-19 (Entity Corporation, Entity TaskList 61):
+- Résumé: new "Entity Corporation" section after Featured Projects (`#entity-corporation`): logo, one-line
+  description, four `.project-item` cards (Entity Games - 7 Android games; Entity SVNWorkflow VS Code
+  extension; Project Cost Calculator; shared tooling) and an "Also under Entity" line for the full-stack
+  projects. Facts only from `D:\persional\Entity\README.md`, `docs\` and this site. Print/PDF checked (A4, light).
+- Home: `.entity-brand` strip under the Apps & Games header (logo + one sentence linking the extension and
+  the calculator). `style.css?v=7`.
+- Logo: `assets/images/entity/entity-corporation-256.webp`, copied unchanged from
+  `Infra\LogoTemplate\entity_brand\out\entity-corporation\` (the "web" file in that README). To update it,
+  re-run `python build_brand.py --corporation` there and copy the file again.
+- Checked with ClaudeTester at 1280 px and 360 px: logo loads, no horizontal scroll, no console messages.
 
 2026-11-19 (cost calculator sections, Entity TaskList 62):
 - Core features and add-ons were one "Features" card with two small grey labels. Now separate section

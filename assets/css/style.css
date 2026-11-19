@@ -733,3 +733,23 @@ p { margin: 0 0 1em; }
     .calc-cta { grid-template-columns: auto minmax(0, 1fr); padding: 20px 16px; }
     .calc-cta .btn { grid-column: 1 / -1; width: 100%; }
 }
+
+/* Entity Corporation strip under the Apps & Games header (logo from Infra/LogoTemplate/entity_brand) */
+.entity-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: -16px 0 28px;
+    padding: 14px 18px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--amber);
+    border-radius: var(--radius-m);
+}
+.entity-brand-logo { width: 64px; height: 64px; flex-shrink: 0; border-radius: var(--icon-radius); box-shadow: var(--icon-shadow); }
+.entity-brand p { margin: 0; color: var(--muted); max-width: none; }
+.entity-brand strong { color: var(--text); font-weight: 600; }
+@media (max-width: 520px) {
+    .entity-brand { align-items: flex-start; padding: 14px; gap: 12px; }
+    .entity-brand-logo { width: 48px; height: 48px; }
+}

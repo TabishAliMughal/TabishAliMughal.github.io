@@ -132,6 +132,13 @@
             font-weight: 500;
         }
 
+        /* Entity Corporation: logo + one-line description, then .project-item cards */
+        .entity-head { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+        .entity-logo { width: 72px; height: 72px; flex-shrink: 0; border-radius: 22%; box-shadow: var(--icon-shadow); }
+        .entity-tagline { color: var(--muted); }
+        .entity-tagline strong { color: var(--text); font-weight: 600; }
+        .entity-more { margin-top: 12px; color: var(--muted); font-size: 0.9rem; }
+        .entity-more strong { color: var(--text); font-weight: 600; }
         /* Top bar: tabs + actions */
         .top-action-bar {
             position: sticky;
@@ -174,6 +181,7 @@
             .two-column, .projects-grid { grid-template-columns: 1fr; }
             .resume-contact { flex-direction: column; align-items: center; gap: 8px; }
             .skills-grid { grid-template-columns: 1fr !important; }
+            .entity-logo { width: 56px; height: 56px; }
             .top-action-bar { position: static; }
             .tab-btn, .download-btn { font-size: 0.8rem; padding: 6px 12px; }
         }
@@ -191,6 +199,8 @@
             .projects-grid { grid-template-columns: 1fr; }
             .section { margin-bottom: 20px; }
             .education-item, .skill-category, .experience-item, .project-item { page-break-inside: avoid; break-inside: avoid; }
+            .entity-logo { width: 56px; height: 56px; box-shadow: none; }
+            .entity-head { break-after: avoid; page-break-after: avoid; }
         }
     </style>
 </head>
@@ -529,6 +539,78 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Entity Corporation (own products; facts from D:\persional\Entity\README.md and the portfolio) -->
+        <div class="section" id="entity-corporation">
+            <h3 class="section-title">Entity Corporation</h3>
+            <div class="entity-head">
+                <img class="entity-logo" src="assets/images/entity/entity-corporation-256.webp" width="72" height="72" alt="Entity Corporation logo">
+                <p class="entity-tagline"><strong>My own product label.</strong> Apps and developer tools I design, build and publish independently under the Entity name.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <div class="project-title">Entity Games (7 Android games)</div>
+                    <div class="project-description">
+                        Offline, family-friendly puzzle games: Arrows, Sudoku, Tubes, Word Puzzle, Word Select,
+                        Bricks Breaker and Bubble Shooter. Built for Google Play's Families rules (child-directed ads,
+                        kid-safe permissions), with a shared force-update check; coming soon to Google Play.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Expo / EAS</span>
+                        <span class="tech-tag">Skia</span>
+                        <span class="tech-tag">AdMob</span>
+                        <span class="tech-tag">Jest</span>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">Entity SVNWorkflow (VS Code extension)</div>
+                    <div class="project-description">
+                        TortoiseSVN-style workflows inside VS Code: SVN sidebar, compare with per-hunk pull, blame,
+                        history, 3-way conflict merge, branches/tags. Published on the VS Code Marketplace with
+                        CI publishing from GitHub; public source on GitHub.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">VS Code API</span>
+                        <span class="tech-tag">esbuild</span>
+                        <span class="tech-tag">Vitest</span>
+                        <span class="tech-tag">GitHub Actions</span>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">Project Cost Calculator</div>
+                    <div class="project-description">
+                        Private estimate and quotation tool (USD/PKR, templates, surcharges, support plans) with a
+                        public client-facing version on my portfolio, generated from the same price data.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">GitHub Pages</span>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">Shared tooling</div>
+                    <div class="project-description">
+                        Python brand and icon generator that produces every Entity logo and app-icon set, Play Store
+                        listing scripts, and the developer website that hosts game pages, privacy policies and the
+                        force-update manifest.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pillow</span>
+                        <span class="tech-tag">GitHub Pages</span>
+                    </div>
+                </div>
+            </div>
+            <p class="entity-more"><strong>Also under Entity:</strong> full-stack products: CashBook shop ledger
+                (Laravel + React Native), a music streaming app and a School ERP (Django + React Native), and a
+                messaging/notification platform (custom PHP MVC, Django rewrite).</p>
         </div>
 
         <!-- Key Achievements -->

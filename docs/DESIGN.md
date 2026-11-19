@@ -38,6 +38,14 @@ Home page order: hero, About, Experience (timeline; roles that are still current
 Skills, AI-Enhanced Development, Projects, Apps & Games (`#apps`), VS Code Extensions (`#extensions`), Contact.
 All old anchors still work.
 
+Entity Corporation (2026-11-19): the parent-brand logo is `assets/images/entity/entity-corporation-256.webp`
+(copied from `Infra\LogoTemplate\entity_brand\out\entity-corporation\`, never edited here; shown with
+`--icon-radius` + `--icon-shadow` like the app logos). Home: `.entity-brand` (`style.css`) right under the
+`#apps` header - `--surface` card, amber left border, 64 px logo (48 px under 520 px) + one sentence.
+Résumé: `#entity-corporation` section after Featured Projects - `.entity-head` (72 px `.entity-logo`, 56 px on
+phones and in print, + `.entity-tagline`), the existing `.projects-grid` / `.project-item` / `.tech-tag`
+cards, and an `.entity-more` line. Only facts from the Entity README/docs; no titles or dates.
+
 Nav: one row of links (`white-space: nowrap`) from 1141 px up; below that the hamburger menu (the full row
 measures ~1080 px + gutters, so keep link labels short - e.g. "Pricing" for the cost calculator). Re-measure
 if you add a link.
