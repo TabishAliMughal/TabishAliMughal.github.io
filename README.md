@@ -179,6 +179,14 @@ the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
 
+2026-11-19 (YouTube promo videos):
+- `tools/game_videos.json` filled from the public videos on youtube.com/@TabishAliMughal (landscape
+  promo used for the embed): Sudoku `3KAMkmdHvBM`, Tubes `Za2kS56CK-o`, Word Puzzle `T5cTLTZGDaA`,
+  Word Select `thqNA7etcNY`. Pages regenerated with `python tools/sync_screenshots.py`.
+- Arrows, Bricks Breaker and Bubble Shooter have no public video yet (entries stay empty, no video block).
+- Checked with ClaudeTester at 1280 px and 360 px: the nocookie embed shows on all 4 pages (716x402 / 292x163),
+  no horizontal overflow, no console errors.
+
 2026-11-18 (all screenshot galleries):
 - `tools/sync_screenshots.py` run for all 7 games: Arrows 8, Sudoku 8, Tubes 7, Word Puzzle 8, Word Select 8,
   Bricks Breaker 8, Bubble Shooter 9 screenshots (540/1080 WebP pairs, all < 120 KB, ~3.4 MB in total).
