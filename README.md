@@ -179,6 +179,13 @@ the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
 
+2026-11-19 (YouTube promo videos, remaining 3 games):
+- `tools/game_videos.json` now has a landscape promo for every game: Arrows `npRGi8CoUEU`, Bricks Breaker
+  `SCEmLl8p11o`, Bubble Shooter `z7HQc771ZWg` (portrait Shorts are not embedded). Pages regenerated with
+  `python tools/sync_screenshots.py` (other 4 pages unchanged).
+- Checked with ClaudeTester at 1280 px and 360 px: embed visible on all 3 pages (716x402 / 292x163),
+  no horizontal overflow, no console errors.
+
 2026-11-19 (YouTube promo videos):
 - `tools/game_videos.json` filled from the public videos on youtube.com/@TabishAliMughal (landscape
   promo used for the embed): Sudoku `3KAMkmdHvBM`, Tubes `Za2kS56CK-o`, Word Puzzle `T5cTLTZGDaA`,
