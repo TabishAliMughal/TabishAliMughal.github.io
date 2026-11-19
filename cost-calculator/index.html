@@ -14,7 +14,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/tokens.css?v=3">
 <link rel="stylesheet" href="/assets/css/entity.css?v=4">
-<link rel="stylesheet" href="/assets/css/calculator.css?v=2">
+<link rel="stylesheet" href="/assets/css/calculator.css?v=3">
 </head>
 <body class="page-wide">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -39,42 +39,55 @@
 <div class="calc-layout">
 <form class="calc-form" id="calc-form" novalidate>
 
-<section class="card" aria-labelledby="h-currency">
-<h2 id="h-currency"><span class="step" aria-hidden="true">1</span>Currency</h2>
+<section class="card calc-currency" aria-labelledby="h-currency">
+<div class="cur-row">
+<h2 id="h-currency" class="cur-title">Show prices in</h2>
 <fieldset class="seg">
 <legend class="visually-hidden">Currency</legend>
 <input type="radio" name="currency" id="cur-usd" value="USD"><label for="cur-usd">USD ($)</label>
 <input type="radio" name="currency" id="cur-pkr" value="PKR"><label for="cur-pkr">PKR (Rs)</label>
 </fieldset>
+</div>
 <p class="calc-note" id="usd-note" role="note" hidden><i class="fas fa-clock" aria-hidden="true"></i><span><strong>Why USD rates are higher:</strong> I am based in Pakistan (UTC+5). For USD clients, work is scheduled outside my regular local hours so I can stay available during your business day, which is why USD prices are higher than PKR prices.</span></p>
 </section>
 
-<section class="card" aria-labelledby="h-type">
-<h2 id="h-type"><span class="step" aria-hidden="true">2</span>Project type</h2>
-<p class="card-hint">Optional shortcut: selects the usual features for that kind of project. You can change any of them below.</p>
+<section class="card calc-sec sec-type" aria-labelledby="h-type">
+<div class="sec-head"><h2 id="h-type"><span class="step" aria-hidden="true">1</span>Project type</h2></div>
+<p class="sec-desc">Optional shortcut: ticks the usual core features and add-ons for that kind of project. You can change any of them below.</p>
 <label class="field"><span>Project type</span>
 <select class="calc-select" id="template"></select>
 </label>
 <div class="variance" id="variance"></div>
 </section>
 
-<section class="card" aria-labelledby="h-features">
-<h2 id="h-features"><span class="step" aria-hidden="true">3</span>Features</h2>
-<p class="card-hint">Tick what you need and set the quantity.</p>
-<div id="services"></div>
+<section class="card calc-sec sec-core" aria-labelledby="h-core">
+<div class="sec-head"><h2 id="h-core"><span class="step" aria-hidden="true">2</span>Core features</h2><span class="sec-sub" id="sub-core"></span></div>
+<p class="sec-desc">What the project is built from: setup, pages, data, security, testing and going live.</p>
+<ul class="svc-list" id="svc-core"></ul>
 </section>
 
-<section class="card" aria-labelledby="h-timeline">
-<h2 id="h-timeline"><span class="step" aria-hidden="true">4</span>Timeline</h2>
-<label class="field"><span>Delivery needed within (days, leave empty if flexible)</span>
+<section class="card calc-sec sec-addon" aria-labelledby="h-addon">
+<div class="sec-head"><h2 id="h-addon"><span class="step" aria-hidden="true">3</span>Add-ons and extras</h2><span class="sec-sub" id="sub-addon"></span></div>
+<p class="sec-desc">Optional extras on top of the core build: payments, uploads, notifications, integrations, deployment and more.</p>
+<ul class="svc-list" id="svc-addon"></ul>
+</section>
+
+<section class="card calc-sec sec-options" aria-labelledby="h-options">
+<div class="sec-head"><h2 id="h-options"><span class="step" aria-hidden="true">4</span>Delivery options</h2><span class="sec-sub" id="sub-options"></span></div>
+<p class="sec-desc">How the work is delivered. These add a percentage of the core + add-on cost.</p>
+<ul class="opt-list">
+<li class="opt"><span class="opt-name">Documentation</span><span class="opt-detail" id="doc-detail"></span></li>
+<li class="opt"><label class="check"><input type="checkbox" id="ai"><span><span class="opt-name">AI-assisted development</span><span class="support-price" id="ai-price"></span></span></label></li>
+<li class="opt"><label class="field"><span>Deadline: delivery needed within (days, leave empty if flexible)</span>
 <input class="calc-input" type="number" id="days" min="0" step="1" inputmode="numeric" placeholder="Flexible">
 </label>
-<label class="check field"><input type="checkbox" id="ai"><span>AI-assisted development <span class="support-price" id="ai-price"></span></span></label>
-<p class="muted flush" id="rush-hint"></p>
+<p class="opt-detail flush" id="rush-hint"></p></li>
+</ul>
 </section>
 
-<section class="card" aria-labelledby="h-support">
-<h2 id="h-support"><span class="step" aria-hidden="true">5</span>Support after launch</h2>
+<section class="card calc-sec sec-support" aria-labelledby="h-support">
+<div class="sec-head"><h2 id="h-support"><span class="step" aria-hidden="true">5</span>Support after launch</h2><span class="sec-sub" id="sub-support"></span></div>
+<p class="sec-desc">Help once the project is live. Only the one-time package is part of the total; monthly and hourly are billed later.</p>
 <ul class="support-list" id="support"></ul>
 </section>
 
@@ -82,10 +95,10 @@
 
 <aside class="calc-aside">
 <section class="card calc-summary" id="summary" aria-labelledby="h-summary">
-<h2 id="h-summary">Your estimate</h2>
+<h2 id="h-summary"><span class="step" aria-hidden="true">6</span>Your estimate</h2>
 <p class="calc-note" id="usd-note-summary" hidden><i class="fas fa-clock" aria-hidden="true"></i><span>USD prices are higher because of the time-zone difference: work is done outside my regular local hours.</span></p>
 <p class="effort" id="effort"></p>
-<ul class="sum-lines" id="sum-lines" tabindex="0" aria-label="Selected features"></ul>
+<div class="sum-lines" id="sum-lines" tabindex="0" role="region" aria-label="Selected features"></div>
 <table class="sum-table">
 <caption class="visually-hidden">Estimate totals</caption>
 <tbody id="sum-table"></tbody>
@@ -111,6 +124,6 @@
 <footer>&copy; Tabish Ali Mughal &middot; <a href="/">Portfolio</a> &middot; <a href="/#contact">Contact</a> &middot; <a href="mailto:tabishalimughal@gmail.com">tabishalimughal@gmail.com</a></footer>
 <script src="/cost-calculator/pricing-data.js?v=1"></script>
 <script src="/cost-calculator/cost-model.js?v=1"></script>
-<script src="/cost-calculator/calculator.js?v=2"></script>
+<script src="/cost-calculator/calculator.js?v=3"></script>
 </body>
 </html>

@@ -49,8 +49,16 @@ each item = Font Awesome icon + name + `.skill-level` bar (`data-level` 0-100, d
 
 Same shell as the game pages (`.site-bar`, `.crumbs`, `.card`, `footer`, tokens.css + entity.css), plus
 `assets/css/calculator.css`. `body.page-wide` widens main/bar/footer to 1160 px. `.calc-layout`: form cards
-(numbered `h2 .step` circles: Currency, Project type, Features, Timeline, Support) and, from 980 px, a sticky
-380 px `.calc-summary`. Under 980 px a fixed `.calc-dock` shows the live total + "View estimate" and hides
+and, from 980 px, a sticky 380 px `.calc-summary`. Form (2026-11-19): `.calc-currency` (slim bar: "Show
+prices in" + `.seg` pills + USD note), then `.calc-sec` section cards, each with a numbered `h2 .step`, a
+`.sec-head` that may hold a `.sec-sub` pill (live "N selected - subtotal"), and a one-line `.sec-desc`:
+1 Project type (`.sec-type`), 2 Core features (`.sec-core`, `#svc-core`), 3 Add-ons and extras
+(`.sec-addon`, `#svc-addon`), 4 Delivery options (`.sec-options`, `.opt-list`: documentation, AI, deadline),
+5 Support (`.sec-support`), and the summary is step 6. Each section sets `--accent` (3 px top rule, step
+circle, checkbox colour): type `--line`, core `--blue`, add-ons `--amber`, options `--ok`, support `--muted`.
+The summary repeats them as 9 px square dots (`.is-core` / `.is-addon` / `.is-options` / `.is-support`
+set `--dot`) on the `.sum-group` headings and the `.is-sub` subtotal rows; `.is-part` rows (documentation,
+AI, rush) are indented under Delivery options. Core vs add-on comes only from `services[].category`. Under 980 px a fixed `.calc-dock` shows the live total + "View estimate" and hides
 itself (IntersectionObserver) while the summary is on screen. Blocks: `.seg` (currency radios as pills),
 `.calc-note` (amber left border; the USD time-zone note), `.svc` rows (checkbox + name, qty + unit, cost;
 stacks under 600 px), `.support-list`, `.sum-lines`, `.sum-table` (`.is-total` row in the display font),

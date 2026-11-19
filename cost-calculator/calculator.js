@@ -15,6 +15,9 @@
 
     var byId = {};
     P.services.forEach(function (s) { byId[s.id] = s; });
+    // Sections come from the catalog's `category` flag (data/services.php: 'core' | 'addon').
+    var GROUPS = [['core', 'Core features'], ['addon', 'Add-ons and extras']];
+    function groupOf(id) { return byId[id].category === 'core' ? 'core' : 'addon'; }
 
     function $(id) { return document.getElementById(id); }
     function el(tag, cls, text) {
@@ -106,10 +109,8 @@
     }
 
     function buildServices() {
-        var host = $('services');
-        [['core', 'Core build'], ['addon', 'Add-ons and integrations']].forEach(function (g) {
-            host.appendChild(el('h3', 'svc-group', g[1]));
-            var ul = el('ul', 'svc-list');
+        GROUPS.forEach(function (g) {
+            var ul = $('svc-' + g[0]);
             P.services.filter(function (s) { return s.category === g[0]; }).forEach(function (s) {
                 var li = el('li', 'svc');
                 var lab = el('label', 'check');
@@ -156,7 +157,6 @@
                 rows[s.id] = { li: li, chk: chk, qty: qty, cost: cost };
                 ul.appendChild(li);
             });
-            host.appendChild(ul);
         });
     }
 
@@ -230,8 +230,21 @@
         return t ? t.name : 'Custom';
     }
 
+    // Display-only split of the model's result by section; every amount still comes from CostModel.
+    function breakdown(r) {
+        var b = { core: 0, addon: 0, coreN: 0, addonN: 0 };
+        r.lines.forEach(function (l) {
+            var g = groupOf(l.id);
+            b[g] += l.cost;
+            b[g + 'N'] += 1;
+        });
+        b.options = r.surchargeAmount;
+        return b;
+    }
+
     function update() {
         var r = last = M.calculate(P, state, currency);
+        var b = breakdown(r);
         var cfg = P.config, s = r.surcharges;
         var usd = currency === 'USD';
         $('usd-note').hidden = !usd;
@@ -246,6 +259,12 @@
             document.querySelector('[data-support="' + o.id + '"]').textContent = supportPrice(o);
         });
         $('ai-price').textContent = 'Roughly halves the build time; adds ' + cfg.ai_surcharge_pct + '% to the feature cost.';
+        $('doc-detail').textContent = 'Always included; adds ' + s.docPct + '% to the feature cost.';
+        $('sub-core').textContent = b.coreN + ' selected · ' + money(b.core);
+        $('sub-addon').textContent = b.addonN + ' selected · ' + money(b.addon);
+        $('sub-options').textContent = '+' + s.totalPct + '% · ' + money(b.options);
+        var so = r.support.option;
+        $('sub-support').textContent = !so || so.type === 'none' ? 'None' : (so.type === 'onetime' ? money(r.support.onetime) : 'Billed separately');
 
         var days = s.effectiveDays;
         $('rush-hint').textContent = r.totalHours > 0
@@ -262,26 +281,35 @@
         }
 
         // lines
-        var ul = $('sum-lines');
-        ul.textContent = '';
+        var host = $('sum-lines');
+        host.textContent = '';
         if (!r.lines.length) {
-            ul.appendChild(el('li', 'sum-empty', 'Pick a project type or tick a feature to see your estimate.'));
+            host.appendChild(el('p', 'sum-empty', 'Pick a project type or tick a feature to see your estimate.'));
         }
-        r.lines.forEach(function (l) {
-            var li = el('li');
-            li.appendChild(el('span', null, l.name + (l.qty !== 1 ? ' × ' + num(l.qty) : '')));
-            li.appendChild(el('span', null, money(l.cost)));
-            ul.appendChild(li);
+        GROUPS.forEach(function (g) {
+            var lines = r.lines.filter(function (l) { return groupOf(l.id) === g[0]; });
+            if (!lines.length) return;
+            host.appendChild(el('h3', 'sum-group is-' + g[0], g[1]));
+            var ul = el('ul');
+            lines.forEach(function (l) {
+                var li = el('li');
+                li.appendChild(el('span', null, l.name + (l.qty !== 1 ? ' × ' + num(l.qty) : '')));
+                li.appendChild(el('span', null, money(l.cost)));
+                ul.appendChild(li);
+            });
+            host.appendChild(ul);
         });
 
         // totals
         var tb = $('sum-table');
         tb.textContent = '';
-        row(tb, 'Features', money(r.featureSubtotal));
-        row(tb, 'Documentation (' + s.docPct + '%)', money(r.docAmount));
-        if (s.aiApplied) row(tb, 'AI-assisted development (' + s.aiPct + '%)', money(r.aiAmount));
-        if (s.rushApplied) row(tb, 'Rush delivery (' + s.rushPct + '%)', money(r.rushAmount));
-        if (r.support.onetime) row(tb, 'Post-launch package', money(r.support.onetime));
+        row(tb, 'Core features', money(b.core), 'is-sub is-core');
+        row(tb, 'Add-ons and extras', money(b.addon), 'is-sub is-addon');
+        row(tb, 'Delivery options', money(b.options), 'is-sub is-options');
+        row(tb, 'Documentation (' + s.docPct + '%)', money(r.docAmount), 'is-part');
+        if (s.aiApplied) row(tb, 'AI-assisted development (' + s.aiPct + '%)', money(r.aiAmount), 'is-part');
+        if (s.rushApplied) row(tb, 'Rush delivery (' + s.rushPct + '%)', money(r.rushAmount), 'is-part');
+        row(tb, 'Support (one-time)', money(r.support.onetime), 'is-sub is-support');
         row(tb, 'Estimated total', money(r.grandTotal), 'is-total');
         $('dock-total').textContent = money(r.grandTotal);
 
@@ -312,20 +340,26 @@
         L.push('Hi Tabish,', '', "I'd like to discuss a project. Here is the estimate from your cost calculator:", '');
         L.push('Project type: ' + templateName());
         L.push('Currency: ' + currency);
-        if (r.lines.length) {
-            L.push('', 'Features:');
-            r.lines.forEach(function (l) { L.push('- ' + l.name + ' x ' + num(l.qty) + ' (' + l.unit + '): ' + money(l.cost)); });
-        }
+        GROUPS.forEach(function (g) {
+            var lines = r.lines.filter(function (l) { return groupOf(l.id) === g[0]; });
+            if (!lines.length) return;
+            L.push('', g[1] + ':');
+            lines.forEach(function (l) { L.push('- ' + l.name + ' x ' + num(l.qty) + ' (' + l.unit + '): ' + money(l.cost)); });
+        });
         L.push('');
         if (r.totalHours > 0) L.push('Estimated effort: ' + num(r.totalHours) + ' hours (about ' + num(s.effectiveDays) + ' working days)');
         L.push('Delivery needed within: ' + (state.requestedDeliveryDays > 0 ? num(state.requestedDeliveryDays) + ' days' : 'flexible'));
         L.push('AI-assisted development: ' + (state.aiUsed ? 'yes' : 'no'));
-        L.push('', 'Features: ' + money(r.featureSubtotal));
-        L.push('Documentation (' + s.docPct + '%): ' + money(r.docAmount));
-        if (s.aiApplied) L.push('AI-assisted development (' + s.aiPct + '%): ' + money(r.aiAmount));
-        if (s.rushApplied) L.push('Rush delivery (' + s.rushPct + '%): ' + money(r.rushAmount));
+        var b = breakdown(r);
+        L.push('', 'Core features: ' + money(b.core));
+        L.push('Add-ons and extras: ' + money(b.addon));
+        L.push('Delivery options: ' + money(b.options));
+        L.push('  Documentation (' + s.docPct + '%): ' + money(r.docAmount));
+        if (s.aiApplied) L.push('  AI-assisted development (' + s.aiPct + '%): ' + money(r.aiAmount));
+        if (s.rushApplied) L.push('  Rush delivery (' + s.rushPct + '%): ' + money(r.rushAmount));
+        L.push('Support (one-time): ' + money(r.support.onetime));
         var o = r.support.option;
-        if (o && o.type !== 'none') L.push('Support: ' + supportLabel(o) + ', ' + supportPrice(o));
+        if (o && o.type !== 'none') L.push('Support chosen: ' + supportLabel(o) + ', ' + supportPrice(o));
         L.push('Estimated total: ' + money(r.grandTotal));
         if (currency === 'USD') L.push('', 'Note: ' + USD_NOTE);
         L.push('', 'Estimate from ' + PAGE_URL + ' (indicative, not a binding quote).', '', 'My name:', 'About the project:', '');

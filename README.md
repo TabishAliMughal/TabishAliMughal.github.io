@@ -110,6 +110,13 @@ that USD prices are higher because of the time-zone difference (work is done out
 "Contact me with this estimate" opens the visitor's email app (`mailto:`) with the summary; nothing is sent
 or stored by the page. Linked from the nav ("Pricing"), the Contact section call-to-action and the footer.
 
+The form has a currency bar and six numbered sections: 1 Project type, 2 Core features, 3 Add-ons and
+extras, 4 Delivery options (documentation, AI-assisted, deadline/rush), 5 Support, 6 Your estimate. A
+service goes in Core or Add-ons by its `category` (`core` | `addon`) in the private tool's
+`data/services.php`; change it there and re-export, never here. The summary splits the total into Core,
+Add-ons, Delivery options and Support (one-time) subtotals; the split is display-only (same totals as
+`cost-model.js`).
+
 **Prices are never edited here.** `cost-calculator/pricing-data.js` is generated from the private tool
 `D:\persional\Entity\Finance\Entity-CostCalculator_finance` (its `data/*.php` are the single source of truth):
 
@@ -178,6 +185,19 @@ contrast; amber focus ring; `prefers-reduced-motion` respected. Full token table
 the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
+
+2026-11-19 (cost calculator sections, Entity TaskList 62):
+- Core features and add-ons were one "Features" card with two small grey labels. Now separate section
+  cards with their own heading, one-line description, accent colour (core blue, add-ons amber, delivery
+  options green, support grey) and a live "N selected - subtotal" pill. Currency is a slim bar above the
+  sections; Timeline + AI became "Delivery options" (documentation shown as always included).
+- Summary (6 "Your estimate") groups the lines under Core features / Add-ons and extras and shows Core,
+  Add-ons, Delivery options (with documentation/AI/rush indented below) and Support (one-time) subtotals
+  before the total; the email/copy text uses the same grouping.
+- Totals unchanged: 6 PHP-vs-JS cases identical, subtotals add up to the grand total. `calculator.css?v=3`,
+  `calculator.js?v=3`. The CostCalculator export now fails if a service has no core/addon `category`.
+- Checked with ClaudeTester at 1280 px and 360 px: no horizontal scroll, no console messages, USD notes,
+  mailto button and the phone total bar unchanged.
 
 2026-11-19 (YouTube promo videos, remaining 3 games):
 - `tools/game_videos.json` now has a landscape promo for every game: Arrows `npRGi8CoUEU`, Bricks Breaker
