@@ -187,6 +187,14 @@ the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
 
+2026-11-19 (cost calculator follow-up, QA):
+- Summary "Add-ons and extras" lines were hidden: the line list had a 280-420 px inner scroll box, so with a
+  project type selected the add-on lines sat below its fold. The box is gone; every line is always shown.
+- The desktop sticky summary never actually stuck (its column was only as tall as the card). `.calc-aside` now
+  stretches, and `fitSummary()` makes a tall summary stick by its bottom edge (total + buttons stay visible).
+- Email/Copy text already listed add-ons (checked: 6 of 6). Parity 6/6 unchanged. `calculator.css?v=5`,
+  `calculator.js?v=4`. Checked at 1280 px and 360 px, no horizontal scroll, no console messages.
+
 2026-11-19 (Entity Corporation, Entity TaskList 61):
 - Résumé: new "Entity Corporation" section after Featured Projects (`#entity-corporation`): logo, one-line
   description, four `.project-item` cards (Entity Games - 7 Android games; Entity SVNWorkflow VS Code

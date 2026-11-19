@@ -66,7 +66,11 @@ prices in" + `.seg` pills + USD note), then `.calc-sec` section cards, each with
 circle, checkbox colour): type `--line`, core `--blue`, add-ons `--amber`, options `--ok`, support `--muted`.
 The summary repeats them as 9 px square dots (`.is-core` / `.is-addon` / `.is-options` / `.is-support`
 set `--dot`) on the `.sum-group` headings and the `.is-sub` subtotal rows; `.is-part` rows (documentation,
-AI, rush) are indented under Delivery options. Core vs add-on comes only from `services[].category`. Under 980 px a fixed `.calc-dock` shows the live total + "View estimate" and hides
+AI, rush) are indented under Delivery options. Core vs add-on comes only from `services[].category`.
+`.sum-lines` never scrolls on its own (every selected line is always rendered). From 980 px `.calc-aside`
+stretches to the column height so `.calc-summary` can stick, and `fitSummary()` in `calculator.js` sets its
+`top` to `min(16px, window height - summary height - 16px)`: a summary taller than the window sticks by its
+bottom edge, so the total and buttons stay on screen and the top lines are reached by scrolling the page. Under 980 px a fixed `.calc-dock` shows the live total + "View estimate" and hides
 itself (IntersectionObserver) while the summary is on screen. Blocks: `.seg` (currency radios as pills),
 `.calc-note` (amber left border; the USD time-zone note), `.svc` rows (checkbox + name, qty + unit, cost;
 stacks under 600 px), `.support-list`, `.sum-lines`, `.sum-table` (`.is-total` row in the display font),

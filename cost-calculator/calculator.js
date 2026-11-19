@@ -333,6 +333,15 @@
 
         $('mail').href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Project estimate: ' + templateName() + ' (' + money(r.grandTotal) + ')') + '&body=' + encodeURIComponent(summaryText(r));
         $('copy-status').textContent = '';
+        fitSummary();
+    }
+
+    // Desktop: the summary is sticky. When it is taller than the window (many lines), a negative `top` makes it
+    // stick by its bottom edge instead, so every line can be reached by scrolling the page and the total and
+    // buttons stay on screen - no inner scroll box that hides lines. Phones: not sticky, `top` has no effect.
+    function fitSummary() {
+        var box = $('summary');
+        box.style.top = Math.min(16, window.innerHeight - box.offsetHeight - 16) + 'px';
     }
 
     function summaryText(r) {
@@ -418,6 +427,7 @@
             }).observe($('summary'));
         }
 
+        window.addEventListener('resize', fitSummary);
         syncControls();
         update();
     }
