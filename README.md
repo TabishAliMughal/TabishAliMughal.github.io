@@ -187,6 +187,14 @@ the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
 
+2026-11-20 (Entity Corporation wording, Entity TaskList 64):
+- Résumé `#entity-corporation`: role line **Founder** / *Entity Corporation* (same `.experience-title` /
+  `.experience-company` style as Professional Experience, no date), inside a new `.entity-role` block next to the
+  logo. Intro now reads "I build apps through AI-assisted development (vibe coding) and publish them under Entity
+  Corporation." (the user's own description).
+- Home `.entity-brand` strip says the same: "Founder, Entity Corporation." plus the vibe-coding sentence.
+- Checked at 1280 px and 360 px and in print media: no horizontal scroll, no console messages.
+
 2026-11-19 (cost calculator follow-up, QA):
 - Summary "Add-ons and extras" lines were hidden: the line list had a 280-420 px inner scroll box, so with a
   project type selected the add-on lines sat below its fold. The box is gone; every line is always shown.

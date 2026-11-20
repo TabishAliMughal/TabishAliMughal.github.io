@@ -43,8 +43,11 @@ Entity Corporation (2026-11-19): the parent-brand logo is `assets/images/entity/
 `--icon-radius` + `--icon-shadow` like the app logos). Home: `.entity-brand` (`style.css`) right under the
 `#apps` header - `--surface` card, amber left border, 64 px logo (48 px under 520 px) + one sentence.
 Résumé: `#entity-corporation` section after Featured Projects - `.entity-head` (72 px `.entity-logo`, 56 px on
-phones and in print, + `.entity-tagline`), the existing `.projects-grid` / `.project-item` / `.tech-tag`
-cards, and an `.entity-more` line. Only facts from the Entity README/docs; no titles or dates.
+phones and in print, + `.entity-role`: a "Founder" `.experience-title`, an "Entity Corporation"
+`.experience-company` and the `.entity-tagline` sentence), the existing `.projects-grid` / `.project-item` /
+`.tech-tag` cards, and an `.entity-more` line. Only facts from the Entity README/docs. The role is Founder with
+no start date (user's choice, 2026-11-20). Describe the work as apps built through AI-assisted development (vibe
+coding) and published under Entity Corporation; do not call it "open source".
 
 Nav: one row of links (`white-space: nowrap`) from 1141 px up; below that the hamburger menu (the full row
 measures ~1080 px + gutters, so keep link labels short - e.g. "Pricing" for the cost calculator). Re-measure

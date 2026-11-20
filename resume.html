@@ -135,8 +135,9 @@
         /* Entity Corporation: logo + one-line description, then .project-item cards */
         .entity-head { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
         .entity-logo { width: 72px; height: 72px; flex-shrink: 0; border-radius: 22%; box-shadow: var(--icon-shadow); }
-        .entity-tagline { color: var(--muted); }
-        .entity-tagline strong { color: var(--text); font-weight: 600; }
+        .entity-role { min-width: 0; }
+        .entity-role .experience-title { margin-top: 0; }
+        .entity-tagline { color: var(--muted); margin-top: 6px; }
         .entity-more { margin-top: 12px; color: var(--muted); font-size: 0.9rem; }
         .entity-more strong { color: var(--text); font-weight: 600; }
         /* Top bar: tabs + actions */
@@ -546,7 +547,11 @@
             <h3 class="section-title">Entity Corporation</h3>
             <div class="entity-head">
                 <img class="entity-logo" src="assets/images/entity/entity-corporation-256.webp" width="72" height="72" alt="Entity Corporation logo">
-                <p class="entity-tagline"><strong>My own product label.</strong> Apps and developer tools I design, build and publish independently under the Entity name.</p>
+                <div class="entity-role">
+                    <div class="experience-title">Founder</div>
+                    <div class="experience-company">Entity Corporation</div>
+                    <p class="entity-tagline">I build apps through AI-assisted development (vibe coding) and publish them under Entity Corporation.</p>
+                </div>
             </div>
             <div class="projects-grid">
                 <div class="project-item">
