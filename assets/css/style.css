@@ -550,7 +550,8 @@ p { margin: 0 0 1em; }
 }
 .app-actions .app-store-badge { font-size: 0.8rem; padding: 0.35rem 0.65rem; }
 .app-privacy { font-size: var(--step--1); }
-.apps-more { margin: 28px 0 0; }
+.apps-more { margin: 28px 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+.entity-brand .play-dev-link { white-space: nowrap; }
 
 @media (max-width: 520px) {
     .apps-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -558,6 +559,7 @@ p { margin: 0 0 1em; }
     .app-title { font-size: 1rem; margin-top: 10px; }
     .app-description { font-size: 0.85rem; }
     .app-store-badge { font-size: 0.78rem; padding: 0.35rem 0.6rem; }
+    .apps-more .btn { width: 100%; }
 }
 @media (max-width: 359px) {
     .apps-grid { grid-template-columns: 1fr; }

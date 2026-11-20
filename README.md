@@ -81,6 +81,11 @@ When a game is live, paste its listing URL for that slug in `assets/js/apps-data
 
 Commit and push. The badge becomes "Get it on Google Play" on both the home card and the game page.
 
+The **Google Play developer page** (`https://play.google.com/store/apps/dev?id=8198153788316941090`) is `window.ENTITY_PLAY_DEVELOPER_URL` in the same
+file. Every link to it has class `play-dev-link` and the URL also written in its `href` (no-JS fallback,
+and the résumé, which loads no JS); `apps.js` overwrites the href from `apps-data.js`. If the URL ever
+changes, update `apps-data.js` and `grep -r play-dev-link` for the hard-coded fallbacks.
+
 ## Adding a VS Code extension (one entry)
 
 Add one object to `window.VSCODE_EXTENSIONS` in `assets/js/extensions-data.js` (facts only, from the
@@ -186,6 +191,15 @@ contrast; amber focus ring; `prefers-reduced-motion` respected. Full token table
 the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
+
+2026-11-20 (Google Play developer page, Entity TaskList 65):
+- Developer page `https://play.google.com/store/apps/dev?id=8198153788316941090` linked from: home hero socials (Play icon), the `.entity-brand` strip, an
+  #apps "View all on Google Play" button (next to "All app privacy policies"), the Contact list
+  ("Google Play" item), the home footer, the résumé `#entity-corporation` section, and every game page
+  footer ("More from Entity on Google Play"). Per-game Play URLs stay empty (apps not in Production yet).
+- URL stored once as `window.ENTITY_PLAY_DEVELOPER_URL` in `assets/js/apps-data.js`; `apps.js` sets the
+  href of every `.play-dev-link` (the HTML also carries it as the no-JS fallback; the résumé has no JS).
+  `style.css` `?v=8`, `apps-data.js` / `apps.js` `?v=2`.
 
 2026-11-20 (Entity Corporation wording, Entity TaskList 64):
 - Résumé `#entity-corporation`: role line **Founder** / *Entity Corporation* (same `.experience-title` /

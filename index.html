@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/tokens.css?v=3">
-    <link rel="stylesheet" href="assets/css/style.css?v=7">
+    <link rel="stylesheet" href="assets/css/style.css?v=8">
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -70,6 +70,9 @@
                     </a>
                     <a href="https://www.facebook.com/TabishAliMughal/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
                         <i class="fab fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://play.google.com/store/apps/dev?id=8198153788316941090" target="_blank" rel="noopener" class="social-link play-dev-link" aria-label="Google Play developer page (opens in a new tab)">
+                        <i class="fab fa-google-play" aria-hidden="true"></i>
                     </a>
                     <a href="mailto:tabishalimughal@gmail.com" class="social-link" aria-label="Email">
                         <i class="fas fa-envelope" aria-hidden="true"></i>
@@ -530,7 +533,8 @@
                 <img class="entity-brand-logo" src="assets/images/entity/entity-corporation-256.webp" width="64" height="64" alt="Entity Corporation logo" loading="lazy">
                 <p><strong>Founder, Entity Corporation.</strong> I build apps through AI-assisted development (vibe coding) and publish them under Entity Corporation,
                     including these games, the <a href="#extensions">Entity SVNWorkflow</a> VS Code extension and the
-                    <a href="cost-calculator/">project cost calculator</a>.</p>
+                    <a href="cost-calculator/">project cost calculator</a>.
+                    <a class="play-dev-link" href="https://play.google.com/store/apps/dev?id=8198153788316941090" target="_blank" rel="noopener"><i class="fab fa-google-play" aria-hidden="true"></i> Google Play developer page</a></p>
             </aside>
             <div class="apps-grid">
                 <article class="app-card" id="app-entity-arrows" data-app="entity-arrows">
@@ -617,7 +621,10 @@
                     </div>
                 </article>
             </div>
-            <p class="apps-more"><a href="privacy/">All app privacy policies</a></p>
+            <p class="apps-more">
+                <a class="btn btn-secondary play-dev-link" href="https://play.google.com/store/apps/dev?id=8198153788316941090" target="_blank" rel="noopener" aria-label="View all Entity apps on Google Play (opens in a new tab)"><i class="fab fa-google-play" aria-hidden="true"></i> View all on Google Play</a>
+                <a class="apps-privacy-all" href="privacy/">All app privacy policies</a>
+            </p>
         </div>
     </section>
 
@@ -686,6 +693,13 @@
                         </div>
                     </li>
                     <li class="contact-item">
+                        <div class="contact-icon" aria-hidden="true"><i class="fab fa-google-play"></i></div>
+                        <div class="contact-details">
+                            <h3>Google Play</h3>
+                            <p><a class="play-dev-link" href="https://play.google.com/store/apps/dev?id=8198153788316941090" target="_blank" rel="noopener">Entity developer page</a></p>
+                        </div>
+                    </li>
+                    <li class="contact-item">
                         <div class="contact-icon" aria-hidden="true"><i class="fab fa-facebook"></i></div>
                         <div class="contact-details">
                             <h3>Facebook</h3>
@@ -740,14 +754,15 @@
                     <a href="tel:+923112918396">+92 311-2918396</a>
                     <a href="https://github.com/TabishAliMughal" target="_blank" rel="noopener">GitHub</a>
                     <a href="https://www.facebook.com/TabishAliMughal/" target="_blank" rel="noopener">Facebook</a>
+                    <a class="play-dev-link" href="https://play.google.com/store/apps/dev?id=8198153788316941090" target="_blank" rel="noopener">Google Play</a>
                 </nav>
             </div>
         </div>
     </footer>
 
     <script src="assets/js/script.js?v=2"></script>
-    <script src="assets/js/apps-data.js"></script>
-    <script src="assets/js/apps.js"></script>
+    <script src="assets/js/apps-data.js?v=2"></script>
+    <script src="assets/js/apps.js?v=2"></script>
     <script src="assets/js/extensions-data.js"></script>
     <script src="assets/js/extensions.js"></script>
 </body>

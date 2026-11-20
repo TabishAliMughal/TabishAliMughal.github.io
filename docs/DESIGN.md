@@ -83,6 +83,18 @@ stacks under 600 px), `.support-list`, `.sum-lines`, `.sum-table` (`.is-total` r
 Home links: nav "Pricing", footer "Cost Calculator", and `.calc-cta` in `#contact` (`style.css`: surface
 card with an amber left border, calculator icon, text, primary button; button goes full-width under 760 px).
 
+### Google Play developer page links (2026-11-20)
+
+`https://play.google.com/store/apps/dev?id=8198153788316941090` (canonical, no `&pli=1`), stored as `window.ENTITY_PLAY_DEVELOPER_URL` in
+`assets/js/apps-data.js`; every link carries class `.play-dev-link` and the same URL as its fallback `href`.
+Placement: hero `.social-link` (Font Awesome `fab fa-google-play`), end of the `.entity-brand` sentence (icon +
+"Google Play developer page", `nowrap`), `#apps` `.apps-more` (flex row: `.btn.btn-secondary` "View all on
+Google Play" - same pattern as the extensions' "View all on VS Code Marketplace" - plus the privacy-policies
+link; the button goes full-width under 520 px), a "Google Play" `.contact-item`, the home footer, the résumé
+`#entity-corporation` (an `.entity-more` line with the URL as text, `.entity-play` wraps anywhere; prints
+readable), and each game page `<footer>` ("More from Entity on Google Play"). All open in a new tab with
+`rel="noopener"`.
+
 ### VS Code Extensions section (`#extensions`)
 
 Data-driven: `assets/js/extensions-data.js` holds `window.VSCODE_EXTENSIONS` (one object per extension:
@@ -121,7 +133,8 @@ the extension's `media/svn.svg` branch glyph stroked in the `--grad` colours.
 5. Keep the empty `<!-- screenshots:start -->...<!-- screenshots:end -->` and
    `<!-- video:start -->...<!-- video:end -->` markers (after "About the game"), add
    `"<slug>": ""` to `tools/game_videos.json`, then run `python tools/sync_screenshots.py`.
-6. Check at 360 px and 1280 px (ClaudeTester, see below): no horizontal scroll, no broken images.
+6. Keep the footer's `.play-dev-link` ("More from Entity on Google Play") that comes with the copied page.
+7. Check at 360 px and 1280 px (ClaudeTester, see below): no horizontal scroll, no broken images.
 
 Useful page blocks in `entity.css`: `.card`, `.hero`, `.tagline`, `.actions`, `.chips`,
 `.modes` > `.mode` (two-up blocks; `.mode.is-new` + `<span class="tag-new">New</span>` for a new
