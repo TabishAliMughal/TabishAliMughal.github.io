@@ -95,6 +95,27 @@ link; the button goes full-width under 520 px), a "Google Play" `.contact-item`,
 readable), and each game page `<footer>` ("More from Entity on Google Play"). All open in a new tab with
 `rel="noopener"`.
 
+### Closed-testing (beta) links (2026-11-20)
+
+Data: `testingUrl` per slug in `window.ENTITY_APPS` (`assets/js/apps-data.js`, next to `playUrl`), format
+`https://play.google.com/apps/testing/<package>`; also written into the HTML as the no-JS fallback.
+`assets/js/apps.js` sets the href of every `.app-test-link` inside a `[data-app]` element, or, when
+`testingUrl` is empty, removes `.app-test-link` / `.app-test-help` and any `.beta-item` row (and sets
+`hidden` on `#beta-test` when no row is left). The Production badge selector is
+`.app-store-badge:not(.app-test-link)`, so both can coexist.
+
+- Button: `a.app-store-badge.is-live.app-test-link` (the existing live Play badge look, `fab fa-android`
+  icon, "Join the beta (Android)"), placed after the "Coming soon" badge in each `.app-actions` card and
+  each game-page hero `.actions`; aria-label "Join the beta (Android): <Game> on Google Play (opens in a
+  new tab)". Game pages add `a.app-test-help` "How to join the beta" -> `/#beta-test`.
+- Help block (`style.css`): `aside.beta-help#beta-test` between `.apps-grid` and `.apps-more` - `--surface`,
+  `--line` border, 3 px amber left border, `--radius-m` (same as `.entity-brand`); `h3` in the display
+  font with an amber Android icon; intro + `.beta-steps` (`ol`, blue markers) + `.beta-note` (invitation:
+  email the Play Gmail to the site's existing `mailto:` address) + `.beta-links` (grid, min 220 px, one
+  column under 520 px) of `li.beta-item[data-app]` > `.btn.btn-secondary.btn-sm.app-test-link`.
+- Print: `.beta-help` avoids page breaks, `.beta-links` is two columns and each button prints its URL
+  (`::after { content: attr(href) }`).
+
 ### VS Code Extensions section (`#extensions`)
 
 Data-driven: `assets/js/extensions-data.js` holds `window.VSCODE_EXTENSIONS` (one object per extension:
@@ -128,7 +149,8 @@ the extension's `media/svn.svg` branch glyph stroked in the `--grad` colours.
    512 px with the same 22% transparent rounded corners; CSS shows it with `--icon-radius` (22%)
    and `--icon-shadow` from `tokens.css`, never a background tile or border.
 4. Home page: add an `<article class="app-card" id="app-<slug>" data-app="<slug>">` to `#apps` in
-   `index.html` (copy an existing one), add `"<slug>": ""` to `assets/js/apps-data.js`, add the policy
+   `index.html` (copy an existing one), add `"<slug>": { playUrl: "", testingUrl: "" }` to `assets/js/apps-data.js` (plus, while it is in
+   closed testing, the `.app-test-link` button and a `#beta-test` row - copy an existing game's), add the policy
    to `privacy/index.html`, and a redirect stub `privacy/<slug>/index.html` only if an old link exists.
 5. Keep the empty `<!-- screenshots:start -->...<!-- screenshots:end -->` and
    `<!-- video:start -->...<!-- video:end -->` markers (after "About the game"), add

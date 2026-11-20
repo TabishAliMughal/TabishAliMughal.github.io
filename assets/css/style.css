@@ -565,6 +565,53 @@ p { margin: 0 0 1em; }
     .apps-grid { grid-template-columns: 1fr; }
 }
 
+/* "Help test Entity games" (#beta-test): same card as .entity-brand; links from testingUrl in apps-data.js */
+.beta-help {
+    margin: 28px 0 0;
+    padding: 20px 22px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--amber);
+    border-radius: var(--radius-m);
+}
+.beta-help h3 { font: 600 var(--step-1)/1.3 var(--font-display); margin: 0 0 8px; }
+.beta-help h3 i { color: var(--amber); margin-right: 4px; }
+.beta-help p { margin: 0 0 12px; color: var(--muted); max-width: var(--measure); }
+.beta-steps { margin: 0 0 12px; padding-left: 1.3em; color: var(--text); max-width: var(--measure); }
+.beta-steps li { margin: 0.3em 0; }
+.beta-steps li::marker { color: var(--blue); font-weight: 600; }
+.beta-steps strong { font-weight: 600; }
+.beta-help .beta-note { margin: 0; }
+.beta-note a { overflow-wrap: anywhere; }
+.beta-links {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+}
+.beta-links li { margin: 0; }
+.beta-links .btn { width: 100%; justify-content: flex-start; }
+@media (max-width: 520px) {
+    .beta-help { padding: 16px 14px; }
+    .beta-links { grid-template-columns: 1fr; }
+}
+/* On paper the buttons can't be tapped, so print each opt-in URL under the game name */
+@media print {
+    .beta-help { break-inside: avoid; }
+    .beta-links { grid-template-columns: 1fr 1fr; }
+    .beta-links .btn { flex-wrap: wrap; min-height: 0; }
+    .beta-links .btn::after {
+        content: attr(href);
+        flex-basis: 100%;
+        font-weight: 400;
+        font-size: 0.75rem;
+        color: var(--muted);
+        overflow-wrap: anywhere;
+    }
+}
+
 /* ---------- VS Code Extensions (cards rendered by assets/js/extensions.js) ---------- */
 .ext-grid {
     display: grid;

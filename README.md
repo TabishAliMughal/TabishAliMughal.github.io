@@ -20,8 +20,8 @@ Static HTML/CSS/JS, no build step. Repo: `TabishAliMughal/TabishAliMughal.github
 | `assets/css/tokens.css` | Design tokens and shared base used by every page |
 | `assets/css/style.css` | Home page layout |
 | `assets/css/entity.css` | Game pages, privacy pages and `/privacy/` |
-| `assets/js/apps-data.js` | Google Play URLs per game - the only place they are stored |
-| `assets/js/apps.js` | Turns the "Coming soon" badge into a live Play link when a URL is set |
+| `assets/js/apps-data.js` | Google Play URLs per game (`playUrl` production listing, `testingUrl` closed-testing opt-in) - the only place they are stored |
+| `assets/js/apps.js` | Turns the "Coming soon" badge into a live Play link when `playUrl` is set; sets or removes the beta links from `testingUrl` |
 | `assets/js/extensions-data.js` | VS Code extensions (one entry each) + publisher URL - the only place they are stored |
 | `assets/js/extensions.js` | Renders the `#extensions` cards from `extensions-data.js` |
 | `assets/images/extensions/` | Extension icons (square SVG or 256 px WebP) |
@@ -73,13 +73,27 @@ Run it from the repo root and open http://127.0.0.1:8765/. Links are root-relati
 
 ## Adding a Play Store link (one line)
 
-When a game is live, paste its listing URL for that slug in `assets/js/apps-data.js`:
+When a game is live, paste its listing URL as that slug's `playUrl` in `assets/js/apps-data.js`:
 
 ```js
-"entity-sudoku": "https://play.google.com/store/apps/details?id=com.entity.sudoku.game",
+"entity-sudoku": {
+    playUrl: "https://play.google.com/store/apps/details?id=com.entity.sudoku.game",
+    testingUrl: "https://play.google.com/apps/testing/com.entity.sudoku.game"
+},
 ```
 
 Commit and push. The badge becomes "Get it on Google Play" on both the home card and the game page.
+
+## Closed testing (beta) links
+
+`testingUrl` is the Play closed-testing opt-in page, `https://play.google.com/apps/testing/<package>`. It
+drives the blue "Join the beta (Android)" button on the home card and the game page, the game page's "How
+to join the beta" link (to `/#beta-test`), and the game's row in the home "Help test Entity games" block
+(`#beta-test`, under the Apps & Games grid: 4 steps + "access is by invitation - email your Play Gmail").
+The same URL is hard-coded in the HTML as the no-JS fallback, so keep both in sync. When testing ends,
+set `testingUrl: ""`: `apps.js` removes that game's beta button, link and row (and hides `#beta-test`
+once no row is left). Testers must be on the closed-testing tester list in Play Console, otherwise the
+opt-in page says they are not a tester.
 
 The **Google Play developer page** (`https://play.google.com/store/apps/dev?id=8198153788316941090`) is `window.ENTITY_PLAY_DEVELOPER_URL` in the same
 file. Every link to it has class `play-dev-link` and the URL also written in its `href` (no-JS fallback,
@@ -172,7 +186,7 @@ Commit the page(s) and the `screenshots/` folder, then push.
 3. Add the game to `LOGOS` in `tools/normalize_app_logos.py` and run `python tools/normalize_app_logos.py`
    (writes `assets/images/apps/<slug>.webp`; never hand-export logos).
 4. Add an `<article class="app-card" id="app-<slug>" data-app="<slug>">` to `#apps` in `index.html`,
-   `"<slug>": ""` to `assets/js/apps-data.js`, the policy to `privacy/index.html`, and the package to
+   `"<slug>": { playUrl: "", testingUrl: "" }` to `assets/js/apps-data.js`, the policy to `privacy/index.html`, and the package to
    `entity/games/manifest.json`.
 5. Check at 360 px and 1280 px: no horizontal scroll, no broken images.
 
@@ -191,6 +205,18 @@ contrast; amber focus ring; `prefers-reduced-motion` respected. Full token table
 the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
+
+2026-11-20 (Google Play closed-testing links, Entity TaskList 72):
+- `assets/js/apps-data.js` is now `window.ENTITY_APPS = { "<slug>": { playUrl, testingUrl } }` (was
+  `ENTITY_PLAY_URLS`); all 7 games have `testingUrl = https://play.google.com/apps/testing/<package>`.
+  `playUrl` stays empty, so the Production badge still says "Coming soon to Google Play".
+- "Join the beta (Android)" button (`.app-store-badge.is-live.app-test-link`, Android icon) on every home
+  card and game-page hero; game pages add a "How to join the beta" link to `/#beta-test`.
+- New `#beta-test` "Help test Entity games" block under the #apps grid (`.beta-help`, same card as
+  `.entity-brand`): how-to steps, invitation note with the site's existing contact email, 7 game buttons.
+  Print shows each opt-in URL under the game name.
+- `style.css?v=9`, `apps-data.js` / `apps.js` `?v=3`. Checked with ClaudeTester at 1280 px and 360 px (home
+  + all 7 game pages: right package per page, no horizontal scroll, no console errors) and in print (PDF).
 
 2026-11-20 (Google Play developer page, Entity TaskList 65):
 - Developer page `https://play.google.com/store/apps/dev?id=8198153788316941090` linked from: home hero socials (Play icon), the `.entity-brand` strip, an
