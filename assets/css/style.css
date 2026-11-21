@@ -65,7 +65,7 @@ p { margin: 0 0 1em; }
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
-    padding: 8px 10px;
+    padding: 8px 8px;
     border-radius: var(--radius-s);
     position: relative;
     white-space: nowrap;
@@ -75,7 +75,7 @@ p { margin: 0 0 1em; }
 .nav-link.active::after {
     content: "";
     position: absolute;
-    left: 10px; right: 10px; bottom: 2px;
+    left: 8px; right: 8px; bottom: 2px;
     height: 2px;
     background: var(--grad);
 }
@@ -111,8 +111,9 @@ p { margin: 0 0 1em; }
 .hamburger.active .bar:nth-child(2) { opacity: 0; }
 .hamburger.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Hamburger below 1140 px: the full link row needs ~1080 px plus gutters (measured 2026-11-18). */
-@media (max-width: 1140px) {
+/* Hamburger at 1160 px and below: the full link row (incl. "Entity", 8 px link padding) needs ~1075 px plus gutters
+   (measured 2026-11-21: overflows by 5 px at 1141 px, fits from 1161 px). */
+@media (max-width: 1160px) {
     .hamburger { display: inline-flex; }
     .nav-menu {
         position: absolute;

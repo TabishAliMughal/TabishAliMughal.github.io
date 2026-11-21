@@ -13,6 +13,7 @@ Static HTML/CSS/JS, no build step. Repo: `TabishAliMughal/TabishAliMughal.github
 | Path | Purpose |
 |---|---|
 | `index.html` | Home page: hero, About, Experience, Skills, AI-Enhanced Development, Projects, Apps & Games (`#apps`), VS Code Extensions (`#extensions`), Contact (with the cost-calculator call-to-action) |
+| `entity/index.html` | Entity Corporation studio page (https://tabishalimughal.github.io/entity/): hero, 7-game grid (Play + beta links from `apps-data.js`), Our approach, Contact. Layout in `assets/css/company.css` |
 | `cost-calculator/` | Client cost calculator (https://tabishalimughal.github.io/cost-calculator/): `index.html`, `calculator.js` (UI), `cost-model.js` (formula), `pricing-data.js` (GENERATED prices) |
 | `assets/css/calculator.css` | Cost calculator page layout (loaded after tokens.css + entity.css) |
 | `assets/images/entity/` | Entity Corporation logo (`entity-corporation-256.webp`, copied from `Infra\LogoTemplate\entity_brand\out\entity-corporation\`) |
@@ -205,6 +206,18 @@ contrast; amber focus ring; `prefers-reduced-motion` respected. Full token table
 the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
+
+2026-11-21 (Entity Corporation page, Entity TaskList 89):
+- New `/entity/` page (`entity/index.html` + `assets/css/company.css?v=1`): hero with the Entity Corporation logo and
+  tagline, "Our games" grid of all 7 games (icon, blurb, game page, Google Play badge and "Join the beta" from
+  `apps-data.js` via `apps.js`), "Our approach" (kid-safe, child-directed non-personalised ads, no tracking,
+  offline-first, 5 difficulties x 50 levels), Contact (existing email/GitHub/Play developer page), privacy links,
+  and title/description/canonical/OG tags.
+- Linked from the home nav ("Entity"), the `.entity-brand` strip, an `#apps` button, the home footer and the résumé
+  Entity Corporation section. Nav link padding 10 -> 8 px and the hamburger breakpoint 1140 -> 1160 px so the longer row
+  fits; `style.css?v=10`.
+- Checked with ClaudeTester at 1280 px and 360 px (no horizontal scroll, no console messages, 7 correct beta URLs, all
+  internal links 200). Home nav was also checked at 1161 px and 1160 px.
 
 2026-11-20 (Google Play closed-testing links, Entity TaskList 72):
 - `assets/js/apps-data.js` is now `window.ENTITY_APPS = { "<slug>": { playUrl, testingUrl } }` (was

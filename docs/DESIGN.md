@@ -49,12 +49,28 @@ phones and in print, + `.entity-role`: a "Founder" `.experience-title`, an "Enti
 no start date (user's choice, 2026-11-20). Describe the work as apps built through AI-assisted development (vibe
 coding) and published under Entity Corporation; do not call it "open source".
 
-Nav: one row of links (`white-space: nowrap`) from 1141 px up; below that the hamburger menu (the full row
-measures ~1080 px + gutters, so keep link labels short - e.g. "Pricing" for the cost calculator). Re-measure
-if you add a link.
+Nav: one row of links (`white-space: nowrap`, 8 px side padding) from 1161 px up; at 1160 px and below the
+hamburger menu (the full row, incl. the "Entity" link added 2026-11-21, measures ~1075 px + gutters, so keep
+link labels short - e.g. "Pricing" for the cost calculator). Re-measure if you add a link.
 
 Skills: five `.skill-category` cards (Backend, Frontend, Database & Tools, Mobile & Others, Cloud & Hosting),
 each item = Font Awesome icon + name + `.skill-level` bar (`data-level` 0-100, drawn by `script.js`).
+
+### Entity Corporation page (`/entity/`, 2026-11-21)
+
+`entity/index.html` is the studio page (https://tabishalimughal.github.io/entity/). It uses the game-page shell
+(`.site-bar`, `.crumbs`, `.card`, `footer`, tokens.css + entity.css) plus `assets/css/company.css`, which widens the page
+to 1080 px (`body.company`) and adds the following blocks:
+- `.company-hero`: 160 px logo (96 px under 640 px) + amber `.eyebrow` + gradient `h1` + tagline + two buttons (games, Play developer page).
+- `#games` `.games-grid`: 7 `.game-card` items (auto-fill, min 220 px; 2 columns under 520 px, 1 under 360 px). Each has
+  `data-app="<slug>"`, so `apps.js` applies `playUrl` (the "Coming soon" badge goes live) and `testingUrl` (the beta button) from
+  `apps-data.js`. The testing URLs are also hard-coded as the no-JS fallback. The icon link goes to the game page.
+- `#approach`: `.approach` icon list (kid-safe, child-safe ads, no tracking, offline-first, 5 difficulties x 50 levels).
+- `#contact`: `.contact-list` with only the contact details already on the site (email, GitHub, Play developer page, `/privacy/`).
+- Title, description, canonical and OG/Twitter tags (image = the 256 px logo).
+Linked from the home nav ("Entity"), the `.entity-brand` strip, an `#apps` "Entity Corporation page" button, the home
+footer, and the résumé `#entity-corporation` section (company name + a "Company page" line, absolute URL for print).
+When a game is added, add a card here too.
 
 ### Cost calculator (`/cost-calculator/`)
 
