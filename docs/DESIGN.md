@@ -58,7 +58,7 @@ each item = Font Awesome icon + name + `.skill-level` bar (`data-level` 0-100, d
 
 ### Entity Corporation page (`/entity/`, 2026-11-21)
 
-`entity/index.html` is the studio page (https://tabishalimughal.github.io/entity/). It uses the game-page shell
+`entity/index.html` is the app studio page (https://tabishalimughal.github.io/entity/). It uses the game-page shell
 (`.site-bar`, `.crumbs`, `.card`, `footer`, tokens.css + entity.css) plus `assets/css/company.css`, which widens the page
 to 1080 px (`body.company`) and adds the following blocks:
 - `.company-hero`: 160 px logo (96 px under 640 px) + amber `.eyebrow` + gradient `h1` + tagline + two buttons (games, Play developer page).
