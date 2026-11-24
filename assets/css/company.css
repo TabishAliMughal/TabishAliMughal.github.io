@@ -38,6 +38,9 @@
 /* Games grid */
 .company-section { margin: 40px 0 32px; }
 .section-lead { color: var(--muted); }
+/* Entity Games logo header above the cards */
+.games-brand { margin: 0 0 18px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.games-brand img { display: block; width: clamp(220px, 46vw, 420px); height: auto; }
 .games-grid {
     list-style: none;
     padding: 0;

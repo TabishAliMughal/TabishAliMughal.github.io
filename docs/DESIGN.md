@@ -72,6 +72,18 @@ Linked from the home nav ("Entity"), the `.entity-brand` strip, an `#apps` "Enti
 footer, and the résumé `#entity-corporation` section (company name + a "Company page" line, absolute URL for print).
 When a game is added, add a card here too.
 
+### Entity Games logo (`assets/images/entity/entity-games/`, 2026-11-24)
+
+"Entity Games" is the umbrella mark for the 7 games (Entity Corporation stays an app studio). Hand-built SVG, no fonts:
+the icon is a navy tile with a blue-to-amber gradient `E` (the Entity logo gradient), node dots, a block and an orbit ring;
+the wordmark is monoline paths (stroke 18, round caps) with "Games" in `--grad` colours.
+- `entity-games-icon.svg` (512 viewBox, works on any background), `entity-games-logo.svg` (lockup for dark backgrounds),
+  `entity-games-logo-light.svg` (navy text, for light backgrounds).
+- PNG exports (headless Chromium via ClaudeTester's Playwright): `entity-games-icon-512.png` (full-bleed, opaque 32-bit,
+  Play Games Services icon), `entity-games-feature-1024x500.png` (24-bit, no alpha, PGS feature graphic),
+  `entity-games-og-1200x630.png`. The 512 and 1024x500 are also in `D:\persional\Entity\docs\games\brand\` for Play Console.
+- Used on `/entity/` as `.games-brand` at the top of `#games` (width `clamp(220px, 46vw, 420px)`, rule underneath).
+
 ### Cost calculator (`/cost-calculator/`)
 
 Same shell as the game pages (`.site-bar`, `.crumbs`, `.card`, `footer`, tokens.css + entity.css), plus

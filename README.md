@@ -17,6 +17,7 @@ Static HTML/CSS/JS, no build step. Repo: `TabishAliMughal/TabishAliMughal.github
 | `cost-calculator/` | Client cost calculator (https://tabishalimughal.github.io/cost-calculator/): `index.html`, `calculator.js` (UI), `cost-model.js` (formula), `pricing-data.js` (GENERATED prices) |
 | `assets/css/calculator.css` | Cost calculator page layout (loaded after tokens.css + entity.css) |
 | `assets/images/entity/` | Entity Corporation logo (`entity-corporation-256.webp`, copied from `Infra\LogoTemplate\entity_brand\out\entity-corporation\`) |
+| `assets/images/entity/entity-games/` | Entity Games logo: SVG icon + lockups (dark/light) and PNG exports (512 icon, 1024x500 feature graphic, 1200x630 OG). See `docs/DESIGN.md` |
 | `resume.html` | Resume + cover letters (dark on screen, plain light A4 when printed) |
 | `assets/css/tokens.css` | Design tokens and shared base used by every page |
 | `assets/css/style.css` | Home page layout |
@@ -209,6 +210,10 @@ the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 2026-11-23 (Entity described as an app studio):
 - `/entity/` eyebrow "Indie game studio" -> "Independent app studio"; meta description now opens "Entity Corporation is an independent app studio." Individual games still call themselves games.
+
+2026-11-24 (Entity Games logo, Entity TaskList 117):
+- Added the Entity Games logo set (SVG icon, dark/light lockups, PNG 512 icon / 1024x500 feature graphic / 1200x630 OG) in
+  `assets/images/entity/entity-games/`, and a logo header at the top of the `/entity/` games section (`.games-brand`).
 
 2026-11-21 (Entity Corporation page, Entity TaskList 89):
 - New `/entity/` page (`entity/index.html` + `assets/css/company.css?v=1`): hero with the Entity Corporation logo and
