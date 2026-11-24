@@ -49,9 +49,13 @@ phones and in print, + `.entity-role`: a "Founder" `.experience-title`, an "Enti
 no start date (user's choice, 2026-11-20). Describe the work as apps built through AI-assisted development (vibe
 coding) and published under Entity Corporation; do not call it "open source".
 
-Nav: one row of links (`white-space: nowrap`, 8 px side padding) from 1161 px up; at 1160 px and below the
-hamburger menu (the full row, incl. the "Entity" link added 2026-11-21, measures ~1075 px + gutters, so keep
-link labels short - e.g. "Pricing" for the cost calculator). Re-measure if you add a link.
+Nav: one row of links (`white-space: nowrap`, 6 px side padding) from 1161 px up; at 1160 px and below the
+hamburger menu. Above 1160 px the logo + link row must fit in 1104 px (measured 2026-11-24: last link ends
+28 px before the container edge), so keep link labels short and re-measure if you add a link. The logo
+(`.nav-logo`) never shrinks. The "TAM" mark (`.nav-mark`, shared in tokens.css) is a fixed-size one-line box
+(`white-space: nowrap`, `overflow-wrap: normal`, `min-width: 4.4em`): links inherit `overflow-wrap: anywhere`,
+which once let a squeezed row wrap it to one letter per line. The sticky navbar uses a near-opaque background
+and no `backdrop-filter` (a blurred sticky bar left a stale full-width line across the text while scrolling).
 
 Skills: five `.skill-category` cards (Backend, Frontend, Database & Tools, Mobile & Others, Cloud & Hosting),
 each item = Font Awesome icon + name + `.skill-level` bar (`data-level` 0-100, drawn by `script.js`).

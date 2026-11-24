@@ -82,6 +82,24 @@ code {
     overflow-wrap: anywhere;
 }
 
+/* "TAM" mark in the nav (home, Entity, game, privacy and calculator pages). It sits inside a link, and
+   links get overflow-wrap: anywhere, which let a squeezed flex row wrap it to one letter per line.
+   Keep it on one line in a box that is the same size before and after the Unbounded web font loads. */
+.nav-mark {
+    display: inline-block;
+    flex: none;
+    min-width: 4.4em;
+    text-align: center;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    font: 700 0.75rem/1 var(--font-display);
+    letter-spacing: 0.04em;
+    padding: 7px 7px 6px;
+    border-radius: var(--radius-s);
+    border: 1.5px solid transparent;
+    background: linear-gradient(var(--bg), var(--bg)) padding-box, var(--grad) border-box;
+}
+
 .skip-link {
     position: absolute;
     left: 12px;

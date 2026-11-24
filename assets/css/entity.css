@@ -25,14 +25,7 @@
     color: var(--text);
     text-decoration: none;
     font-weight: 600;
-}
-.nav-mark {
-    font: 700 0.75rem/1 var(--font-display);
-    letter-spacing: 0.04em;
-    padding: 7px 7px 6px;
-    border-radius: var(--radius-s);
-    border: 1.5px solid transparent;
-    background: linear-gradient(var(--bg), var(--bg)) padding-box, var(--grad) border-box;
+    flex-shrink: 0;
 }
 .site-bar .bar-link { color: var(--muted); text-decoration: none; font-weight: 500; padding: 10px 0; }
 .site-bar .bar-link:hover { color: var(--text); }

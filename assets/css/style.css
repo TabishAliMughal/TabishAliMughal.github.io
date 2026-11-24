@@ -21,9 +21,9 @@ p { margin: 0 0 1em; }
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(10, 21, 40, 0.88);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    /* Near-opaque, no backdrop-filter: a blurred backdrop on a sticky bar left a stale full-width
+       line (its bottom edge) painted across the page while scrolling on some GPUs / display scales. */
+    background: rgba(10, 21, 40, 0.97);
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s;
 }
@@ -47,14 +47,7 @@ p { margin: 0 0 1em; }
     color: var(--text);
     text-decoration: none;
     font-weight: 600;
-}
-.nav-mark {
-    font: 700 0.75rem/1 var(--font-display);
-    letter-spacing: 0.04em;
-    padding: 7px 7px 6px;
-    border-radius: var(--radius-s);
-    border: 1.5px solid transparent;
-    background: linear-gradient(var(--bg), var(--bg)) padding-box, var(--grad) border-box;
+    flex-shrink: 0;
 }
 .nav-name { white-space: nowrap; }
 
@@ -65,7 +58,7 @@ p { margin: 0 0 1em; }
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
-    padding: 8px 8px;
+    padding: 8px 6px;
     border-radius: var(--radius-s);
     position: relative;
     white-space: nowrap;
@@ -111,8 +104,8 @@ p { margin: 0 0 1em; }
 .hamburger.active .bar:nth-child(2) { opacity: 0; }
 .hamburger.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Hamburger at 1160 px and below: the full link row (incl. "Entity", 8 px link padding) needs ~1075 px plus gutters
-   (measured 2026-11-21: overflows by 5 px at 1141 px, fits from 1161 px). */
+/* Hamburger at 1160 px and below. Above it the nav container is 1160 px wide (1104 px of content); the logo
+   plus the full link row (incl. "Entity" and "Pricing", 6 px link padding) must fit in that. */
 @media (max-width: 1160px) {
     .hamburger { display: inline-flex; }
     .nav-menu {

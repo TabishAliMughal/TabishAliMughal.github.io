@@ -210,6 +210,15 @@ the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
 
+2026-11-24 (nav fixes, ecosystem TaskList #127):
+- Full-width light line across the page while scrolling: the sticky navbar had `backdrop-filter: blur(10px)`, the only
+  full-viewport-wide layer above the content; it now uses a near-opaque background and no backdrop-filter.
+- "TAM" logo stacking one letter per line: links inherit `overflow-wrap: anywhere`, and since the "Pricing" link the
+  desktop nav row no longer fit, so the logo shrank and the mark wrapped. `.nav-mark` moved to tokens.css as a one-line
+  fixed-size box, `.nav-logo`/`.brand` no longer shrink, nav link padding 8 -> 6 px. CSS versions bumped
+  (tokens v4, style v11, entity v5). Checked home, /entity/, a game page, /cost-calculator/ and the resume at
+  1777/1366/1161/768/390 px: mark 52.8x27 px everywhere, no nav overflow, no horizontal scroll.
+
 2026-11-24 (ecosystem-wide Entity wording, ecosystem TaskList #126):
 - New `docs/entity-copy.md`: the one copy set for Entity Corporation (tagline "Simple, privacy-first apps for play, work and learning.", a 159-character meta/OG description, a hero paragraph, one line per branch) and the wording rules (app studio, never game studio; game-only claims stay with the games; no overclaiming).
 - `/entity/`: title/OG/Twitter title "Entity Corporation - independent app studio"; meta, OG and Twitter descriptions, hero tagline and paragraph, ecosystem lead, Games and AI Tools leads, contact line and footer now use the set. "Our approach" now starts with the all-app rules (privacy first, offline-first) and labels the game-only items (kid-safe games, child-safe ads in games); "5 difficulties x 50 levels" (not true for every game) became "Step-by-step difficulty".
