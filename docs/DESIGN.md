@@ -39,7 +39,7 @@ Skills, AI-Enhanced Development, Projects, Apps & Games (`#apps`), VS Code Exten
 All old anchors still work.
 
 Entity Corporation (2026-11-19): the parent-brand logo is `assets/images/entity/entity-corporation-256.webp`
-(copied from `Infra\LogoTemplate\entity_brand\out\entity-corporation\`, never edited here; shown with
+(copied from `Branding\logomaker\entity_brand\out\entity-corporation\`, never edited here; shown with
 `--icon-radius` + `--icon-shadow` like the app logos). Home: `.entity-brand` (`style.css`) right under the
 `#apps` header - `--surface` card, amber left border, 64 px logo (48 px under 520 px) + one sentence.
 Résumé: `#entity-corporation` section after Featured Projects - `.entity-head` (72 px `.entity-logo`, 56 px on
@@ -78,7 +78,10 @@ When a game is added, add a card here too.
 the icon is a navy tile with a blue-to-amber gradient `E` (the Entity logo gradient), node dots, a block and an orbit ring;
 the wordmark is monoline paths (stroke 18, round caps) with "Games" in `--grad` colours.
 - `entity-games-icon.svg` (512 viewBox, works on any background), `entity-games-logo.svg` (lockup for dark backgrounds),
-  `entity-games-logo-light.svg` (navy text, for light backgrounds).
+  `entity-games-logo-light.svg` (navy text, for light backgrounds; since 2026-11-24 "Games" uses a 5-stop OKLCH
+  blue-violet-pink-amber gradient, because the old two-stop `#1C74C9`→`#C77700` went grey-brown in the middle).
+- Master copies and the generator for every Entity branch logo now live in the Entity repo:
+  `D:\persional\Entity\Branding\logos\games\` (built by `Branding\logomaker\brands\build_logos.py`).
 - PNG exports (headless Chromium via ClaudeTester's Playwright): `entity-games-icon-512.png` (full-bleed, opaque 32-bit,
   Play Games Services icon), `entity-games-feature-1024x500.png` (24-bit, no alpha, PGS feature graphic),
   `entity-games-og-1200x630.png`. The 512 and 1024x500 are also in `D:\persional\Entity\docs\games\brand\` for Play Console.

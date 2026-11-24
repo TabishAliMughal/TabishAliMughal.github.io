@@ -16,7 +16,7 @@ Static HTML/CSS/JS, no build step. Repo: `TabishAliMughal/TabishAliMughal.github
 | `entity/index.html` | Entity Corporation app studio page (https://tabishalimughal.github.io/entity/): hero, 7-game grid (Play + beta links from `apps-data.js`), Our approach, Contact. Layout in `assets/css/company.css` |
 | `cost-calculator/` | Client cost calculator (https://tabishalimughal.github.io/cost-calculator/): `index.html`, `calculator.js` (UI), `cost-model.js` (formula), `pricing-data.js` (GENERATED prices) |
 | `assets/css/calculator.css` | Cost calculator page layout (loaded after tokens.css + entity.css) |
-| `assets/images/entity/` | Entity Corporation logo (`entity-corporation-256.webp`, copied from `Infra\LogoTemplate\entity_brand\out\entity-corporation\`) |
+| `assets/images/entity/` | Entity Corporation logo (`entity-corporation-256.webp`, copied from `Branding\logomaker\entity_brand\out\entity-corporation\`) |
 | `assets/images/entity/entity-games/` | Entity Games logo: SVG icon + lockups (dark/light) and PNG exports (512 icon, 1024x500 feature graphic, 1200x630 OG). See `docs/DESIGN.md` |
 | `resume.html` | Resume + cover letters (dark on screen, plain light A4 when printed) |
 | `assets/css/tokens.css` | Design tokens and shared base used by every page |
@@ -272,7 +272,7 @@ the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 - Home: `.entity-brand` strip under the Apps & Games header (logo + one sentence linking the extension and
   the calculator). `style.css?v=7`.
 - Logo: `assets/images/entity/entity-corporation-256.webp`, copied unchanged from
-  `Infra\LogoTemplate\entity_brand\out\entity-corporation\` (the "web" file in that README). To update it,
+  `Branding\logomaker\entity_brand\out\entity-corporation\` (the "web" file in that README). To update it,
   re-run `python build_brand.py --corporation` there and copy the file again.
 - Checked with ClaudeTester at 1280 px and 360 px: logo loads, no horizontal scroll, no console messages.
 
@@ -333,7 +333,7 @@ the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 - Video IDs live in `tools/game_videos.json` (all empty for now). `entity.css` bumped to `?v=4` on every page.
 
 2026-11-18 (Entity brand template):
-- All 7 games got new icons from the shared Entity template (`Infra/LogoTemplate/entity_brand/build_brand.py`);
+- All 7 games got new icons from the shared Entity template (`Branding/logomaker/entity_brand/build_brand.py`);
   logos regenerated. `tools/normalize_app_logos.py` now uses the FULL crop for every game (all icons are
   full-bleed, no rim).
 

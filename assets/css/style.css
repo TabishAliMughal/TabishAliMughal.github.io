@@ -784,7 +784,7 @@ p { margin: 0 0 1em; }
     .calc-cta .btn { grid-column: 1 / -1; width: 100%; }
 }
 
-/* Entity Corporation strip under the Apps & Games header (logo from Infra/LogoTemplate/entity_brand) */
+/* Entity Corporation strip under the Apps & Games header (logo from Branding/logomaker/entity_brand) */
 .entity-brand {
     display: flex;
     align-items: center;

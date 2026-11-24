@@ -24,7 +24,7 @@ SUPERSAMPLE = 4       # mask anti-aliasing
 
 # box: (x0, y0, x1, y1) crop as fractions of the source, dropping baked corners + rim.
 #   Since 2026-11-18 all seven icon.png files come from the shared Entity template
-#   (Infra/LogoTemplate/entity_brand/build_brand.py): full-bleed square art with no
+#   (Branding/logomaker/entity_brand/build_brand.py): full-bleed square art with no
 #   rim or baked corners -> FULL for every game. INNER_TILE is kept for reference
 #   (it cropped the old rimmed Arrows/Sudoku tiles).
 # watermark: list of (x0, y0, x1, y1) boxes, as fractions of the SOURCE image,
