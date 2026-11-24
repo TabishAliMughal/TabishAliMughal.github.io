@@ -777,6 +777,44 @@ p { margin: 0 0 1em; }
     .calc-cta .btn { grid-column: 1 / -1; width: 100%; }
 }
 
+/* About Me: Entity Corporation intro + journey timeline (index.html #about) */
+.about-entity {
+    margin-top: 40px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--amber);
+    border-radius: var(--radius-m);
+}
+.about-entity p { max-width: var(--measure); color: var(--muted); }
+.about-entity-intro { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.about-entity-title { font: 600 var(--step-2)/1.3 var(--font-body); color: var(--text); }
+.about-entity-tagline { margin: 4px 0 0; color: var(--text); }
+.journey-title {
+    margin: 24px 0 12px;
+    font: 600 var(--step--1)/1.4 var(--font-body);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--amber);
+}
+.journey { list-style: none; margin: 0; padding: 0; max-width: 880px; }
+.journey li {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: 12px;
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+    color: var(--text);
+}
+.journey-date { color: var(--blue); font-weight: 600; white-space: nowrap; }
+.about-entity-more { margin: 20px 0 0; font-weight: 600; }
+@media (max-width: 520px) {
+    .about-entity { padding: 16px; }
+    .about-entity-intro { align-items: flex-start; gap: 12px; }
+    .about-entity .entity-brand-logo { width: 48px; height: 48px; }
+    .journey li { grid-template-columns: 1fr; gap: 2px; }
+}
+
 /* Entity Corporation strip under the Apps & Games header (logo from Branding/logomaker/entity_brand) */
 .entity-brand {
     display: flex;

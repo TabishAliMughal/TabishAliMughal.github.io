@@ -210,6 +210,13 @@ the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
 
+2026-11-24 (About Me: Entity Corporation, ecosystem TaskList #128):
+- New `.about-entity` block at the end of `#about`: "Founder, Entity Corporation" (links to /entity/), the tagline and
+  wording from `docs/entity-copy.md`, and a five-item journey (Jan 2026 notification app + school portal, May 2026 first
+  games, Nov 2026 seven games in Play closed testing, Nov 2026 seven branches + Cost Calculator/SVNWorkflow, next: more
+  apps). Dates come from repo first commits and the Entity TaskList only. `style.css?v=12`. Checked at 1366/390 px:
+  no horizontal scroll, all links resolve, no console errors.
+
 2026-11-24 (nav fixes, ecosystem TaskList #127):
 - Full-width light line across the page while scrolling: the sticky navbar had `backdrop-filter: blur(10px)`, the only
   full-viewport-wide layer above the content; it now uses a near-opaque background and no backdrop-filter.
