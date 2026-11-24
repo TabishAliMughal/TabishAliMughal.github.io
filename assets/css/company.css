@@ -1,5 +1,5 @@
 /* Entity Corporation company page (/entity/). Load after tokens.css and entity.css - this file only adds
-   the wider layout, the hero, the games grid, the approach list and the contact list. */
+   the wider layout, the hero, the ecosystem blocks, the games grid, the approach list and the contact list. */
 
 .company main,
 .company .site-bar .wrap,
@@ -35,12 +35,70 @@
 .company-hero-text > p:not(.tagline):not(.eyebrow) { color: var(--muted); }
 .company-hero .actions { margin-top: 0.5rem; }
 
-/* Games grid */
+/* Ecosystem section + games grid */
 .company-section { margin: 40px 0 32px; }
 .section-lead { color: var(--muted); }
-/* Entity Games logo header above the cards */
-.games-brand { margin: 0 0 18px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
-.games-brand img { display: block; width: clamp(220px, 46vw, 420px); height: auto; }
+/* Entity ecosystem (#ecosystem): intro, then one .eco-branch block per branch (logo, lead, cards).
+   Each block sets --accent to its branch's Accent A (Branding/README.md palette). */
+.eco-intro { margin-bottom: 8px; }
+.eco-corp-logo { display: block; width: auto; height: clamp(36px, 9vw, 56px); max-width: 100%; margin-bottom: 18px; }
+.eco-jump { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.eco-jump li { margin: 0; }
+.eco-jump a {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: var(--step--1);
+    text-decoration: none;
+}
+.eco-jump a:hover { border-color: var(--blue); }
+.eco-branch { --accent: var(--blue); margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); }
+.branch-brand { margin: 0 0 12px; }
+.branch-brand img { display: block; width: auto; height: clamp(34px, 8.5vw, 52px); max-width: 100%; }
+.branch-lead { color: var(--muted); margin-bottom: 18px; }
+.eco-subhead { margin: 28px 0 12px; color: var(--text); font-weight: 600; }
+.eco-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+.eco-grid li::marker { content: none; }
+.eco-card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 16px 18px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--accent);
+    border-radius: var(--radius-m);
+}
+.eco-card h4 { font: 600 var(--step-1)/1.3 var(--font-body); margin: 0 0 6px; }
+.eco-card p { color: var(--muted); font-size: 0.92rem; margin: 0 0 14px; }
+/* Status badges: all text pairs >= 4.5:1 on --surface */
+.eco-badge {
+    margin-top: auto;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 34px;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.eco-badge.is-soon { border: 1px solid rgba(255, 182, 72, 0.55); background: rgba(255, 182, 72, 0.1); color: var(--amber); }
+.eco-badge.is-internal { border: 1px dashed var(--line); color: var(--muted); }
+a.eco-badge.is-live { border: 1px solid transparent; background: var(--ok); color: var(--on-accent); text-decoration: none; }
+a.eco-badge.is-live:hover { background: var(--amber); color: var(--on-accent); }
 .games-grid {
     list-style: none;
     padding: 0;
@@ -61,7 +119,7 @@
 }
 .game-card:hover { border-color: rgba(91, 184, 255, 0.55); }
 .game-link { display: block; color: var(--text); text-decoration: none; border-radius: var(--radius-m); }
-.game-link:hover h3 { color: var(--blue); }
+.game-link:hover h4 { color: var(--blue); }
 .game-icon {
     display: block;
     width: 100%;
@@ -70,7 +128,7 @@
     border-radius: var(--icon-radius);
     box-shadow: var(--icon-shadow);
 }
-.game-card h3 { font: 600 var(--step-1)/1.3 var(--font-body); margin: 14px 4px 6px; }
+.game-card h4 { font: 600 var(--step-1)/1.3 var(--font-body); margin: 14px 4px 6px; }
 .game-blurb { color: var(--muted); font-size: 0.92rem; margin: 0 4px 14px; }
 .game-actions {
     margin-top: auto;
@@ -134,9 +192,13 @@
 @media (max-width: 520px) {
     .games-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
     .game-card { padding: 8px 8px 12px; }
-    .game-card h3 { font-size: 1rem; margin-top: 10px; }
+    .game-card h4 { font-size: 1rem; margin-top: 10px; }
     .game-blurb { font-size: 0.85rem; }
     .game-actions .app-store-badge { font-size: 0.78rem; padding: 0.35rem 0.6rem; }
+}
+@media (max-width: 520px) {
+    .eco-grid { grid-template-columns: 1fr; gap: 12px; }
+    .eco-branch { margin-top: 32px; padding-top: 22px; }
 }
 @media (max-width: 359px) {
     .games-grid { grid-template-columns: 1fr; }

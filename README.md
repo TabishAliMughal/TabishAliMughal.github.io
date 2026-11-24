@@ -13,10 +13,11 @@ Static HTML/CSS/JS, no build step. Repo: `TabishAliMughal/TabishAliMughal.github
 | Path | Purpose |
 |---|---|
 | `index.html` | Home page: hero, About, Experience, Skills, AI-Enhanced Development, Projects, Apps & Games (`#apps`), VS Code Extensions (`#extensions`), Contact (with the cost-calculator call-to-action) |
-| `entity/index.html` | Entity Corporation app studio page (https://tabishalimughal.github.io/entity/): hero, 7-game grid (Play + beta links from `apps-data.js`), Our approach, Contact. Layout in `assets/css/company.css` |
+| `entity/index.html` | Entity Corporation app studio page (https://tabishalimughal.github.io/entity/): hero, Entity ecosystem (`#ecosystem`: one block per branch with its logo and app cards; Games block = 7-game grid with Play + beta links from `apps-data.js`), Our approach, Contact. Layout in `assets/css/company.css` |
 | `cost-calculator/` | Client cost calculator (https://tabishalimughal.github.io/cost-calculator/): `index.html`, `calculator.js` (UI), `cost-model.js` (formula), `pricing-data.js` (GENERATED prices) |
 | `assets/css/calculator.css` | Cost calculator page layout (loaded after tokens.css + entity.css) |
 | `assets/images/entity/` | Entity Corporation logo (`entity-corporation-256.webp`, copied from `Branding\logomaker\entity_brand\out\entity-corporation\`) |
+| `assets/images/entity/<branch>/logo.svg` | Branch logos for the ecosystem section (corporation, finance, lms, music, notification, extensions, aitools), copied from `Branding\logos\<branch>\logo.svg` |
 | `assets/images/entity/entity-games/` | Entity Games logo: SVG icon + lockups (dark/light) and PNG exports (512 icon, 1024x500 feature graphic, 1200x630 OG). See `docs/DESIGN.md` |
 | `resume.html` | Resume + cover letters (dark on screen, plain light A4 when printed) |
 | `assets/css/tokens.css` | Design tokens and shared base used by every page |
@@ -207,6 +208,15 @@ contrast; amber focus ring; `prefers-reduced-motion` respected. Full token table
 the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
+
+2026-11-24 (Entity ecosystem on `/entity/`, ecosystem TaskList #125):
+- New `#ecosystem` section: Entity Corporation intro + jump links, then one block per branch (Games, Finance, LMS, Music,
+  Notification, Extensions, AI Tools) with the branch logo, a one-line description and app cards with a status badge.
+- The existing game grid is now the Games block (`#games` anchor and Play/beta links unchanged), plus Drop Sort and Loop Sort as "Coming soon".
+- Available: the 7 games (beta), Entity Cost Calculator (`/cost-calculator/`), Entity SVNWorkflow (VS Code Marketplace).
+  Coming soon: Drop Sort, Loop Sort, CashBook, School Portal, Music, Notification. Internal tool: Claude Tester, My Standard, AI Agents.
+- Branch logos copied to `assets/images/entity/<branch>/logo.svg`; styles in `company.css` (see `docs/DESIGN.md`).
+  Checked at 1366 px and 390 px (no horizontal scroll).
 
 2026-11-23 (Entity described as an app studio):
 - `/entity/` eyebrow "Indie game studio" -> "Independent app studio"; meta description now opens "Entity Corporation is an independent app studio." Individual games still call themselves games.

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Entity Corporation - calm, kid-safe puzzle and arcade games</title>
-<meta name="description" content="Entity Corporation is an independent app studio. Its current apps are calm, kid-safe puzzle and arcade games for Android: Arrows, Sudoku, Tubes, Word Puzzle, Word Select, Bricks Breaker and Bubble Shooter. Offline, no tracking, child-directed ads.">
+<meta name="description" content="Entity Corporation is an independent app studio. Its current apps are calm, kid-safe puzzle and arcade games for Android: Arrows, Sudoku, Tubes, Word Puzzle, Word Select, Bricks Breaker and Bubble Shooter. Offline, no tracking, child-directed ads. Apps for money, school, music and messaging are coming soon.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#0A1528">
 <link rel="canonical" href="https://tabishalimughal.github.io/entity/">
@@ -28,13 +28,14 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/tokens.css?v=3">
 <link rel="stylesheet" href="/assets/css/entity.css?v=4">
-<link rel="stylesheet" href="/assets/css/company.css?v=2">
+<link rel="stylesheet" href="/assets/css/company.css?v=3">
 </head>
 <body class="company">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-bar"><div class="wrap">
 <a class="brand" href="/"><span class="nav-mark" aria-hidden="true">TAM</span> Tabish Ali Mughal</a>
 <nav class="bar-nav" aria-label="Entity Corporation">
+<a class="bar-link" href="#ecosystem">Ecosystem</a>
 <a class="bar-link" href="#games">Games</a>
 <a class="bar-link" href="#approach">Approach</a>
 <a class="bar-link" href="#contact">Contact</a>
@@ -50,25 +51,35 @@
 <h1 id="page-title">Entity Corporation</h1>
 <p class="tagline">Calm, kid-safe puzzle and arcade games for Android: offline, with no tracking.</p>
 <p>Founded by <a href="/">Tabish Ali Mughal</a>, who builds the apps through AI-assisted development (vibe coding) and publishes them under Entity Corporation.
-The seven games are in closed testing on Google Play before launch.</p>
+The seven games are in closed testing on Google Play before launch, and apps for money, school, music and messaging are on the way.</p>
 <div class="actions">
 <a class="btn btn-primary" href="#games">See the games</a>
+<a class="btn btn-secondary" href="#ecosystem">All Entity apps</a>
 <a class="btn btn-secondary play-dev-link" href="https://play.google.com/store/apps/dev?id=8198153788316941090" target="_blank" rel="noopener" aria-label="Entity Corporation on Google Play (opens in a new tab)"><i class="fab fa-google-play" aria-hidden="true"></i> Google Play developer page</a>
 </div>
 </div>
 </section>
 
-<section class="company-section" id="games" aria-labelledby="games-title">
-<div class="games-brand"><img src="/assets/images/entity/entity-games/entity-games-logo.svg?v=1" alt="Entity Games logo: a blue-to-amber letter E inside an orbit ring, with the words Entity Games" width="943" height="160"></div>
-<h2 id="games-title">Our games</h2>
-<p class="section-lead">Seven games, one family: the same calm look, the same privacy rules. Each card links to the game's page; the beta button opens its Google Play testing page.</p>
+<section class="company-section" id="ecosystem" aria-labelledby="ecosystem-title">
+<div class="eco-intro">
+<img class="eco-corp-logo" src="/assets/images/entity/corporation/logo.svg?v=1" alt="Entity Corporation logo" width="1246" height="160">
+<h2 id="ecosystem-title">The Entity ecosystem</h2>
+<p class="section-lead">One independent app studio, seven branches. The games are in testing now; apps marked &ldquo;Coming soon&rdquo; are still being built and are not available yet.</p>
+<ul class="eco-jump" aria-label="Jump to a branch">
+<li><a href="#games">Games</a></li><li><a href="#finance">Finance</a></li><li><a href="#lms">Learning</a></li><li><a href="#music">Music</a></li><li><a href="#notification">Notification</a></li><li><a href="#extensions">Extensions</a></li><li><a href="#aitools">AI Tools</a></li>
+</ul>
+</div>
+
+<div class="eco-branch" id="games" style="--accent:#5BB8FF">
+<h3 class="branch-brand"><img src="/assets/images/entity/entity-games/entity-games-logo.svg?v=1" alt="Entity Games" width="943" height="160"></h3>
+<p class="branch-lead">Seven calm, kid-safe games, one family: the same friendly look and the same privacy rules. Each card links to the game's page; the beta button opens its Google Play testing page.</p>
 <!-- Google Play links: playUrl / testingUrl per data-app slug in /assets/js/apps-data.js, applied by /assets/js/apps.js
      (the testing URLs are also written here as the no-JS fallback - keep them in sync). -->
 <ul class="games-grid">
 <li class="game-card" data-app="entity-arrows">
 <a class="game-link" href="/entity/games/entity-arrows/">
 <img class="game-icon" src="/assets/images/apps/entity-arrows.webp?v=2" alt="" width="256" height="256" loading="lazy">
-<h3>Entity Arrows</h3>
+<h4>Entity Arrows</h4>
 </a>
 <p class="game-blurb">Free tangled arrow strings in the right order to clear every board.</p>
 <div class="game-actions">
@@ -80,7 +91,7 @@ The seven games are in closed testing on Google Play before launch.</p>
 <li class="game-card" data-app="entity-sudoku">
 <a class="game-link" href="/entity/games/entity-sudoku/">
 <img class="game-icon" src="/assets/images/apps/entity-sudoku.webp?v=2" alt="" width="256" height="256" loading="lazy">
-<h3>Entity Sudoku</h3>
+<h4>Entity Sudoku</h4>
 </a>
 <p class="game-blurb">A fresh daily Sudoku across five difficulty levels, with streaks and stats.</p>
 <div class="game-actions">
@@ -92,7 +103,7 @@ The seven games are in closed testing on Google Play before launch.</p>
 <li class="game-card" data-app="entity-tubes-game">
 <a class="game-link" href="/entity/games/entity-tubes-game/">
 <img class="game-icon" src="/assets/images/apps/entity-tubes-game.webp?v=2" alt="" width="256" height="256" loading="lazy">
-<h3>Entity Tubes</h3>
+<h4>Entity Tubes</h4>
 </a>
 <p class="game-blurb">Pour and sort coloured layers until every tube holds a single colour.</p>
 <div class="game-actions">
@@ -104,7 +115,7 @@ The seven games are in closed testing on Google Play before launch.</p>
 <li class="game-card" data-app="entity-wordpuzzlematching">
 <a class="game-link" href="/entity/games/entity-wordpuzzlematching/">
 <img class="game-icon" src="/assets/images/apps/entity-wordpuzzlematching.webp?v=2" alt="" width="256" height="256" loading="lazy">
-<h3>Entity Word Puzzle</h3>
+<h4>Entity Word Puzzle</h4>
 </a>
 <p class="game-blurb">Drag across a hexagon of letters to find every hidden word.</p>
 <div class="game-actions">
@@ -116,7 +127,7 @@ The seven games are in closed testing on Google Play before launch.</p>
 <li class="game-card" data-app="entity-wordpuzzleselecting">
 <a class="game-link" href="/entity/games/entity-wordpuzzleselecting/">
 <img class="game-icon" src="/assets/images/apps/entity-wordpuzzleselecting.webp?v=2" alt="" width="256" height="256" loading="lazy">
-<h3>Entity Word Select</h3>
+<h4>Entity Word Select</h4>
 </a>
 <p class="game-blurb">Fill a crossword grid from a letter bank, guided by across and down clues.</p>
 <div class="game-actions">
@@ -128,7 +139,7 @@ The seven games are in closed testing on Google Play before launch.</p>
 <li class="game-card" data-app="entity-bricksbreaker">
 <a class="game-link" href="/entity/games/entity-bricksbreaker/">
 <img class="game-icon" src="/assets/images/apps/entity-bricksbreaker.webp?v=2" alt="" width="256" height="256" loading="lazy">
-<h3>Entity Bricks Breaker</h3>
+<h4>Entity Bricks Breaker</h4>
 </a>
 <p class="game-blurb">Aim and fire bouncing sparks to break numbered bricks, across five difficulties or an endless Infinity mode.</p>
 <div class="game-actions">
@@ -140,7 +151,7 @@ The seven games are in closed testing on Google Play before launch.</p>
 <li class="game-card" data-app="entity-bubbleshooter">
 <a class="game-link" href="/entity/games/entity-bubbleshooter/">
 <img class="game-icon" src="/assets/images/apps/entity-bubbleshooter.webp?v=2" alt="" width="256" height="256" loading="lazy">
-<h3>Entity Bubble Shooter</h3>
+<h4>Entity Bubble Shooter</h4>
 </a>
 <p class="game-blurb">Match three or more sea-bubbles to pop them and clear the cluster before it reaches the danger line.</p>
 <div class="game-actions">
@@ -151,6 +162,63 @@ The seven games are in closed testing on Google Play before launch.</p>
 </li>
 </ul>
 <p class="beta-hint muted">Testing is by invitation. See <a href="/#beta-test">how to join the beta</a>, or email the Gmail address you use on Google Play to <a href="mailto:tabishalimughal@gmail.com?subject=Entity%20games%20beta">tabishalimughal@gmail.com</a>.</p>
+<p class="eco-subhead">More games in the works</p>
+<ul class="eco-grid">
+<li class="eco-card"><h4>Entity Drop Sort</h4><p>Drop colourful marbles through a spinning wheel and guide each one into the bucket of the same colour.</p><span class="eco-badge is-soon"><i class="fas fa-hourglass-half" aria-hidden="true"></i> Coming soon</span></li>
+<li class="eco-card"><h4>Entity Loop Sort</h4><p>Send coloured blocks around a looping track and fill every box with the matching colour.</p><span class="eco-badge is-soon"><i class="fas fa-hourglass-half" aria-hidden="true"></i> Coming soon</span></li>
+</ul>
+</div>
+
+<div class="eco-branch" id="finance" style="--accent:#2DD39A">
+<h3 class="branch-brand"><img src="/assets/images/entity/finance/logo.svg?v=1" alt="Entity Finance" width="986" height="160"></h3>
+<p class="branch-lead">Simple money tools for small shops and small projects.</p>
+<ul class="eco-grid">
+<li class="eco-card"><h4>Entity CashBook</h4><p>A digital khata for shopkeepers: keep track of customer credit, payments and daily cash in and out, even offline.</p><span class="eco-badge is-soon"><i class="fas fa-hourglass-half" aria-hidden="true"></i> Coming soon</span></li>
+<li class="eco-card"><h4>Entity Cost Calculator</h4><p>Pick the features you need for an app or website and get a clear cost estimate you can print.</p><a class="eco-badge is-live" href="/cost-calculator/" aria-label="Available: open Entity Cost Calculator"><i class="fas fa-check" aria-hidden="true"></i> Available: open it</a></li>
+</ul>
+</div>
+
+<div class="eco-branch" id="lms" style="--accent:#4C8DFF">
+<h3 class="branch-brand"><img src="/assets/images/entity/lms/logo.svg?v=1" alt="Entity LMS" width="777" height="160"></h3>
+<p class="branch-lead">Learning tools that help schools, teachers and students work together.</p>
+<ul class="eco-grid">
+<li class="eco-card"><h4>Entity School Portal</h4><p>One place for a school to run classes and homework, with separate portals for teachers and students.</p><span class="eco-badge is-soon"><i class="fas fa-hourglass-half" aria-hidden="true"></i> Coming soon</span></li>
+</ul>
+</div>
+
+<div class="eco-branch" id="music" style="--accent:#A66BFF">
+<h3 class="branch-brand"><img src="/assets/images/entity/music/logo.svg?v=1" alt="Entity Music" width="857" height="160"></h3>
+<p class="branch-lead">Music to enjoy anywhere, online or off.</p>
+<ul class="eco-grid">
+<li class="eco-card"><h4>Entity Music</h4><p>Stream songs, save them for offline listening and keep the music playing in the background.</p><span class="eco-badge is-soon"><i class="fas fa-hourglass-half" aria-hidden="true"></i> Coming soon</span></li>
+</ul>
+</div>
+
+<div class="eco-branch" id="notification" style="--accent:#FF5D6C">
+<h3 class="branch-brand"><img src="/assets/images/entity/notification/logo.svg?v=1" alt="Entity Notification" width="1221" height="160"></h3>
+<p class="branch-lead">Friendly ways for businesses to keep their customers in the loop.</p>
+<ul class="eco-grid">
+<li class="eco-card"><h4>Entity Notification</h4><p>Send updates, reminders and announcements to customers by WhatsApp and email from one simple dashboard.</p><span class="eco-badge is-soon"><i class="fas fa-hourglass-half" aria-hidden="true"></i> Coming soon</span></li>
+</ul>
+</div>
+
+<div class="eco-branch" id="extensions" style="--accent:#9BE15D">
+<h3 class="branch-brand"><img src="/assets/images/entity/extensions/logo.svg?v=1" alt="Entity Extensions" width="1173" height="160"></h3>
+<p class="branch-lead">Add-ons that make everyday developer tools quicker to use.</p>
+<ul class="eco-grid">
+<li class="eco-card"><h4>Entity SVNWorkflow</h4><p>Work with SVN right inside VS Code: see your changes, compare files, pull a single change and fix merge conflicts.</p><a class="eco-badge is-live" href="https://marketplace.visualstudio.com/items?itemName=TabishAliMughal.Entity-SVNWorkflow" target="_blank" rel="noopener" aria-label="Available: Entity SVNWorkflow on the VS Code Marketplace (opens in a new tab)"><i class="fas fa-check" aria-hidden="true"></i> Available on VS Code Marketplace</a></li>
+</ul>
+</div>
+
+<div class="eco-branch" id="aitools" style="--accent:#3FD7FF">
+<h3 class="branch-brand"><img src="/assets/images/entity/aitools/logo.svg?v=1" alt="Entity AI Tools" width="1005" height="160"></h3>
+<p class="branch-lead">The helpers we use behind the scenes to build and test every Entity app. They are for our own team, so they are not offered to the public.</p>
+<ul class="eco-grid">
+<li class="eco-card"><h4>Claude Tester</h4><p>Checks our apps automatically in a web browser and on Android test phones before anything ships.</p><span class="eco-badge is-internal"><i class="fas fa-lock" aria-hidden="true"></i> Internal tool</span></li>
+<li class="eco-card"><h4>My Standard</h4><p>Our shared playbook and starter templates, so every Entity app looks and works the same way.</p><span class="eco-badge is-internal"><i class="fas fa-lock" aria-hidden="true"></i> Internal tool</span></li>
+<li class="eco-card"><h4>Entity AI Agents</h4><p>A team of AI helpers, each focused on one kind of work, that help us plan, build and test the apps.</p><span class="eco-badge is-internal"><i class="fas fa-lock" aria-hidden="true"></i> Internal tool</span></li>
+</ul>
+</div>
 </section>
 
 <section class="card" id="approach" aria-labelledby="approach-title">

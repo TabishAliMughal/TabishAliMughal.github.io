@@ -61,8 +61,8 @@ each item = Font Awesome icon + name + `.skill-level` bar (`data-level` 0-100, d
 `entity/index.html` is the app studio page (https://tabishalimughal.github.io/entity/). It uses the game-page shell
 (`.site-bar`, `.crumbs`, `.card`, `footer`, tokens.css + entity.css) plus `assets/css/company.css`, which widens the page
 to 1080 px (`body.company`) and adds the following blocks:
-- `.company-hero`: 160 px logo (96 px under 640 px) + amber `.eyebrow` + gradient `h1` + tagline + two buttons (games, Play developer page).
-- `#games` `.games-grid`: 7 `.game-card` items (auto-fill, min 220 px; 2 columns under 520 px, 1 under 360 px). Each has
+- `.company-hero`: 160 px logo (96 px under 640 px) + amber `.eyebrow` + gradient `h1` + tagline + three buttons (games, all Entity apps, Play developer page).
+- `#ecosystem`: see "Entity ecosystem section" below. Its Games block `#games` holds the `.games-grid`: 7 `.game-card` items (auto-fill, min 220 px; 2 columns under 520 px, 1 under 360 px). Each has
   `data-app="<slug>"`, so `apps.js` applies `playUrl` (the "Coming soon" badge goes live) and `testingUrl` (the beta button) from
   `apps-data.js`. The testing URLs are also hard-coded as the no-JS fallback. The icon link goes to the game page.
 - `#approach`: `.approach` icon list (kid-safe, child-safe ads, no tracking, offline-first, 5 difficulties x 50 levels).
@@ -85,7 +85,24 @@ the wordmark is monoline paths (stroke 18, round caps) with "Games" in `--grad` 
 - PNG exports (headless Chromium via ClaudeTester's Playwright): `entity-games-icon-512.png` (full-bleed, opaque 32-bit,
   Play Games Services icon), `entity-games-feature-1024x500.png` (24-bit, no alpha, PGS feature graphic),
   `entity-games-og-1200x630.png`. The 512 and 1024x500 are also in `D:\persional\Entity\docs\games\brand\` for Play Console.
-- Used on `/entity/` as `.games-brand` at the top of `#games` (width `clamp(220px, 46vw, 420px)`, rule underneath).
+- Used on `/entity/` as the `.branch-brand` heading of the Games block (`#games`) inside `#ecosystem`.
+
+### Entity ecosystem section (`/entity/#ecosystem`, 2026-11-24)
+
+`#ecosystem` (in `entity/index.html`, styles in `company.css`) shows every Entity branch and app from
+`D:\persional\Entity\ecosystem.json`. Structure: `.eco-intro` (Entity Corporation lockup, h2, lead, `.eco-jump` pill
+links), then one `.eco-branch` per branch in this order: Games (`#games`), Finance (`#finance`), LMS (`#lms`),
+Music (`#music`), Notification (`#notification`), Extensions (`#extensions`), AI Tools (`#aitools`).
+- Each block: `h3.branch-brand` holding the branch `logo.svg` (alt = branch name, height `clamp(34px, 8.5vw, 52px)`),
+  a one-line `.branch-lead`, then cards. Each block sets `style="--accent:<Accent A>"` (Branding/README.md palette),
+  used as the 3 px top border of its `.eco-card`s.
+- Games keeps the 7 `.game-card`s (headings are now `h4`) plus a "More games in the works" `.eco-grid` (Drop Sort, Loop Sort).
+- `.eco-grid` / `.eco-card`: auto-fill min 240 px, 1 column under 520 px. Card = `h4` name, user-facing one-liner, badge.
+- `.eco-badge` states (all >= 4.5:1 on `--surface`): `a.is-live` (`--ok` fill, navy text, links to the live app),
+  `.is-soon` (amber text, amber tint, "Coming soon"), `.is-internal` (muted, dashed, "Internal tool").
+- Branch logos are copies of `Branding\logos\<branch>\logo.svg` at `assets/images/entity/<branch>/logo.svg`
+  (corporation, finance, lms, music, notification, extensions, aitools); Games still uses `entity-games/entity-games-logo.svg`.
+- Rules: never link private GitHub repos; when an app is released, swap its `.is-soon` span for an `a.eco-badge.is-live`.
 
 ### Cost calculator (`/cost-calculator/`)
 
