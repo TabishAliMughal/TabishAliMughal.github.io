@@ -58,6 +58,8 @@ each item = Font Awesome icon + name + `.skill-level` bar (`data-level` 0-100, d
 
 ### Entity Corporation page (`/entity/`, 2026-11-21)
 
+All Entity / Entity Corporation wording (tagline, ~160-character meta/OG description, hero paragraph, one line per branch) comes from [entity-copy.md](./entity-copy.md). Reuse it word for word; don't write new descriptions of Entity on other pages.
+
 `entity/index.html` is the app studio page (https://tabishalimughal.github.io/entity/). It uses the game-page shell
 (`.site-bar`, `.crumbs`, `.card`, `footer`, tokens.css + entity.css) plus `assets/css/company.css`, which widens the page
 to 1080 px (`body.company`) and adds the following blocks:
@@ -65,7 +67,7 @@ to 1080 px (`body.company`) and adds the following blocks:
 - `#ecosystem`: see "Entity ecosystem section" below. Its Games block `#games` holds the `.games-grid`: 7 `.game-card` items (auto-fill, min 220 px; 2 columns under 520 px, 1 under 360 px). Each has
   `data-app="<slug>"`, so `apps.js` applies `playUrl` (the "Coming soon" badge goes live) and `testingUrl` (the beta button) from
   `apps-data.js`. The testing URLs are also hard-coded as the no-JS fallback. The icon link goes to the game page.
-- `#approach`: `.approach` icon list (kid-safe, child-safe ads, no tracking, offline-first, 5 difficulties x 50 levels).
+- `#approach`: `.section-lead` + `.approach` icon list: privacy first and offline-first (all apps), then kid-safe games, child-safe ads in games, step-by-step difficulty (game-only items say so).
 - `#contact`: `.contact-list` with only the contact details already on the site (email, GitHub, Play developer page, `/privacy/`).
 - Title, description, canonical and OG/Twitter tags (image = the 256 px logo).
 Linked from the home nav ("Entity"), the `.entity-brand` strip, an `#apps` "Entity Corporation page" button, the home

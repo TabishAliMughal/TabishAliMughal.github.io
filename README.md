@@ -33,6 +33,7 @@ Static HTML/CSS/JS, no build step. Repo: `TabishAliMughal/TabishAliMughal.github
 | `tools/normalize_app_logos.py` | Rebuilds every game logo from the games' `assets/icon.png` (Pillow + numpy) |
 | `tools/sync_screenshots.py` | Builds each game page's screenshot gallery + video slot (Pillow) - see "Screenshots and YouTube video" |
 | `tools/game_videos.json` | YouTube video per game (one line per slug; empty = no video) |
+| `docs/entity-copy.md` | The approved Entity Corporation wording (tagline, meta/OG description, hero paragraph, one line per branch). Reuse it on every page that describes Entity |
 | `entity/games/<slug>/screenshots/` | Web screenshots (`<name>-540.webp` / `<name>-1080.webp`) - generated, never hand-edited |
 | `entity/games/<slug>/` | One page per game |
 | `entity/games/<slug>/privacy/` | One privacy policy per game |
@@ -208,6 +209,12 @@ contrast; amber focus ring; `prefers-reduced-motion` respected. Full token table
 the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
+
+2026-11-24 (ecosystem-wide Entity wording, ecosystem TaskList #126):
+- New `docs/entity-copy.md`: the one copy set for Entity Corporation (tagline "Simple, privacy-first apps for play, work and learning.", a 159-character meta/OG description, a hero paragraph, one line per branch) and the wording rules (app studio, never game studio; game-only claims stay with the games; no overclaiming).
+- `/entity/`: title/OG/Twitter title "Entity Corporation - independent app studio"; meta, OG and Twitter descriptions, hero tagline and paragraph, ecosystem lead, Games and AI Tools leads, contact line and footer now use the set. "Our approach" now starts with the all-app rules (privacy first, offline-first) and labels the game-only items (kid-safe games, child-safe ads in games); "5 difficulties x 50 levels" (not true for every game) became "Step-by-step difficulty".
+- Home `#apps` subtitle and `.entity-brand` strip, and the résumé Entity tagline, describe the seven-branch app studio; the games now say "in closed testing on Google Play" instead of "coming soon". Game pages keep their own game copy.
+- Checked at 1366 px and 390 px (no horizontal scroll, internal links resolve, no console errors).
 
 2026-11-24 (Entity ecosystem on `/entity/`, ecosystem TaskList #125):
 - New `#ecosystem` section: Entity Corporation intro + jump links, then one block per branch (Games, Finance, LMS, Music,
