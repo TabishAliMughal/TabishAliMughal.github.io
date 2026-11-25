@@ -26,5 +26,9 @@
   "com.entity.bubbleshooter.game": {
     "latestVersionCode": 8,
     "minSupportedVersionCode": 6
+  },
+  "com.entity.loopsort.game": {
+    "latestVersionCode": 1,
+    "minSupportedVersionCode": 1
   }
 }
