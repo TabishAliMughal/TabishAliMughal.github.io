@@ -59,7 +59,7 @@ The Games line is the old site-wide tagline: use it only where the text is about
 - `index.html`: `#apps` subtitle and the `.entity-brand` founder strip.
 - `index.html` `#about`: the `.about-entity` block (position "Founder, Entity Corporation", tagline, medium
   paragraph shortened to the branch list + privacy-first + first-person founder line, and a five-item
-  journey). Journey dates are verified only: first commits of the Entity repos (Notification Jan 2026,
+  journey). Journey dates are verified only: first commits of the Entity repos (Notification Jan 2026, from the legacy PHP repo retired on 2026-11-25; the Django app that replaced it starts Apr 2026,
   School Portal Feb 2026, Arrows/Sudoku/Tubes May 2026, the word games Aug 2026, Bricks Breaker/Bubble Shooter
   Nov 2026), Play closed testing for all seven games (Entity TaskList, Nov 2026) and the seven-branch
   ecosystem map (Nov 2026). Update it when a milestone really happens; no invented dates or numbers.
