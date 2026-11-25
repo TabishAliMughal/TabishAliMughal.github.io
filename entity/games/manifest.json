@@ -1,31 +1,31 @@
 {
   "com.entity.arrows.game": {
-    "latestVersionCode": 7,
-    "minSupportedVersionCode": 5
+    "latestVersionCode": 8,
+    "minSupportedVersionCode": 6
   },
   "com.entity.sudoku.game": {
-    "latestVersionCode": 4,
-    "minSupportedVersionCode": 2
+    "latestVersionCode": 5,
+    "minSupportedVersionCode": 3
   },
   "com.entity.tubes.game": {
-    "latestVersionCode": 5,
-    "minSupportedVersionCode": 3
-  },
-  "com.entity.wordpuzzlematching.game": {
-    "latestVersionCode": 5,
-    "minSupportedVersionCode": 3
-  },
-  "com.entity.wordpuzzleselecting.game": {
-    "latestVersionCode": 4,
-    "minSupportedVersionCode": 2
-  },
-  "com.entity.bricksbreaker.game": {
     "latestVersionCode": 6,
     "minSupportedVersionCode": 4
   },
-  "com.entity.bubbleshooter.game": {
+  "com.entity.wordpuzzlematching.game": {
+    "latestVersionCode": 6,
+    "minSupportedVersionCode": 4
+  },
+  "com.entity.wordpuzzleselecting.game": {
     "latestVersionCode": 8,
     "minSupportedVersionCode": 6
+  },
+  "com.entity.bricksbreaker.game": {
+    "latestVersionCode": 7,
+    "minSupportedVersionCode": 5
+  },
+  "com.entity.bubbleshooter.game": {
+    "latestVersionCode": 9,
+    "minSupportedVersionCode": 7
   },
   "com.entity.loopfill.game": {
     "latestVersionCode": 1,
