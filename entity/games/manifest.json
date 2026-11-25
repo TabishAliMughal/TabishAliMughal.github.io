@@ -27,7 +27,7 @@
     "latestVersionCode": 8,
     "minSupportedVersionCode": 6
   },
-  "com.entity.loopsort.game": {
+  "com.entity.loopfill.game": {
     "latestVersionCode": 1,
     "minSupportedVersionCode": 1
   }
