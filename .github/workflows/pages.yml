@@ -15,11 +15,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       # Static site, no build step: publish the repo root (served at "/").
@@ -31,5 +28,16 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+
+  # Separate job: deploy-pages in the same job as the upload sometimes looked up the
+  # artifact before the API listed it ("Found 0 artifact(s)"). A job boundary avoids that
+  # race, and a failed deploy can be re-run alone ("Re-run failed jobs").
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4

@@ -198,7 +198,9 @@ Commit the page(s) and the `screenshots/` folder, then push.
 
 Push to `main`. `.github/workflows/pages.yml` copies the repo root (minus `.git`, `.github` and
 `assets/scripts`) into `_site` and deploys it with GitHub Actions Pages (Settings > Pages > Source =
-GitHub Actions). Live in about a minute.
+GitHub Actions). Live in about a minute. Two jobs: `build` uploads the `github-pages` artifact,
+`deploy` publishes it. If `deploy` fails with "No artifacts named github-pages", use "Re-run failed jobs"
+(or `gh run rerun <id> --failed -R TabishAliMughal/TabishAliMughal.github.io`).
 
 ## Design system
 
@@ -209,6 +211,12 @@ contrast; amber focus ring; `prefers-reduced-motion` respected. Full token table
 the detailed game-page steps: [docs/DESIGN.md](./docs/DESIGN.md).
 
 ## Tasks Completed
+
+2026-11-25 (Pages deploy fix, ecosystem TaskList #136):
+
+- Deploys failed intermittently (2 of the last 5 runs): the upload succeeded, then `deploy-pages` in the same job
+  found 0 artifacts 0.4 s later. `pages.yml` now has separate `build` and `deploy` jobs (GitHub's starter layout),
+  so the deploy runs after the artifact is listed and can be re-run alone. No settings change (source = GitHub Actions).
 
 2026-11-24 (About Me: Entity Corporation, ecosystem TaskList #128):
 - New `.about-entity` block at the end of `#about`: "Founder, Entity Corporation" (links to /entity/), the tagline and
